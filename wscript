@@ -55,12 +55,12 @@ def build(bld):
         bld(
             rule = 'cp ${SRC} ${TGT[0].abspath()}',
             source = bld.path.find_or_declare('sdr/seeder'),
-            target = 'musubi'
+            target = 'seeder'
         )
         bld(
             rule = 'cp ${SRC} ${TGT[0].abspath()}',
             source = bld.path.find_or_declare('sdr/sdr_harvesting'),
-            target = 'mus_harvesting'
+            target = 'sdr_harvesting'
         )
         bld(
             rule = 'cp ${SRC} ${TGT[0].abspath()}',
