@@ -45,7 +45,8 @@ def build(bld):
         bld.recurse('aotus')
     fill_revision_string(bld, subdir='sdr')
     bld(rule='cp ${SRC} ${TGT}', source=bld.env.COCOSET, target='coco.set')
-    bld.recurse('tem')
+    if not (bld.cmd == 'docu' and bld.env.fordonline):
+        bld.recurse('tem')
     bld.recurse('polynomials')
     bld.recurse('sdr')
 
