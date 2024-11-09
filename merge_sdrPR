@@ -50,8 +50,8 @@ owd=$(pwd)
 if [ -d $sdrdir ]; then
     if gh --version &>/dev/null; then
         cd $sdrdir
-        musbranch=$(git branch --show-current)
-        musmsg=$(git show --pretty=format:%s -s HEAD)
+        sdrbranch=$(git branch --show-current)
+        sdrmsg=$(git show --pretty=format:%s -s HEAD)
 
         if [ "$sdrbranch" = "main" ]; then
             cd $seederdir
