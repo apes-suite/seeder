@@ -1,0 +1,1920 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ply_fxt_header_module &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ply_fxt_header_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.8% of total for modules and submodules.">150 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ply_fxt_header_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/ply_fxt_header_module.f90.html'>ply_fxt_header_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ply_fxt_header_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#inters-0"
+         aria-expanded="false" aria-controls="inters-0">
+         <h4 class="card-header bg-primary text-white">Interfaces</h4>
+      </a>
+      <div id="inters-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-assignment%28%3D%29~7">assignment(=)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28%3D%3D%29~5">operator(==)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28SLASH%3D%29~5">operator(/=)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28lt%29~5">operator(<)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28lt%3D%29~5">operator(<=)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28gt%29~5">operator(>)</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#interface-operator%28gt%3D%29~5">operator(>=)</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#type-ply_fxt_header_type">ply_fxt_header_type</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-isequal~5">isEqual</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-isunequal~5">isUnequal</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-issmaller~5">isSmaller</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-issmallerorequal~5">isSmallerOrEqual</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-isgreater~5">isGreater</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-isgreaterorequal~5">isGreaterOrEqual</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-ply_fxt_header_load">ply_fxt_header_load</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-ply_fxt_header_out">ply_fxt_header_out</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-ply_fxt_header_display">ply_fxt_header_display</a>
+            <a class="list-group-item" href="../module/ply_fxt_header_module.html#proc-copy_fxt_header">Copy_fxt_header</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>The FXT method offers a transformation from Legendre modes to nodes by a
+ fast multipole approach implemented in the
+ <a href="http://sudalab.is.s.u-tokyo.ac.jp/~reiji/fxtpack.html">FXTPACK</a> library by
+ Reiji Suda:
+ R. Suda, "Fast Spherical Harmonic Transform Algorithm based on
+ Generalized Fast Multiple Method", RIMS Kokyuroku vol 1606,
+ pp. 18-29, Jun. 2008, RIMS, Kyoto University.</p>
+<p>Besides the oversampling <code>factor</code> that can be used to increase the number
+ points in the nodal representation to achieve an de-aliasing, there is only
+ one other option to this method:
+ The <code>prec</code> parameter configures the precision up to which the FXTPACK
+ should compute the transformation.
+ It defaults to the square root of the epsilon for the real kind. With
+ double precision this would something around 1.4e-8.</p>
+<p>This transformation utilizes the Gauss Legendre integration points in the
+ nodal representation.</p>
+<p>Thus, the configuration for a FXT projection takes the following form:</p>
+<div class="codehilite"><pre><span></span><code>  <span class="n">projection</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;fxt&#39;</span><span class="p">,</span>
+    <span class="n">prec</span> <span class="o">=</span> <span class="mf">1.e-10</span>
+  <span class="p">}</span>
+</code></pre></div>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_float_module.html'>tem_float_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
+                  <li class="list-inline-item"><a href='ply_nodes_header_module.html'>ply_nodes_header_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~ply_fxt_header_module~~UsesGraph Pages: 1 -->
+<svg id="moduleply_fxt_header_moduleUsesGraph" width="449pt" height="280pt"
+ viewBox="0.00 0.00 449.00 280.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~ply_fxt_header_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 276)">
+<title>module~~ply_fxt_header_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-276 445,-276 445,4 -4,4"/>
+<!-- module~ply_fxt_header_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node1" class="node">
+<title>module~ply_fxt_header_module</title>
+<polygon fill="none" stroke="black" points="441,-150 305,-150 305,-126 441,-126 441,-150"/>
+<text text-anchor="middle" x="373" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_fxt_header_module</text>
+</g>
+<!-- aot_out_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node2" class="node">
+<title>aot_out_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/aotus/module/aot_out_module.html" xlink:title="aot_out_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="240.5,-272 142.5,-272 142.5,-248 240.5,-248 240.5,-272"/>
+<text text-anchor="middle" x="191.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aot_out_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;aot_out_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge1" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;aot_out_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M362.96,-150.29C346.62,-171.6 310.04,-215.41 269,-239 263.14,-242.37 256.72,-245.21 250.17,-247.62"/>
+<polygon fill="#000000" stroke="#000000" points="248.91,-244.35 240.52,-250.83 251.12,-250.99 248.91,-244.35"/>
+</g>
+<!-- aotus_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node3" class="node">
+<title>aotus_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node3"><a xlink:href="https://apes-suite.github.io/aotus/module/aotus_module.html" xlink:title="aotus_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="235.5,-230 147.5,-230 147.5,-206 235.5,-206 235.5,-230"/>
+<text text-anchor="middle" x="191.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aotus_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;aotus_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge2" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;aotus_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M351.16,-150.15C330.68,-161.8 298.32,-179.42 269,-192 260.2,-195.78 250.65,-199.39 241.38,-202.65"/>
+<polygon fill="#000000" stroke="#000000" points="240.18,-199.36 231.86,-205.92 242.45,-205.98 240.18,-199.36"/>
+</g>
+<!-- env_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node4" class="node">
+<title>env_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node4"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="78,-170 0,-170 0,-146 78,-146 78,-170"/>
+<text text-anchor="middle" x="39" y="-155.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;env_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge3" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M323.32,-150.02C306.26,-153.67 286.89,-157.2 269,-159 200.46,-165.92 182.89,-159.47 114,-159 105.69,-158.94 96.85,-158.85 88.29,-158.75"/>
+<polygon fill="#000000" stroke="#000000" points="88.07,-155.24 78.03,-158.61 87.98,-162.24 88.07,-155.24"/>
+</g>
+<!-- module~ply_nodes_header_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node5" class="node">
+<title>module~ply_nodes_header_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node5"><a xlink:href="../module/ply_nodes_header_module.html" xlink:title="ply_nodes_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="269,-150 114,-150 114,-126 269,-126 269,-150"/>
+<text text-anchor="middle" x="191.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_nodes_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge4" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M304.91,-138C296.53,-138 287.88,-138 279.26,-138"/>
+<polygon fill="#000000" stroke="#000000" points="279.18,-134.5 269.18,-138 279.18,-141.5 279.18,-134.5"/>
+</g>
+<!-- tem_aux_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node6" class="node">
+<title>tem_aux_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node6"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_aux_module.html" xlink:title="tem_aux_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="243.5,-108 139.5,-108 139.5,-84 243.5,-84 243.5,-108"/>
+<text text-anchor="middle" x="191.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_aux_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;tem_aux_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge5" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;tem_aux_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M320.56,-125.96C299.63,-121.07 275.27,-115.37 253.46,-110.26"/>
+<polygon fill="#000000" stroke="#000000" points="254.17,-106.84 243.63,-107.96 252.57,-113.65 254.17,-106.84"/>
+</g>
+<!-- tem_float_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node7" class="node">
+<title>tem_float_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node7"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_float_module.html" xlink:title="tem_float_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="246,-66 137,-66 137,-42 246,-42 246,-66"/>
+<text text-anchor="middle" x="191.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_float_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;tem_float_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge6" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;tem_float_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M355.66,-125.99C335.99,-112.02 301.51,-89.07 269,-75 264.22,-72.93 259.19,-71.02 254.08,-69.26"/>
+<polygon fill="#000000" stroke="#000000" points="254.8,-65.81 244.21,-66.06 252.64,-72.47 254.8,-65.81"/>
+</g>
+<!-- tem_logging_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_node8" class="node">
+<title>tem_logging_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsesGraph_node8"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_logging_module.html" xlink:title="tem_logging_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="253.5,-24 129.5,-24 129.5,0 253.5,0 253.5,-24"/>
+<text text-anchor="middle" x="191.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_logging_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;tem_logging_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge7" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;tem_logging_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M363.58,-125.91C347.69,-104 311.05,-57.72 269,-33 265.94,-31.2 262.72,-29.55 259.4,-28.04"/>
+<polygon fill="#000000" stroke="#000000" points="260.43,-24.68 249.85,-24.13 257.78,-31.16 260.43,-24.68"/>
+</g>
+<!-- module~ply_nodes_header_module&#45;&gt;env_module -->
+<g id="module~~ply_fxt_header_module~~UsesGraph_edge8" class="edge">
+<title>module~ply_nodes_header_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M113.93,-148.18C105.25,-149.33 96.59,-150.48 88.42,-151.57"/>
+<polygon fill="#000000" stroke="#000000" points="87.82,-148.11 78.37,-152.9 88.74,-155.05 87.82,-148.11"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~ply_fxt_header_module~~UsedByGraph Pages: 1 -->
+<svg id="moduleply_fxt_header_moduleUsedByGraph" width="641pt" height="140pt"
+ viewBox="0.00 0.00 641.00 140.22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~ply_fxt_header_module~~UsedByGraph" class="graph" transform="scale(0.69 0.69) rotate(0) translate(4 199)">
+<title>module~~ply_fxt_header_module~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-199 924,-199 924,4 -4,4"/>
+<!-- module~ply_fxt_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node1" class="node">
+<title>module~ply_fxt_header_module</title>
+<polygon fill="none" stroke="black" points="136,-174 0,-174 0,-150 136,-150 136,-174"/>
+<text text-anchor="middle" x="68" y="-159.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_fxt_header_module</text>
+</g>
+<!-- module~ply_fxt_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node2" class="node">
+<title>module~ply_fxt_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node2"><a xlink:href="../module/ply_fxt_module.html" xlink:title="ply_fxt_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="287,-195 194,-195 194,-171 287,-171 287,-195"/>
+<text text-anchor="middle" x="240.5" y="-180.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_fxt_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_module&#45;&gt;module~ply_fxt_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge1" class="edge">
+<title>module~ply_fxt_module&#45;&gt;module~ply_fxt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M193.81,-177.37C179.19,-175.57 162.57,-173.52 146.34,-171.53"/>
+<polygon fill="#000000" stroke="#000000" points="146.66,-168.04 136.3,-170.29 145.8,-174.99 146.66,-168.04"/>
+</g>
+<!-- module~ply_prj_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node3" class="node">
+<title>module~ply_prj_header_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node3"><a xlink:href="../module/ply_prj_header_module.html" xlink:title="ply_prj_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="309,-153 172,-153 172,-129 309,-129 309,-153"/>
+<text text-anchor="middle" x="240.5" y="-138.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_prj_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_prj_header_module&#45;&gt;module~ply_fxt_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge2" class="edge">
+<title>module~ply_prj_header_module&#45;&gt;module~ply_fxt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M171.62,-149.36C163.21,-150.4 154.57,-151.46 146.03,-152.51"/>
+<polygon fill="#000000" stroke="#000000" points="145.58,-149.04 136.09,-153.74 146.44,-155.99 145.58,-149.04"/>
+</g>
+<!-- module~sdr_proto2treelm_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node4" class="node">
+<title>module~sdr_proto2treelm_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node4"><a xlink:href="../module/sdr_proto2treelm_module.html" xlink:title="sdr_proto2treelm_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="830,-188 681,-188 681,-164 830,-164 830,-188"/>
+<text text-anchor="middle" x="755.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge3" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M681,-170.99C584.94,-164.43 417.43,-153 319.29,-146.31"/>
+<polygon fill="#000000" stroke="#000000" points="319.35,-142.8 309.14,-145.61 318.88,-149.79 319.35,-142.8"/>
+</g>
+<!-- module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node6" class="node">
+<title>module~sdr_config_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node6"><a xlink:href="../module/sdr_config_module.html" xlink:title="sdr_config_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="645,-113 532,-113 532,-89 645,-89 645,-113"/>
+<text text-anchor="middle" x="588.5" y="-98.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_config_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge8" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M717.06,-163.99C705.36,-159.91 692.52,-155.08 681,-150 659.52,-140.52 636.21,-127.99 618.49,-117.98"/>
+<polygon fill="#000000" stroke="#000000" points="620.19,-114.92 609.77,-113 616.72,-121 620.19,-114.92"/>
+</g>
+<!-- module~sdr_subresolution_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node5" class="node">
+<title>module~sdr_subresolution_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node5"><a xlink:href="../module/sdr_subresolution_module.html" xlink:title="sdr_subresolution_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="496,-133 345,-133 345,-109 496,-109 496,-133"/>
+<text text-anchor="middle" x="420.5" y="-118.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_subresolution_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge4" class="edge">
+<title>module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M344.79,-129.39C336.4,-130.34 327.84,-131.3 319.41,-132.25"/>
+<polygon fill="#000000" stroke="#000000" points="318.77,-128.8 309.22,-133.39 319.55,-135.75 318.77,-128.8"/>
+</g>
+<!-- module~sdr_config_module&#45;&gt;module~sdr_subresolution_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge6" class="edge">
+<title>module~sdr_config_module&#45;&gt;module~sdr_subresolution_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M531.76,-107.72C523.57,-108.7 514.98,-109.74 506.36,-110.78"/>
+<polygon fill="#000000" stroke="#000000" points="505.77,-107.32 496.26,-111.99 506.61,-114.27 505.77,-107.32"/>
+</g>
+<!-- program~seeder -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node7" class="node">
+<title>program~seeder</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node7"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="920,-168 866,-168 866,-144 920,-144 920,-168"/>
+<text text-anchor="middle" x="893" y="-153.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+</a>
+</g>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_proto2treelm_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge5" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_proto2treelm_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M865.87,-159.86C858.25,-160.98 849.48,-162.28 840.29,-163.63"/>
+<polygon fill="#000000" stroke="#000000" points="839.57,-160.2 830.19,-165.12 840.59,-167.13 839.57,-160.2"/>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge11" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M865.95,-151.26C819.46,-142.81 720.93,-124.9 654.95,-112.9"/>
+<polygon fill="#000000" stroke="#000000" points="655.52,-109.45 645.06,-111.1 654.27,-116.33 655.52,-109.45"/>
+</g>
+<!-- module~sdr_flooding_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node8" class="node">
+<title>module~sdr_flooding_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node8"><a xlink:href="../module/sdr_flooding_module.html" xlink:title="sdr_flooding_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="817.5,-108 693.5,-108 693.5,-84 817.5,-84 817.5,-108"/>
+<text text-anchor="middle" x="755.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_flooding_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_flooding_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge7" class="edge">
+<title>module~sdr_flooding_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M693.06,-97.86C680.75,-98.23 667.77,-98.63 655.31,-99.01"/>
+<polygon fill="#000000" stroke="#000000" points="654.89,-95.52 645,-99.32 655.1,-102.51 654.89,-95.52"/>
+</g>
+<!-- module~sdr_prototree_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node9" class="node">
+<title>module~sdr_prototree_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node9"><a xlink:href="../module/sdr_prototree_module.html" xlink:title="sdr_protoTree_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="820.5,-66 690.5,-66 690.5,-42 820.5,-42 820.5,-66"/>
+<text text-anchor="middle" x="755.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_protoTree_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_prototree_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge9" class="edge">
+<title>module~sdr_prototree_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M712.01,-66.1C690.55,-72.22 664.32,-79.69 641.65,-86.14"/>
+<polygon fill="#000000" stroke="#000000" points="640.51,-82.83 631.85,-88.94 642.42,-89.56 640.51,-82.83"/>
+</g>
+<!-- module~sdr_refinept_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_node10" class="node">
+<title>module~sdr_refinept_module</title>
+<g id="a_module~~ply_fxt_header_module~~UsedByGraph_node10"><a xlink:href="../module/sdr_refinept_module.html" xlink:title="sdr_refinePT_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="817.5,-24 693.5,-24 693.5,0 817.5,0 817.5,-24"/>
+<text text-anchor="middle" x="755.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_refinePT_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~ply_fxt_header_module~~UsedByGraph_edge10" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M703.38,-24.01C695.71,-26.55 688.02,-29.53 681,-33 654.62,-46.03 628.02,-66.86 610.35,-82.04"/>
+<polygon fill="#000000" stroke="#000000" points="607.65,-79.75 602.44,-88.97 612.26,-85.01 607.65,-79.75"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmoduleply_fxt_header_moduleUsedByGraph = svgPanZoom('#moduleply_fxt_header_moduleUsedByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+        <section>
+          <h2>Interfaces</h2>
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-assignment%28%3D%29~7"></span>
+      <h3>public        interface <a href='../interface/assignment(=)~7.html'>assignment(=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure subroutine <a href='../proc/copy_fxt_header.html'>Copy_fxt_header</a>(left, right)  
+
+    </h3>
+    
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~32"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~32"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28%3D%3D%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(==)~5.html'>operator(==)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isequal~5.html'>isEqual</a>(left, right) result(equality)  
+
+    </h3>
+    
+  <p>This function provides the test for equality of two projections.</p>
+<p>Two fxt header are considered to be equal, if their node_header,
+and the factor are equal.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~33"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~33"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28SLASH%3D%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(SLASH=)~5.html'>operator(/=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+
+    </h3>
+    
+  <p>This function provides the test for unequality of two projections.</p>
+<p>Two fxt header are considered to be unequal, if their node_header,
+or the factor are not equal.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~34"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~34"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is unequal??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28lt%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(lt)~5.html'>operator(<)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
+
+    </h3>
+    
+  <p>This function provides a &lt; comparison of two projections.</p>
+<p>Sorting of fxt header is given by node_header and by the factor.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~35"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~35"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28lt%3D%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(lt=)~5.html'>operator(<=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+
+    </h3>
+    
+  <p>This function provides a &lt;= comparison of two projections.</p>
+<p>Sorting of fxt header is given by node_header, fxt_blocksize and
+last by factor.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~36"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~36"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28gt%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(gt)~5.html'>operator(>)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
+
+    </h3>
+    
+  <p>This function provides a &gt; comparison of two projections.</p>
+<p>Sorting of fxt header is given by node_header, fxt_blocksize and
+last by factor.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~37"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~37"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28gt%3D%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(gt=)~5.html'>operator(>=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
+
+    </h3>
+    
+  <p>This function provides a &gt;= comparison of two projections.</p>
+<p>Sorting of fxt header is given by node_header, fxt_blocksize and
+last by factor.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~38"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~38"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+          </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-ply_fxt_header_type"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p>Fxt projection header type, consisting of the node header which give
+information about the type and number of points for the projection</p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nodes_header~3"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nodes_header</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-factor~5"></span>
+              real(kind=rk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>factor</strong></td>
+<td> =</td>
+                <td>1.0</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prec~2"></span>
+              real(kind=rk),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prec</strong></td>
+<td> =</td>
+                <td>epsilon(1.0)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isequal~5"></span> <h3>private pure function <a href='../proc/isequal~5.html'>isEqual</a>(left, right) result(equality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for equality of two projections.</p><a href="../proc/isequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~33"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~33"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~5"></span> <h3>private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for unequality of two projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~34"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~34"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is unequal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~5"></span> <h3>private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt; comparison of two projections.</p><a href="../proc/issmaller~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~35"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~35"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~5"></span> <h3>private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt;= comparison of two projections.</p><a href="../proc/issmallerorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~36"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~36"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~5"></span> <h3>private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &gt; comparison of two projections.</p><a href="../proc/isgreater~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~37"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~37"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~5"></span> <h3>private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &gt;= comparison of two projections.</p><a href="../proc/isgreaterorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~38"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~38"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_fxt_header_load"></span> <h3>public  subroutine <a href='../proc/ply_fxt_header_load.html'>ply_fxt_header_load</a>(me, conf, thandle)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Load settings to describe a projection method from a Lua table.</p><a href="../proc/ply_fxt_header_load.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~37"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-conf~22"></span>
+              type(<a href='https://apes-suite.github.io/aotus/type/flu_state.html'>flu_State</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>conf</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-thandle~15"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>thandle</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_fxt_header_out"></span> <h3>public  subroutine <a href='../proc/ply_fxt_header_out.html'>ply_fxt_header_out</a>(me, conf)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Write FXT settings into a Lua table.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~38"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-conf~23"></span>
+              type(<a href='https://apes-suite.github.io/aotus/type/aot_out_type.html'>aot_out_type</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>conf</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_fxt_header_display"></span> <h3>public  subroutine <a href='../proc/ply_fxt_header_display.html'>ply_fxt_header_display</a>(me)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~39"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-copy_fxt_header"></span> <h3>private pure subroutine <a href='../proc/copy_fxt_header.html'>Copy_fxt_header</a>(left, right)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~32"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~32"></span>
+              type(<a href='../type/ply_fxt_header_type.html'>ply_fxt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

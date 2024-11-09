@@ -1,0 +1,1823 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ply_legFpt_module &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ply_legFpt_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 2.9% of total for modules and submodules.">247 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ply_legFpt_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/ply_legfpt_module.f90.html'>ply_legFpt_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ply_legFpt_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#inters-0"
+         aria-expanded="false" aria-controls="inters-0">
+         <h4 class="card-header bg-primary text-white">Interfaces</h4>
+      </a>
+      <div id="inters-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#interface-assignment%28%3D%29~3">assignment(=)</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#interface-ply_fptm2n">ply_fptm2n</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#interface-ply_fptn2m">ply_fptn2m</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#type-ply_legfpt_type">ply_legFpt_type</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_init_legfpt">ply_init_legFpt</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-copy_fpt">Copy_fpt</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_legtopnt_single">ply_legToPnt_single</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_legtopnt_vec">ply_legToPnt_vec</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_legtopnt_lobatto_single">ply_legToPnt_lobatto_single</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_legtopnt_lobatto_vec">ply_legToPnt_lobatto_vec</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_pnttoleg_single">ply_pntToLeg_single</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_pnttoleg_vec">ply_pntToLeg_vec</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_pnttoleg_lobatto_single">ply_pntToLeg_lobatto_single</a>
+            <a class="list-group-item" href="../module/ply_legfpt_module.html#proc-ply_pnttoleg_lobatto_vec">ply_pntToLeg_lobatto_vec</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>Module providing datatypes and routines for a fast
+transformation of Legendre expansion to point values.
+\author{Jens Zudrop}</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
+                  <li class="list-inline-item"><a href='ply_fpt_header_module.html'>ply_fpt_header_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_compileconf_module.html'>tem_compileconf_module</a></li>
+                  <li class="list-inline-item">ply_polyBaseExc_module</li>
+                  <li class="list-inline-item">fftw_wrap</li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~ply_legfpt_module~~UsesGraph Pages: 1 -->
+<svg id="moduleply_legfpt_moduleUsesGraph" width="608pt" height="355pt"
+ viewBox="0.00 0.00 608.00 355.06" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~ply_legfpt_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 351.06)">
+<title>module~~ply_legfpt_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-351.06 604,-351.06 604,4 -4,4"/>
+<!-- module~ply_legfpt_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node1" class="node">
+<title>module~ply_legfpt_module</title>
+<polygon fill="none" stroke="black" points="600,-213 488,-213 488,-189 600,-189 600,-213"/>
+<text text-anchor="middle" x="544" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_legFpt_module</text>
+</g>
+<!-- env_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node2" class="node">
+<title>env_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="78,-296 0,-296 0,-272 78,-272 78,-296"/>
+<text text-anchor="middle" x="39" y="-281.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;env_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge1" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M533.5,-213.09C518.32,-231.55 486.75,-266.55 452,-285 347.36,-340.56 310.96,-344.13 192.5,-346"/>
+</g>
+<!-- fftw_wrap -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node3" class="node">
+<title>fftw_wrap</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="410.5,-276 346.5,-276 346.5,-252 410.5,-252 410.5,-276"/>
+<text text-anchor="middle" x="378.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fftw_wrap</text>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;fftw_wrap -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge2" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;fftw_wrap</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M519.47,-213.05C501.33,-222.05 475.47,-234.24 452,-243 441.86,-246.78 430.71,-250.31 420.27,-253.36"/>
+<polygon fill="#000000" stroke="#000000" points="419.19,-250.02 410.52,-256.12 421.1,-256.76 419.19,-250.02"/>
+</g>
+<!-- iso_c_binding -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node4" class="node">
+<title>iso_c_binding</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node4"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="420.5,-234 336.5,-234 336.5,-210 420.5,-210 420.5,-234"/>
+<text text-anchor="middle" x="378.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;iso_c_binding -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge3" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M487.65,-208.11C469.21,-210.48 448.76,-213.1 430.65,-215.43"/>
+<polygon fill="#000000" stroke="#000000" points="430.05,-211.98 420.58,-216.72 430.94,-218.92 430.05,-211.98"/>
+</g>
+<!-- module~ply_fpt_header_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node5" class="node">
+<title>module~ply_fpt_header_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node5"><a xlink:href="../module/ply_fpt_header_module.html" xlink:title="ply_fpt_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="447,-192 310,-192 310,-168 447,-168 447,-192"/>
+<text text-anchor="middle" x="378.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_fpt_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge4" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M487.65,-193.89C477.92,-192.64 467.63,-191.32 457.43,-190.01"/>
+<polygon fill="#000000" stroke="#000000" points="457.63,-186.51 447.27,-188.7 456.74,-193.45 457.63,-186.51"/>
+</g>
+<!-- ply_polyBaseExc_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node6" class="node">
+<title>ply_polyBaseExc_module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="452,-150 305,-150 305,-126 452,-126 452,-150"/>
+<text text-anchor="middle" x="378.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_polyBaseExc_module</text>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;ply_polyBaseExc_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge5" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;ply_polyBaseExc_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M519.47,-188.95C501.33,-179.95 475.47,-167.76 452,-159 446.49,-156.95 440.69,-154.97 434.87,-153.1"/>
+<polygon fill="#000000" stroke="#000000" points="435.68,-149.69 425.09,-150.07 433.61,-156.37 435.68,-149.69"/>
+</g>
+<!-- tem_compileconf_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node7" class="node">
+<title>tem_compileconf_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node7"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_compileconf_module.html" xlink:title="tem_compileconf_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="267,-24 116,-24 116,0 267,0 267,-24"/>
+<text text-anchor="middle" x="191.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_compileconf_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;tem_compileconf_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge6" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;tem_compileconf_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M532.22,-188.86C516.11,-171.27 484.2,-138.46 452,-117 377.53,-67.37 353.09,-63.61 269,-33 263.14,-30.87 256.96,-28.83 250.76,-26.93"/>
+<polygon fill="#000000" stroke="#000000" points="251.61,-23.53 241.03,-24.04 249.62,-30.24 251.61,-23.53"/>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;env_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge9" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.96,-192.08C312.58,-194.53 308.51,-197.47 305,-201 263.89,-242.26 310.89,-286.54 269,-327 243.8,-351.34 227.53,-345.45 192.5,-346"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.5,-346C143.59,-346.74 94.22,-320.44 65.32,-301.87"/>
+<polygon fill="#000000" stroke="#000000" points="66.95,-298.75 56.68,-296.15 63.09,-304.59 66.95,-298.75"/>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;tem_compileconf_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge12" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;tem_compileconf_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.96,-167.92C312.58,-165.47 308.51,-162.53 305,-159 263.89,-117.74 310.4,-73.97 269,-33 267.9,-31.91 266.75,-30.88 265.55,-29.89"/>
+<polygon fill="#000000" stroke="#000000" points="267.32,-26.86 257.08,-24.14 263.39,-32.66 267.32,-26.86"/>
+</g>
+<!-- aot_out_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node8" class="node">
+<title>aot_out_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node8"><a xlink:href="https://apes-suite.github.io/aotus/module/aot_out_module.html" xlink:title="aot_out_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="240.5,-318 142.5,-318 142.5,-294 240.5,-294 240.5,-318"/>
+<text text-anchor="middle" x="191.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aot_out_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;aot_out_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge7" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;aot_out_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M318.5,-192.03C313.62,-194.48 309.03,-197.44 305,-201 274.57,-227.9 299.62,-258.31 269,-285 263.5,-289.79 257.01,-293.5 250.16,-296.36"/>
+<polygon fill="#000000" stroke="#000000" points="248.9,-293.1 240.68,-299.78 251.27,-299.69 248.9,-293.1"/>
+</g>
+<!-- aotus_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node9" class="node">
+<title>aotus_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node9"><a xlink:href="https://apes-suite.github.io/aotus/module/aotus_module.html" xlink:title="aotus_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="235.5,-276 147.5,-276 147.5,-252 235.5,-252 235.5,-276"/>
+<text text-anchor="middle" x="191.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aotus_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;aotus_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge8" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;aotus_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.92,-192.02C316.63,-194.49 310.51,-197.45 305,-201 284.33,-214.31 289.76,-229.84 269,-243 261.81,-247.56 253.63,-251.14 245.36,-253.95"/>
+<polygon fill="#000000" stroke="#000000" points="244.21,-250.64 235.67,-256.91 246.25,-257.34 244.21,-250.64"/>
+</g>
+<!-- module~ply_nodes_header_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node10" class="node">
+<title>module~ply_nodes_header_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node10"><a xlink:href="../module/ply_nodes_header_module.html" xlink:title="ply_nodes_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="269,-234 114,-234 114,-210 269,-210 269,-234"/>
+<text text-anchor="middle" x="191.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_nodes_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge10" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M324.49,-192.04C302.91,-196.93 277.8,-202.63 255.31,-207.74"/>
+<polygon fill="#000000" stroke="#000000" points="254.5,-204.34 245.52,-209.96 256.05,-211.16 254.5,-204.34"/>
+</g>
+<!-- tem_aux_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node11" class="node">
+<title>tem_aux_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node11"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_aux_module.html" xlink:title="tem_aux_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="243.5,-192 139.5,-192 139.5,-168 243.5,-168 243.5,-192"/>
+<text text-anchor="middle" x="191.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_aux_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;tem_aux_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge11" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;tem_aux_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M309.93,-180C291.55,-180 271.75,-180 253.75,-180"/>
+<polygon fill="#000000" stroke="#000000" points="253.66,-176.5 243.66,-180 253.66,-183.5 253.66,-176.5"/>
+</g>
+<!-- tem_float_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node12" class="node">
+<title>tem_float_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node12"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_float_module.html" xlink:title="tem_float_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="246,-150 137,-150 137,-126 246,-126 246,-150"/>
+<text text-anchor="middle" x="191.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_float_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;tem_float_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge13" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;tem_float_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M324.49,-167.96C302.91,-163.07 277.8,-157.37 255.31,-152.26"/>
+<polygon fill="#000000" stroke="#000000" points="256.05,-148.84 245.52,-150.04 254.5,-155.66 256.05,-148.84"/>
+</g>
+<!-- tem_logging_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node13" class="node">
+<title>tem_logging_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node13"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_logging_module.html" xlink:title="tem_logging_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="253.5,-108 129.5,-108 129.5,-84 253.5,-84 253.5,-108"/>
+<text text-anchor="middle" x="191.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_logging_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;tem_logging_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge14" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;tem_logging_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.92,-167.98C316.63,-165.51 310.51,-162.55 305,-159 284.33,-145.69 289.76,-130.16 269,-117 266.21,-115.23 263.27,-113.61 260.23,-112.12"/>
+<polygon fill="#000000" stroke="#000000" points="261.45,-108.83 250.88,-108.05 258.66,-115.25 261.45,-108.83"/>
+</g>
+<!-- tem_tools_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_node14" class="node">
+<title>tem_tools_module</title>
+<g id="a_module~~ply_legfpt_module~~UsesGraph_node14"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_tools_module.html" xlink:title="tem_tools_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="246.5,-66 136.5,-66 136.5,-42 246.5,-42 246.5,-66"/>
+<text text-anchor="middle" x="191.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_tools_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;tem_tools_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge15" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;tem_tools_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M318.5,-167.97C313.62,-165.52 309.03,-162.56 305,-159 274.57,-132.1 299.62,-101.69 269,-75 265.08,-71.58 260.65,-68.71 255.94,-66.31"/>
+<polygon fill="#000000" stroke="#000000" points="257.19,-63.03 246.62,-62.24 254.38,-69.45 257.19,-63.03"/>
+</g>
+<!-- module~ply_nodes_header_module&#45;&gt;env_module -->
+<g id="module~~ply_legfpt_module~~UsesGraph_edge16" class="edge">
+<title>module~ply_nodes_header_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M139.73,-234.11C131.03,-236.7 122.16,-239.67 114,-243 98.09,-249.48 81.26,-258.61 67.68,-266.6"/>
+<polygon fill="#000000" stroke="#000000" points="65.62,-263.76 58.85,-271.91 69.23,-269.76 65.62,-263.76"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+
+
+        <section>
+          <h2>Interfaces</h2>
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-assignment%28%3D%29~3"></span>
+      <h3>public        interface <a href='../interface/assignment(=)~3.html'>assignment(=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private  subroutine <a href='../proc/copy_fpt.html'>Copy_fpt</a>(left, right)  
+
+    </h3>
+    
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~16"></span>
+              type(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~16"></span>
+              type(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-ply_fptm2n"></span>
+      <h3>        interface
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private  subroutine ply_fptm2n(fpt, legCoeffs, pntVal, nIndeps)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-ply_fptn2m"></span>
+      <h3>        interface
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private  subroutine ply_fptn2m(fpt, pntVal, legCoeffs, nIndeps)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~2"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-ply_legfpt_type"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p>Datatype for parameters of the FPT used for 1d, 2d and 3d.</p><a href="../type/ply_legfpt_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legtochebparams"></span>
+              type(ply_trafo_params_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legToChebParams</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>FPT params for the fast base exchange from Legendre to
+Chebyshev expansion.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-chebtolegparams"></span>
+              type(ply_trafo_params_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>chebToLegParams</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>FPT params for the fast base exchange from Chebyshev to
+Legendre expansion.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-planchebtopnt"></span>
+              type(C_PTR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>planChebToPnt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>FFTW plan for DCT from Chebyshev coefficients to point values.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-planpnttocheb"></span>
+              type(C_PTR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>planPntToCheb</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>FFTW plan for DCT from point values to Chebyshev coefficients.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-use_lobatto_points"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>use_lobatto_points</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>Flag whether to use Lobatto points (include boundary points)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legtopnt"></span>
+              procedure(<a href='../interface/ply_fptm2n.html'>ply_fptm2n</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>legtopnt</strong></td>
+<td>=&gt; </td>
+                <td>NULL()</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pnttoleg"></span>
+              procedure(<a href='../interface/ply_fptn2m.html'>ply_fptn2m</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>pnttoleg</strong></td>
+<td>=&gt; </td>
+                <td>NULL()</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_init_legfpt"></span> <h3>public  subroutine <a href='../proc/ply_init_legfpt.html'>ply_init_legFpt</a>(maxPolyDegree, nIndeps, fpt, header, fft_flags)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to initialize the fast polynomial transformation
+ for Legendre expansion.</p><a href="../proc/ply_init_legfpt.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxpolydegree"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxPolyDegree</strong></td>
+            <td>
+<p>Maximal polynomial degree for the transformation.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+<p>Number of independent values that can be computed simultaneously.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~3"></span>
+              type(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+<p>The Fast Polynomial Transformation setting to initialize.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-header~5"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>header</strong></td>
+            <td>
+<p>Configuration settings for the projection.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fft_flags"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fft_flags</strong></td>
+            <td>
+<p>Planning flags for the FFT.</p><a href="../proc/ply_init_legfpt.html#variable-fft_flags" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-copy_fpt"></span> <h3>private  subroutine <a href='../proc/copy_fpt.html'>Copy_fpt</a>(left, right)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~16"></span>
+              type(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~16"></span>
+              type(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_legtopnt_single"></span> <h3>private  subroutine <a href='../proc/ply_legtopnt_single.html'>ply_legToPnt_single</a>(fpt, legCoeffs, pntVal, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to transform Legendre expansion to point values
+at Chebyshev nodes.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~4"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~3"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~3"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_legtopnt_vec"></span> <h3>private  subroutine <a href='../proc/ply_legtopnt_vec.html'>ply_legToPnt_vec</a>(fpt, legCoeffs, pntVal, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Vectorizing subroutine to transform Legendre expansion to point values
+at Chebyshev nodes.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~5"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~4"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~4"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_legtopnt_lobatto_single"></span> <h3>private  subroutine <a href='../proc/ply_legtopnt_lobatto_single.html'>ply_legToPnt_lobatto_single</a>(fpt, legCoeffs, pntVal, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to transform Legendre expansion to point values
+at Chebyshev-Lobatto nodes.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~6"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~5"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~5"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~6"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_legtopnt_lobatto_vec"></span> <h3>private  subroutine <a href='../proc/ply_legtopnt_lobatto_vec.html'>ply_legToPnt_lobatto_vec</a>(fpt, legCoeffs, pntVal, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Vectorizing subroutine to transform Legendre expansion to point values
+at Chebyshev-Lobatto nodes.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~7"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~7"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_pnttoleg_single"></span> <h3>private  subroutine <a href='../proc/ply_pnttoleg_single.html'>ply_pntToLeg_single</a>(fpt, pntVal, legCoeffs, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to transform point values at Chebyshev nodes to a Legendre
+expansion.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~8"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~7"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~7"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~8"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_pnttoleg_vec"></span> <h3>private  subroutine <a href='../proc/ply_pnttoleg_vec.html'>ply_pntToLeg_vec</a>(fpt, pntVal, legCoeffs, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Vectorizing subroutine to transform point values at Chebyshev nodes to a
+Legendre expansion.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~9"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~8"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~8"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~9"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_pnttoleg_lobatto_single"></span> <h3>private  subroutine <a href='../proc/ply_pnttoleg_lobatto_single.html'>ply_pntToLeg_lobatto_single</a>(fpt, pntVal, legCoeffs, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to transform point values at Chebyshev-Lobatto nodes to a
+Legendre expansion.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~10"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~9"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~9"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~10"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_pnttoleg_lobatto_vec"></span> <h3>private  subroutine <a href='../proc/ply_pnttoleg_lobatto_vec.html'>ply_pntToLeg_lobatto_vec</a>(fpt, pntVal, legCoeffs, nIndeps)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Vectorizing subroutine to transform point values at Chebyshev-Lobatto
+nodes to a Legendre expansion.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fpt~11"></span>
+              class(<a href='../type/ply_legfpt_type.html'>ply_legFpt_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fpt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pntval~10"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pntVal</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-legcoeffs~10"></span>
+              real(kind=rk),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>legCoeffs</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nindeps~11"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nIndeps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

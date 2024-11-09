@@ -1,0 +1,1084 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sdr_config_module &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>sdr_config_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.1% of total for modules and submodules.">95 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_config_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_config_module.f90.html'>sdr_config_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">sdr_config_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/sdr_config_module.html#type-sdr_confhead_type">sdr_confHead_type</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/sdr_config_module.html#proc-sdr_load_config">sdr_load_config</a>
+            <a class="list-group-item" href="../module/sdr_config_module.html#proc-sdr_load_inverted">sdr_load_inverted</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>This module provides the configuration of the mesh generation.</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">sdr_attribute_module</li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/flu_binding.html'>flu_binding</a></li>
+                  <li class="list-inline-item"><a href='sdr_geometry_module.html'>sdr_geometry_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_timer_module.html'>tem_timer_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_general_module.html'>tem_general_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_table_module.html'>aot_table_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_comm_module.html'>tem_comm_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_debug_module.html'>tem_debug_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_tools_module.html'>tem_tools_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_dyn_array_module.html'>tem_dyn_array_module</a></li>
+                  <li class="list-inline-item"><a href='sdr_subresolution_module.html'>sdr_subresolution_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+                  <li class="list-inline-item"><a href='sdr_timer_module.html'>sdr_timer_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~sdr_config_module~~UsesGraph Pages: 1 -->
+<svg id="modulesdr_config_moduleUsesGraph" width="308pt" height="662pt"
+ viewBox="0.00 0.00 308.00 662.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sdr_config_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 658)">
+<title>module~~sdr_config_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-658 304,-658 304,4 -4,4"/>
+<!-- module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node1" class="node">
+<title>module~sdr_config_module</title>
+<polygon fill="none" stroke="black" points="300,-339 187,-339 187,-315 300,-315 300,-339"/>
+<text text-anchor="middle" x="243.5" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_config_module</text>
+</g>
+<!-- aot_table_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node2" class="node">
+<title>aot_table_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/aotus/module/aot_table_module.html" xlink:title="aot_table_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="129.5,-654 21.5,-654 21.5,-630 129.5,-630 129.5,-654"/>
+<text text-anchor="middle" x="75.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aot_table_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;aot_table_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge1" class="edge">
+<title>module~sdr_config_module&#45;&gt;aot_table_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.57,-339.14C242.14,-383.67 234.51,-539.72 151,-621 147.46,-624.45 143.39,-627.34 139.03,-629.77"/>
+<polygon fill="#000000" stroke="#000000" points="137.3,-626.71 129.72,-634.11 140.26,-633.05 137.3,-626.71"/>
+</g>
+<!-- aotus_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node3" class="node">
+<title>aotus_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node3"><a xlink:href="https://apes-suite.github.io/aotus/module/aotus_module.html" xlink:title="aotus_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="119.5,-612 31.5,-612 31.5,-588 119.5,-588 119.5,-612"/>
+<text text-anchor="middle" x="75.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aotus_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;aotus_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge2" class="edge">
+<title>module~sdr_config_module&#45;&gt;aotus_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.85,-339.08C239.02,-379.44 224.31,-510.89 151,-579 144.91,-584.66 137.41,-588.81 129.55,-591.85"/>
+<polygon fill="#000000" stroke="#000000" points="128.25,-588.59 119.84,-595.03 130.43,-595.24 128.25,-588.59"/>
+</g>
+<!-- env_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node4" class="node">
+<title>env_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node4"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="114.5,-570 36.5,-570 36.5,-546 114.5,-546 114.5,-570"/>
+<text text-anchor="middle" x="75.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;env_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge3" class="edge">
+<title>module~sdr_config_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.87,-339.07C235.39,-374.95 214.23,-481.84 151,-537 143.56,-543.49 134.25,-547.99 124.76,-551.1"/>
+<polygon fill="#000000" stroke="#000000" points="123.57,-547.8 114.88,-553.86 125.45,-554.54 123.57,-547.8"/>
+</g>
+<!-- flu_binding -->
+<g id="module~~sdr_config_module~~UsesGraph_node5" class="node">
+<title>flu_binding</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node5"><a xlink:href="https://apes-suite.github.io/aotus/module/flu_binding.html" xlink:title="flu_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="111,-528 40,-528 40,-504 111,-504 111,-528"/>
+<text text-anchor="middle" x="75.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flu_binding</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;flu_binding -->
+<g id="module~~sdr_config_module~~UsesGraph_edge4" class="edge">
+<title>module~sdr_config_module&#45;&gt;flu_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.39,-339.29C230.88,-370.35 204.22,-452.54 151,-495 142.31,-501.93 131.47,-506.57 120.76,-509.69"/>
+<polygon fill="#000000" stroke="#000000" points="119.88,-506.3 111.03,-512.13 121.59,-513.09 119.88,-506.3"/>
+</g>
+<!-- module~sdr_geometry_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node6" class="node">
+<title>module~sdr_geometry_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node6"><a xlink:href="../module/sdr_geometry_module.html" xlink:title="sdr_geometry_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="141.5,-486 9.5,-486 9.5,-462 141.5,-462 141.5,-486"/>
+<text text-anchor="middle" x="75.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_geometry_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;module~sdr_geometry_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge5" class="edge">
+<title>module~sdr_config_module&#45;&gt;module~sdr_geometry_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.12,-339.14C225.32,-364.35 194.69,-422.55 151,-453 148.62,-454.66 146.12,-456.18 143.52,-457.59"/>
+<polygon fill="#000000" stroke="#000000" points="141.94,-454.47 134.41,-461.93 144.94,-460.79 141.94,-454.47"/>
+</g>
+<!-- module~sdr_subresolution_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node7" class="node">
+<title>module~sdr_subresolution_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node7"><a xlink:href="../module/sdr_subresolution_module.html" xlink:title="sdr_subresolution_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="151,-444 0,-444 0,-420 151,-420 151,-444"/>
+<text text-anchor="middle" x="75.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_subresolution_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;module~sdr_subresolution_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge6" class="edge">
+<title>module~sdr_config_module&#45;&gt;module~sdr_subresolution_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.58,-339.21C217.06,-357.49 185.28,-391.88 151,-411 147.6,-412.9 144.01,-414.63 140.33,-416.22"/>
+<polygon fill="#000000" stroke="#000000" points="139.04,-412.97 131.01,-419.87 141.6,-419.48 139.04,-412.97"/>
+</g>
+<!-- module~sdr_timer_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node8" class="node">
+<title>module~sdr_timer_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node8"><a xlink:href="../module/sdr_timer_module.html" xlink:title="sdr_timer_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="130,-402 21,-402 21,-378 130,-378 130,-402"/>
+<text text-anchor="middle" x="75.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_timer_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;module~sdr_timer_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge7" class="edge">
+<title>module~sdr_config_module&#45;&gt;module~sdr_timer_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M218.85,-339.09C200.62,-348.11 174.62,-360.31 151,-369 145.21,-371.13 139.09,-373.17 132.96,-375.09"/>
+<polygon fill="#000000" stroke="#000000" points="131.91,-371.75 123.35,-378 133.94,-378.45 131.91,-371.75"/>
+</g>
+<!-- sdr_attribute_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node9" class="node">
+<title>sdr_attribute_module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="138.5,-360 12.5,-360 12.5,-336 138.5,-336 138.5,-360"/>
+<text text-anchor="middle" x="75.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_attribute_module</text>
+</g>
+<!-- module~sdr_config_module&#45;&gt;sdr_attribute_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge8" class="edge">
+<title>module~sdr_config_module&#45;&gt;sdr_attribute_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.76,-334.05C174.57,-335.59 161.5,-337.25 148.77,-338.86"/>
+<polygon fill="#000000" stroke="#000000" points="148.14,-335.41 138.66,-340.14 149.02,-342.35 148.14,-335.41"/>
+</g>
+<!-- tem_aux_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node10" class="node">
+<title>tem_aux_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node10"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_aux_module.html" xlink:title="tem_aux_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="127.5,-318 23.5,-318 23.5,-294 127.5,-294 127.5,-318"/>
+<text text-anchor="middle" x="75.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_aux_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_aux_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge9" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_aux_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.76,-319.95C171.08,-317.96 153.93,-315.8 137.93,-313.77"/>
+<polygon fill="#000000" stroke="#000000" points="137.98,-310.25 127.61,-312.47 137.1,-317.19 137.98,-310.25"/>
+</g>
+<!-- tem_comm_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node11" class="node">
+<title>tem_comm_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node11"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_comm_module.html" xlink:title="tem_comm_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="134.5,-276 16.5,-276 16.5,-252 134.5,-252 134.5,-276"/>
+<text text-anchor="middle" x="75.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_comm_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_comm_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge10" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_comm_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M218.85,-314.91C200.62,-305.89 174.62,-293.69 151,-285 145.21,-282.87 139.09,-280.83 132.96,-278.91"/>
+<polygon fill="#000000" stroke="#000000" points="133.94,-275.55 123.35,-276 131.91,-282.25 133.94,-275.55"/>
+</g>
+<!-- tem_debug_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node12" class="node">
+<title>tem_debug_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node12"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_debug_module.html" xlink:title="tem_debug_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="134.5,-234 16.5,-234 16.5,-210 134.5,-210 134.5,-234"/>
+<text text-anchor="middle" x="75.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_debug_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_debug_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge11" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_debug_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.58,-314.79C217.06,-296.51 185.28,-262.12 151,-243 147.6,-241.1 144.01,-239.37 140.33,-237.78"/>
+<polygon fill="#000000" stroke="#000000" points="141.6,-234.52 131.01,-234.13 139.04,-241.03 141.6,-234.52"/>
+</g>
+<!-- tem_dyn_array_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node13" class="node">
+<title>tem_dyn_array_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node13"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_dyn_array_module.html" xlink:title="tem_dyn_array_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="144.5,-192 6.5,-192 6.5,-168 144.5,-168 144.5,-192"/>
+<text text-anchor="middle" x="75.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_dyn_array_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_dyn_array_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge12" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_dyn_array_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.12,-314.86C225.32,-289.65 194.69,-231.45 151,-201 148.62,-199.34 146.12,-197.82 143.52,-196.41"/>
+<polygon fill="#000000" stroke="#000000" points="144.94,-193.21 134.41,-192.07 141.94,-199.53 144.94,-193.21"/>
+</g>
+<!-- tem_general_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node14" class="node">
+<title>tem_general_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node14"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_general_module.html" xlink:title="tem_general_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="138.5,-150 12.5,-150 12.5,-126 138.5,-126 138.5,-150"/>
+<text text-anchor="middle" x="75.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_general_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_general_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge13" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_general_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.39,-314.71C230.88,-283.65 204.22,-201.46 151,-159 149.21,-157.57 147.32,-156.24 145.37,-155"/>
+<polygon fill="#000000" stroke="#000000" points="146.85,-151.82 136.39,-150.11 143.5,-157.97 146.85,-151.82"/>
+</g>
+<!-- tem_logging_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node15" class="node">
+<title>tem_logging_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node15"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_logging_module.html" xlink:title="tem_logging_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="137.5,-108 13.5,-108 13.5,-84 137.5,-84 137.5,-108"/>
+<text text-anchor="middle" x="75.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_logging_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_logging_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge14" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_logging_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.87,-314.93C235.39,-279.05 214.23,-172.16 151,-117 149.48,-115.67 147.88,-114.43 146.22,-113.27"/>
+<polygon fill="#000000" stroke="#000000" points="147.85,-110.16 137.46,-108.08 144.28,-116.18 147.85,-110.16"/>
+</g>
+<!-- tem_timer_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node16" class="node">
+<title>tem_timer_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node16"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_timer_module.html" xlink:title="tem_timer_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="132,-66 19,-66 19,-42 132,-42 132,-66"/>
+<text text-anchor="middle" x="75.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_timer_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_timer_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge15" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_timer_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.85,-314.92C239.02,-274.56 224.31,-143.11 151,-75 148.04,-72.25 144.74,-69.85 141.24,-67.77"/>
+<polygon fill="#000000" stroke="#000000" points="142.65,-64.57 132.15,-63.21 139.51,-70.82 142.65,-64.57"/>
+</g>
+<!-- tem_tools_module -->
+<g id="module~~sdr_config_module~~UsesGraph_node17" class="node">
+<title>tem_tools_module</title>
+<g id="a_module~~sdr_config_module~~UsesGraph_node17"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_tools_module.html" xlink:title="tem_tools_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="130.5,-24 20.5,-24 20.5,0 130.5,0 130.5,-24"/>
+<text text-anchor="middle" x="75.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_tools_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;tem_tools_module -->
+<g id="module~~sdr_config_module~~UsesGraph_edge16" class="edge">
+<title>module~sdr_config_module&#45;&gt;tem_tools_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.57,-314.86C242.14,-270.33 234.51,-114.28 151,-33 147.72,-29.8 143.98,-27.08 139.98,-24.78"/>
+<polygon fill="#000000" stroke="#000000" points="141.38,-21.57 130.86,-20.34 138.32,-27.86 141.38,-21.57"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~sdr_config_module~~UsedByGraph Pages: 1 -->
+<svg id="modulesdr_config_moduleUsedByGraph" width="641pt" height="172pt"
+ viewBox="0.00 0.00 641.00 171.58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sdr_config_module~~UsedByGraph" class="graph" transform="scale(0.88 0.88) rotate(0) translate(4 191.13)">
+<title>module~~sdr_config_module~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-191.13 725,-191.13 725,4 -4,4"/>
+<!-- module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node1" class="node">
+<title>module~sdr_config_module</title>
+<polygon fill="none" stroke="black" points="113,-118.99 0,-118.99 0,-94.99 113,-94.99 113,-118.99"/>
+<text text-anchor="middle" x="56.5" y="-104.59" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_config_module</text>
+</g>
+<!-- module~sdr_flooding_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node2" class="node">
+<title>module~sdr_flooding_module</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node2"><a xlink:href="../module/sdr_flooding_module.html" xlink:title="sdr_flooding_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="618.5,-118.99 494.5,-118.99 494.5,-94.99 618.5,-94.99 618.5,-118.99"/>
+<text text-anchor="middle" x="556.5" y="-104.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_flooding_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_flooding_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge1" class="edge">
+<title>module~sdr_flooding_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M494.19,-109.6C460.8,-110.37 418.81,-110.27 381.5,-106.99"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M379.5,-106.99C302.13,-100.19 291.15,-32.69 215,-47.99"/>
+</g>
+<!-- module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node4" class="node">
+<title>module~sdr_prototree_module</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node4"><a xlink:href="../module/sdr_prototree_module.html" xlink:title="sdr_protoTree_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="279,-118.99 149,-118.99 149,-94.99 279,-94.99 279,-118.99"/>
+<text text-anchor="middle" x="214" y="-104.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_protoTree_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_flooding_module&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge9" class="edge">
+<title>module~sdr_flooding_module&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M379.5,-106.99C350.11,-104.4 317.65,-103.9 289.38,-104.23"/>
+<polygon fill="#000000" stroke="#000000" points="289.12,-100.73 279.17,-104.38 289.23,-107.73 289.12,-100.73"/>
+</g>
+<!-- module~sdr_boundary_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node7" class="node">
+<title>module~sdr_boundary_module</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node7"><a xlink:href="../module/sdr_boundary_module.html" xlink:title="sdr_boundary_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="446,-158.99 315,-158.99 315,-134.99 446,-134.99 446,-158.99"/>
+<text text-anchor="middle" x="380.5" y="-144.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_boundary_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_flooding_module&#45;&gt;module~sdr_boundary_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge14" class="edge">
+<title>module~sdr_flooding_module&#45;&gt;module~sdr_boundary_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M503.29,-118.99C484.63,-123.28 463.4,-128.16 443.95,-132.63"/>
+<polygon fill="#000000" stroke="#000000" points="442.93,-129.27 433.97,-134.92 444.5,-136.1 442.93,-129.27"/>
+</g>
+<!-- module~sdr_proto2treelm_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node3" class="node">
+<title>module~sdr_proto2treelm_module</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node3"><a xlink:href="../module/sdr_proto2treelm_module.html" xlink:title="sdr_proto2treelm_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="631,-160.99 482,-160.99 482,-136.99 631,-136.99 631,-160.99"/>
+<text text-anchor="middle" x="556.5" y="-146.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge2" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M379.5,-186.99C274.47,-185.77 155.69,-145.7 96.04,-122.74"/>
+<polygon fill="#000000" stroke="#000000" points="97.23,-119.45 86.64,-119.07 94.69,-125.97 97.23,-119.45"/>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge10" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M521.96,-161.04C487.27,-172.38 431.28,-187.56 381.5,-186.99"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M379.5,-186.99C323.72,-186.34 267.04,-148.92 236.95,-125.49"/>
+<polygon fill="#000000" stroke="#000000" points="238.85,-122.52 228.85,-119.01 234.47,-127.99 238.85,-122.52"/>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~sdr_boundary_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge15" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~sdr_boundary_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M481.96,-148.14C473.52,-148.04 464.91,-147.95 456.45,-147.85"/>
+<polygon fill="#000000" stroke="#000000" points="456.27,-144.35 446.23,-147.73 456.19,-151.35 456.27,-144.35"/>
+</g>
+<!-- module~sdr_prototree_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge3" class="edge">
+<title>module~sdr_prototree_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.85,-106.99C140.41,-106.99 131.74,-106.99 123.27,-106.99"/>
+<polygon fill="#000000" stroke="#000000" points="123.06,-103.49 113.06,-106.99 123.06,-110.49 123.06,-103.49"/>
+</g>
+<!-- module~sdr_refinept_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_node5" class="node">
+<title>module~sdr_refinept_module</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node5"><a xlink:href="../module/sdr_refinept_module.html" xlink:title="sdr_refinePT_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="442.5,-40.99 318.5,-40.99 318.5,-16.99 442.5,-16.99 442.5,-40.99"/>
+<text text-anchor="middle" x="380.5" y="-26.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_refinePT_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge4" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M318.19,-33.62C287.08,-36.59 248.82,-41.19 215,-47.99"/>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge11" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M347.75,-41.08C337.23,-45.27 325.53,-50.14 315,-54.99 291.47,-65.81 265.55,-79.34 245.99,-89.89"/>
+<polygon fill="#000000" stroke="#000000" points="244.06,-86.95 236.94,-94.8 247.4,-93.11 244.06,-86.95"/>
+</g>
+<!-- program~seeder -->
+<g id="module~~sdr_config_module~~UsedByGraph_node6" class="node">
+<title>program~seeder</title>
+<g id="a_module~~sdr_config_module~~UsedByGraph_node6"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="721,-118.99 667,-118.99 667,-94.99 721,-94.99 721,-118.99"/>
+<text text-anchor="middle" x="694" y="-104.59" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+</a>
+</g>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge5" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M670.74,-94.78C644.5,-80.99 599.16,-59.04 557.5,-47.99"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M555.5,-47.99C505.42,-34.71 497.02,-17.01 446,-7.99 388.67,2.16 372.17,3.02 315,-7.99 268,-17.04 261.93,-38.56 215,-47.99"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M213,-47.99C169.06,-56.13 121.42,-75.99 90.61,-90.42"/>
+<polygon fill="#000000" stroke="#000000" points="88.75,-87.43 81.23,-94.89 91.76,-93.75 88.75,-87.43"/>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_flooding_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge6" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_flooding_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M666.87,-106.99C655.9,-106.99 642.56,-106.99 629.01,-106.99"/>
+<polygon fill="#000000" stroke="#000000" points="628.65,-103.49 618.65,-106.99 628.65,-110.49 628.65,-103.49"/>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_proto2treelm_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge7" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_proto2treelm_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M666.85,-116.16C655.82,-119.94 642.83,-124.3 631,-127.99 624.53,-130.01 617.72,-132.05 610.96,-134.04"/>
+<polygon fill="#000000" stroke="#000000" points="609.76,-130.74 601.13,-136.9 611.71,-137.47 609.76,-130.74"/>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge12" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M555.5,-47.99C502.14,-34 349.75,-70.55 268.13,-92.25"/>
+<polygon fill="#000000" stroke="#000000" points="266.82,-88.98 258.06,-94.95 268.63,-95.74 266.82,-88.98"/>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_refinept_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge13" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_refinept_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M555.5,-47.99C522.35,-39.29 484.63,-34.57 452.81,-32.01"/>
+<polygon fill="#000000" stroke="#000000" points="452.93,-28.51 442.69,-31.25 452.4,-35.49 452.93,-28.51"/>
+</g>
+<!-- module~sdr_boundary_module&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_config_module~~UsedByGraph_edge8" class="edge">
+<title>module~sdr_boundary_module&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M330.14,-134.99C312.66,-130.73 292.79,-125.9 274.55,-121.47"/>
+<polygon fill="#000000" stroke="#000000" points="275.15,-118.01 264.6,-119.05 273.49,-124.81 275.15,-118.01"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmodulesdr_config_moduleUsedByGraph = svgPanZoom('#modulesdr_config_moduleUsedByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-sdr_confhead_type"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/sdr_confhead_type.html'>sdr_confHead_type</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p>This type contains basic information loaded from the config file.</p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comment"></span>
+              character(len=PathLen),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comment</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-folder"></span>
+              character(len=PathLen),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>folder</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-minlevel"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>minlevel</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-general~4"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/tem_general_type.html'>tem_general_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>general</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-subresolution"></span>
+              type(<a href='../type/sdr_subresolution_type.html'>sdr_subresolution_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>subresolution</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>Information on resolution of boundaries within elements using
+polynomials.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-inverted_colors"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/dyn_labelarray_type.html'>dyn_labelarray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>inverted_colors</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>List of colors to invert.</p><a href="../type/sdr_confhead_type.html#variable-inverted_colors" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-sdr_load_config"></span> <h3>public  subroutine <a href='../proc/sdr_load_config.html'>sdr_load_config</a>(me, geometry)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Load the configuration from the Lua script provided on the command line
+or from seeder.lua by default, if no file name is given as program
+argument.</p><a href="../proc/sdr_load_config.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~23"></span>
+              type(<a href='../type/sdr_confhead_type.html'>sdr_confHead_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+<p>contains basic information from config file</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~13"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+<p>contains all geometry object defined in the config file</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-sdr_load_inverted"></span> <h3>private  subroutine <a href='../proc/sdr_load_inverted.html'>sdr_load_inverted</a>(invlist, conf)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-invlist"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/dyn_labelarray_type.html'>dyn_labelarray_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>invlist</strong></td>
+            <td>
+<p>List of labels for inverted colors.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-conf~19"></span>
+              type(<a href='https://apes-suite.github.io/aotus/type/flu_state.html'>flu_State</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>conf</strong></td>
+            <td>
+<p>Lua script handle to read the inversion list from.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,593 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sdr_triangle_module.f90 &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>sdr_triangle_module.f90
+      <small>Source File</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for source files.">30 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_triangle_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+            <li class="breadcrumb-item active" aria-current="page">sdr_triangle_module.f90</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#mods-0"
+         aria-expanded="false" aria-controls="mods-0">
+         <h4 class="card-header bg-primary text-white">Modules</h4>
+      </a>
+      <div id="mods-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/sdr_triangle_module.html">sdr_triangle_module</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../sourcefile/sdr_triangle_module.f90.html#src">sdr_triangle_module.f90</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Files dependent on this one</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: sourcefile~~sdr_triangle_module.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilesdr_triangle_modulef90AfferentGraph" width="641pt" height="139pt"
+ viewBox="0.00 0.00 641.00 138.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph" class="graph" transform="scale(0.54 0.54) rotate(0) translate(4 253.46)">
+<title>sourcefile~~sdr_triangle_module.f90~~AfferentGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-253.46 1185,-253.46 1185,4 -4,4"/>
+<!-- sourcefile~sdr_triangle_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~sdr_triangle_module.f90</title>
+<polygon fill="none" stroke="black" points="142,-116.32 0,-116.32 0,-92.32 142,-92.32 142,-116.32"/>
+<text text-anchor="middle" x="71" y="-101.92" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_triangle_module.f90</text>
+</g>
+<!-- sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~sdr_geometry_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node2"><a xlink:href="../sourcefile/sdr_geometry_module.f90.html" xlink:title="sdr_geometry_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="330,-116.32 178,-116.32 178,-92.32 330,-92.32 330,-116.32"/>
+<text text-anchor="middle" x="254" y="-101.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_geometry_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_geometry_module.f90&#45;&gt;sourcefile~sdr_triangle_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~sdr_geometry_module.f90&#45;&gt;sourcefile~sdr_triangle_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M177.81,-104.32C169.39,-104.32 160.78,-104.32 152.3,-104.32"/>
+<polygon fill="#000000" stroke="#000000" points="152.03,-100.82 142.03,-104.32 152.03,-107.82 152.03,-100.82"/>
+</g>
+<!-- sourcefile~sdr_boundary_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~sdr_boundary_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node3"><a xlink:href="../sourcefile/sdr_boundary_module.f90.html" xlink:title="sdr_boundary_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="872,-214.32 721,-214.32 721,-190.32 872,-190.32 872,-214.32"/>
+<text text-anchor="middle" x="796.5" y="-199.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_boundary_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_boundary_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~sdr_boundary_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M720.74,-208.67C668.62,-213.3 597.5,-220.02 535,-227.32 489.77,-232.61 478.1,-250.51 433.5,-241.32"/>
+</g>
+<!-- sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node7" class="node">
+<title>sourcefile~sdr_prototree_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node7"><a xlink:href="../sourcefile/sdr_prototree_module.f90.html" xlink:title="sdr_protoTree_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="685,-156.32 535,-156.32 535,-132.32 685,-132.32 685,-156.32"/>
+<text text-anchor="middle" x="610" y="-141.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_protoTree_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_boundary_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge18" class="edge">
+<title>sourcefile~sdr_boundary_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M757.27,-190.31C728.7,-181.32 689.45,-168.99 658.8,-159.35"/>
+<polygon fill="#000000" stroke="#000000" points="659.77,-155.99 649.18,-156.33 657.67,-162.66 659.77,-155.99"/>
+</g>
+<!-- sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node4" class="node">
+<title>sourcefile~sdr_config_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node4"><a xlink:href="../sourcefile/sdr_config_module.f90.html" xlink:title="sdr_config_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="499,-116.32 366,-116.32 366,-92.32 499,-92.32 499,-116.32"/>
+<text text-anchor="middle" x="432.5" y="-101.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_config_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_config_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge3" class="edge">
+<title>sourcefile~sdr_config_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M365.78,-104.32C357.47,-104.32 348.87,-104.32 340.31,-104.32"/>
+<polygon fill="#000000" stroke="#000000" points="340.29,-100.82 330.29,-104.32 340.29,-107.82 340.29,-100.82"/>
+</g>
+<!-- sourcefile~sdr_flooding_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node5" class="node">
+<title>sourcefile~sdr_flooding_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node5"><a xlink:href="../sourcefile/sdr_flooding_module.f90.html" xlink:title="sdr_flooding_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1064.5,-214.32 920.5,-214.32 920.5,-190.32 1064.5,-190.32 1064.5,-214.32"/>
+<text text-anchor="middle" x="992.5" y="-199.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_flooding_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge4" class="edge">
+<title>sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M609,-241.32C532.32,-227.04 509.66,-258.15 433.5,-241.32"/>
+</g>
+<!-- sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_boundary_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge9" class="edge">
+<title>sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_boundary_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M920.36,-202.32C907.99,-202.32 895.01,-202.32 882.32,-202.32"/>
+<polygon fill="#000000" stroke="#000000" points="882.21,-198.82 872.21,-202.32 882.21,-205.82 882.21,-198.82"/>
+</g>
+<!-- sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge11" class="edge">
+<title>sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_config_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M949.78,-214.4C879.41,-233.03 732.85,-264.36 611,-241.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M609,-241.32C537.19,-227.95 475.76,-159.66 448.52,-124.82"/>
+<polygon fill="#000000" stroke="#000000" points="451.2,-122.56 442.35,-116.74 445.63,-126.81 451.2,-122.56"/>
+</g>
+<!-- sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge19" class="edge">
+<title>sourcefile~sdr_flooding_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M946.44,-190.24C907.38,-180.45 849.17,-167.45 797.5,-162.32"/>
+</g>
+<!-- sourcefile~sdr_proto2treelm_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node6" class="node">
+<title>sourcefile~sdr_proto2treelm_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node6"><a xlink:href="../sourcefile/sdr_proto2treelm_module.f90.html" xlink:title="sdr_proto2treelm_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1077,-58.32 908,-58.32 908,-34.32 1077,-34.32 1077,-58.32"/>
+<text text-anchor="middle" x="992.5" y="-43.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge5" class="edge">
+<title>sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M951.09,-34.23C912.17,-23.49 851.42,-9.07 797.5,-6.32"/>
+</g>
+<!-- sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_boundary_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge10" class="edge">
+<title>sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_boundary_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M983.42,-58.57C966.03,-84.05 922.46,-143.14 872,-176.32 866.02,-180.26 859.38,-183.67 852.59,-186.6"/>
+<polygon fill="#000000" stroke="#000000" points="851.28,-183.36 843.3,-190.32 853.88,-189.86 851.28,-183.36"/>
+</g>
+<!-- sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge12" class="edge">
+<title>sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_config_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M969.66,-58.38C934.62,-76.96 863.1,-111.75 797.5,-124.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M795.5,-124.32C714.49,-139.85 693.48,-104.54 611,-104.32"/>
+</g>
+<!-- sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge20" class="edge">
+<title>sourcefile~sdr_proto2treelm_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M795.5,-124.32C762.95,-130.56 726.77,-135.02 695.13,-138.11"/>
+<polygon fill="#000000" stroke="#000000" points="694.65,-134.64 685.03,-139.07 695.31,-141.61 694.65,-134.64"/>
+</g>
+<!-- sourcefile~sdr_prototree_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~sdr_prototree_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.7,-156.47C544.35,-182.89 442.02,-243.08 433.5,-241.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M431.5,-241.32C359.7,-226.53 297.72,-158.92 270.19,-124.53"/>
+<polygon fill="#000000" stroke="#000000" points="272.87,-122.28 263.95,-116.56 267.36,-126.59 272.87,-122.28"/>
+</g>
+<!-- sourcefile~sdr_prototree_module.f90&#45;&gt;sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge13" class="edge">
+<title>sourcefile~sdr_prototree_module.f90&#45;&gt;sourcefile~sdr_config_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M556.34,-132.32C537.43,-128.01 515.91,-123.11 496.22,-118.62"/>
+<polygon fill="#000000" stroke="#000000" points="496.95,-115.19 486.42,-116.39 495.39,-122.02 496.95,-115.19"/>
+</g>
+<!-- sourcefile~sdr_refinept_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node8" class="node">
+<title>sourcefile~sdr_refinept_module.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node8"><a xlink:href="../sourcefile/sdr_refinept_module.f90.html" xlink:title="sdr_refinePT_module.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="868.5,-58.32 724.5,-58.32 724.5,-34.32 868.5,-34.32 868.5,-58.32"/>
+<text text-anchor="middle" x="796.5" y="-43.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_refinePT_module.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M724.43,-43.12C690.11,-42.29 648.36,-42.34 611,-45.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M609,-45.32C531.25,-51.53 509.72,-28.73 433.5,-45.32"/>
+</g>
+<!-- sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge14" class="edge">
+<title>sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_config_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M609,-45.32C557.16,-49.46 500.75,-71.93 466.25,-87.91"/>
+<polygon fill="#000000" stroke="#000000" points="464.67,-84.79 457.12,-92.23 467.66,-91.12 464.67,-84.79"/>
+</g>
+<!-- sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge21" class="edge">
+<title>sourcefile~sdr_refinept_module.f90&#45;&gt;sourcefile~sdr_prototree_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M779.75,-58.33C758.94,-73.78 720.74,-100.72 685,-118.32 677.27,-122.13 668.85,-125.64 660.54,-128.77"/>
+<polygon fill="#000000" stroke="#000000" points="659.1,-125.57 650.89,-132.27 661.48,-132.15 659.1,-125.57"/>
+</g>
+<!-- sourcefile~seeder.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node9" class="node">
+<title>sourcefile~seeder.f90</title>
+<g id="a_sourcefile~~sdr_triangle_module.f90~~AfferentGraph_node9"><a xlink:href="../sourcefile/seeder.f90.html" xlink:title="seeder.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1181,-116.32 1113,-116.32 1113,-92.32 1181,-92.32 1181,-116.32"/>
+<text text-anchor="middle" x="1147" y="-101.92" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_geometry_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge8" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_geometry_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1138.99,-92.31C1128.07,-74.72 1105.3,-42.22 1077,-25.32 1044.32,-5.81 1030.94,-13.18 993.5,-6.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M991.5,-6.32C906.69,9.21 883.61,-10.71 797.5,-6.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M795.5,-6.32C633.89,1.9 591.62,-10.91 433.5,-45.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M431.5,-45.32C382.78,-55.43 328.79,-74.73 293.52,-88.51"/>
+<polygon fill="#000000" stroke="#000000" points="292.1,-85.3 284.08,-92.23 294.67,-91.81 292.1,-85.3"/>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_config_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge15" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_config_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M991.5,-6.32C954.07,0.56 940.59,-5.66 908,-25.32 886.95,-38.03 893.56,-55.5 872,-67.32 769.27,-123.65 728.16,-104.64 611,-104.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M609,-104.32C576.42,-104.19 540.45,-104.17 509.59,-104.19"/>
+<polygon fill="#000000" stroke="#000000" points="509.34,-100.69 499.34,-104.2 509.34,-107.69 509.34,-100.69"/>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_flooding_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge16" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_flooding_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1137.59,-116.32C1125.81,-132.27 1102.91,-160.29 1077,-176.32 1070.46,-180.37 1063.25,-183.83 1055.88,-186.78"/>
+<polygon fill="#000000" stroke="#000000" points="1054.66,-183.5 1046.49,-190.25 1057.09,-190.07 1054.66,-183.5"/>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_proto2treelm_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge17" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_proto2treelm_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1114.4,-92.31C1091.3,-83.52 1059.74,-71.52 1034.67,-61.98"/>
+<polygon fill="#000000" stroke="#000000" points="1035.65,-58.61 1025.06,-58.33 1033.16,-65.15 1035.65,-58.61"/>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_prototree_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge22" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_prototree_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1112.55,-115.88C1050.69,-135.91 914.08,-173.9 797.5,-162.32"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M795.5,-162.32C762.78,-159.87 726.85,-156.51 695.47,-153.37"/>
+<polygon fill="#000000" stroke="#000000" points="695.75,-149.88 685.44,-152.35 695.04,-156.84 695.75,-149.88"/>
+</g>
+<!-- sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_refinept_module.f90 -->
+<g id="sourcefile~~sdr_triangle_module.f90~~AfferentGraph_edge23" class="edge">
+<title>sourcefile~seeder.f90&#45;&gt;sourcefile~sdr_refinept_module.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M991.5,-6.32C964.5,-1.36 895.73,-18.14 847.79,-31.48"/>
+<polygon fill="#000000" stroke="#000000" points="846.57,-28.18 837.9,-34.26 848.47,-34.92 846.57,-28.18"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var pansourcefilesdr_triangle_modulef90AfferentGraph = svgPanZoom('#sourcefilesdr_triangle_modulef90AfferentGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#AfferentGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="AfferentGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="202pt" height="32pt"
+ viewBox="0.00 0.00 201.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 197.5,-28 197.5,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="193.5,-24 88.5,-24 88.5,0 193.5,0 193.5,-24"/>
+<text text-anchor="middle" x="141" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+<br>
+      <section>
+        <h2><span class="anchor" id="src"></span>Source Code</h2>
+        <div class="hl codehilite"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">! Copyright (c) 2012-2013, 2019 Kannan Masilamani &lt;kannan.masilamani@uni-siegen.de&gt;</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">! Copyright (c) 2012-2014, 2017 Harald Klimach &lt;harald.klimach@uni-siegen.de&gt;</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">! Copyright (c) 2012 Jiaxing Qi &lt;jiaxing.qi@uni-siegen.de&gt;</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">! Copyright (c) 2012 Sathish Krishnan P S &lt;s.krishnan@grs-sim.de&gt;</span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="c">!</span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">! Redistribution and use in source and binary forms, with or without</span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="c">! modification, are permitted provided that the following conditions are met:</span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="c">!</span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="c">! 1. Redistributions of source code must retain the above copyright notice, this</span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="c">! list of conditions and the following disclaimer.</span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="c">!</span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="c">! 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="c">! this list of conditions and the following disclaimer in the documentation</span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="c">! and/or other materials provided with the distribution.</span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="c">!</span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="c">! THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="c">! AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="c">! IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="c">! DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="c">! FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="c">! DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="c">! SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a><span class="c">! CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="c">! OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<a id="ln-25" name="ln-25" href="#ln-25"></a><span class="c">! OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a id="ln-26" name="ln-26" href="#ln-26"></a><span class="c">!&gt; \brief This module is an adapter to tem_triangle_module, Contains </span>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="c">!! a routine to load triangle and added it to list of spatial objects</span>
+<a id="ln-28" name="ln-28" href="#ln-28"></a><span class="k">module </span><span class="n">sdr_triangle_module</span>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">  </span><span class="k">use </span><span class="n">tem_logging_module</span><span class="p">,</span><span class="w">        </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">logunit</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">  </span><span class="k">use </span><span class="n">tem_transformation_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">tem_transformation_type</span><span class="w">  </span>
+<a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">  </span><span class="k">use </span><span class="n">tem_triangle_module</span><span class="p">,</span><span class="w">       </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">tem_triangle_type</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="w">    </span><span class="p">&amp;</span><span class="w">                                  </span><span class="n">grw_triangleArray_type</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">    </span><span class="p">&amp;</span><span class="w">                                  </span><span class="n">tem_load_triangle</span><span class="p">,</span><span class="w"> </span><span class="n">append</span>
+<a id="ln-34" name="ln-34" href="#ln-34"></a>
+<a id="ln-35" name="ln-35" href="#ln-35"></a><span class="w">  </span><span class="k">use </span><span class="n">aotus_module</span><span class="p">,</span><span class="w">              </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">flu_State</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">  </span><span class="k">use </span><span class="n">sdr_spatialObj_module</span><span class="p">,</span><span class="w">     </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">grw_spatialObjArray_type</span><span class="p">,</span><span class="w">               </span><span class="p">&amp;</span>
+<a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">    </span><span class="p">&amp;</span><span class="w">                                  </span><span class="n">sdr_spatialObj_type</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span>
+<a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">    </span><span class="p">&amp;</span><span class="w">                                  </span><span class="n">triangle</span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a>
+<a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">  </span><span class="k">implicit none</span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a>
+<a id="ln-43" name="ln-43" href="#ln-43"></a><span class="k">  private</span>
+<a id="ln-44" name="ln-44" href="#ln-44"></a>
+<a id="ln-45" name="ln-45" href="#ln-45"></a><span class="k">  public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sdr_load_triangle</span>
+<a id="ln-46" name="ln-46" href="#ln-46"></a>
+<a id="ln-47" name="ln-47" href="#ln-47"></a><span class="k">contains</span>
+<a id="ln-48" name="ln-48" href="#ln-48"></a>
+<a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">  </span><span class="c">! ****************************************************************************</span>
+<a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">  </span><span class="c">!&gt; Load triangle information from config file.</span>
+<a id="ln-51" name="ln-51" href="#ln-51"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">sdr_load_triangle</span><span class="p">(</span><span class="n">triArray</span><span class="p">,</span><span class="w"> </span><span class="n">spaObjArray</span><span class="p">,</span><span class="w"> </span><span class="n">attr_pos</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">    </span><span class="p">&amp;</span><span class="w">                          </span><span class="n">conf</span><span class="p">,</span><span class="w"> </span><span class="n">thandle</span><span class="w"> </span><span class="p">)</span>
+<a id="ln-53" name="ln-53" href="#ln-53"></a><span class="w">    </span><span class="c">!--------------------------------------------------------------------------!</span>
+<a id="ln-54" name="ln-54" href="#ln-54"></a><span class="w">    </span><span class="c">!inferface variables</span>
+<a id="ln-55" name="ln-55" href="#ln-55"></a><span class="w">    </span><span class="c">!&gt; growing array of triangles</span>
+<a id="ln-56" name="ln-56" href="#ln-56"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">grw_triangleArray_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">triArray</span>
+<a id="ln-57" name="ln-57" href="#ln-57"></a><span class="w">    </span><span class="c">!&gt; growing array of geometrical objects.</span>
+<a id="ln-58" name="ln-58" href="#ln-58"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">grw_spatialObjArray_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">spaObjArray</span>
+<a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">    </span><span class="c">!&gt; Position of the attribute to connect this object to.</span>
+<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">attr_pos</span>
+<a id="ln-61" name="ln-61" href="#ln-61"></a><span class="w">    </span><span class="c">!&gt; transformation for spatial object</span>
+<a id="ln-62" name="ln-62" href="#ln-62"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">tem_transformation_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">transform</span><span class="w"> </span>
+<a id="ln-63" name="ln-63" href="#ln-63"></a><span class="w">    </span><span class="c">!&gt; lua state</span>
+<a id="ln-64" name="ln-64" href="#ln-64"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">flu_state</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">conf</span><span class="w"> </span>
+<a id="ln-65" name="ln-65" href="#ln-65"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">thandle</span><span class="w"> </span><span class="c">!&lt; handle for canonical objects</span>
+<a id="ln-66" name="ln-66" href="#ln-66"></a><span class="w">    </span><span class="c">!--------------------------------------------------------------------------!</span>
+<a id="ln-67" name="ln-67" href="#ln-67"></a><span class="w">    </span><span class="c">! local varaibles</span>
+<a id="ln-68" name="ln-68" href="#ln-68"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">tem_triangle_type</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">loc_triangle</span><span class="p">(:)</span>
+<a id="ln-69" name="ln-69" href="#ln-69"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">sdr_spatialObj_type</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">spatialObj</span><span class="w"> </span>
+<a id="ln-70" name="ln-70" href="#ln-70"></a><span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iTri</span>
+<a id="ln-71" name="ln-71" href="#ln-71"></a><span class="w">    </span><span class="c">!--------------------------------------------------------------------------!</span>
+<a id="ln-72" name="ln-72" href="#ln-72"></a>
+<a id="ln-73" name="ln-73" href="#ln-73"></a><span class="w">    </span><span class="k">call </span><span class="n">tem_load_triangle</span><span class="p">(</span><span class="w"> </span><span class="n">me</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">loc_triangle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-74" name="ln-74" href="#ln-74"></a><span class="w">      </span><span class="p">&amp;</span><span class="w">                     </span><span class="n">transform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transform</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span>
+<a id="ln-75" name="ln-75" href="#ln-75"></a><span class="w">      </span><span class="p">&amp;</span><span class="w">                     </span><span class="n">conf</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="w">         </span><span class="p">&amp;</span>
+<a id="ln-76" name="ln-76" href="#ln-76"></a><span class="w">      </span><span class="p">&amp;</span><span class="w">                     </span><span class="n">thandle</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">thandle</span><span class="w">       </span><span class="p">)</span>
+<a id="ln-77" name="ln-77" href="#ln-77"></a>
+<a id="ln-78" name="ln-78" href="#ln-78"></a><span class="w">    </span><span class="c">!append triangle to triangle array</span>
+<a id="ln-79" name="ln-79" href="#ln-79"></a><span class="w">    </span><span class="n">spatialObj</span><span class="p">%</span><span class="n">attribute_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attr_pos</span>
+<a id="ln-80" name="ln-80" href="#ln-80"></a><span class="w">    </span><span class="n">spatialObj</span><span class="p">%</span><span class="n">geometry_primitive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">triangle</span>
+<a id="ln-81" name="ln-81" href="#ln-81"></a>
+<a id="ln-82" name="ln-82" href="#ln-82"></a><span class="w">    </span><span class="k">do </span><span class="n">iTri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">loc_triangle</span><span class="p">)</span>
+<a id="ln-83" name="ln-83" href="#ln-83"></a><span class="w">      </span><span class="k">call </span><span class="n">append</span><span class="p">(</span><span class="w"> </span><span class="n">triArray</span><span class="p">,</span><span class="w"> </span><span class="n">loc_triangle</span><span class="p">(</span><span class="n">iTri</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<a id="ln-84" name="ln-84" href="#ln-84"></a>
+<a id="ln-85" name="ln-85" href="#ln-85"></a><span class="w">      </span><span class="n">spatialObj</span><span class="p">%</span><span class="n">primitive_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">triArray</span><span class="p">%</span><span class="n">nVals</span>
+<a id="ln-86" name="ln-86" href="#ln-86"></a>
+<a id="ln-87" name="ln-87" href="#ln-87"></a><span class="w">      </span><span class="c">!add spatialObj to spatialObj list</span>
+<a id="ln-88" name="ln-88" href="#ln-88"></a><span class="w">      </span><span class="k">call </span><span class="n">append</span><span class="p">(</span><span class="n">spaObjArray</span><span class="p">,</span><span class="w"> </span><span class="n">spatialObj</span><span class="p">)</span>
+<a id="ln-89" name="ln-89" href="#ln-89"></a><span class="w">    </span><span class="k">end do</span>
+<a id="ln-90" name="ln-90" href="#ln-90"></a>
+<a id="ln-91" name="ln-91" href="#ln-91"></a><span class="k">  end subroutine </span><span class="n">sdr_load_triangle</span>
+<a id="ln-92" name="ln-92" href="#ln-92"></a><span class="w">  </span><span class="c">! ****************************************************************************</span>
+<a id="ln-93" name="ln-93" href="#ln-93"></a>
+<a id="ln-94" name="ln-94" href="#ln-94"></a><span class="k">end module </span><span class="n">sdr_triangle_module</span>
+</pre></div>
+
+      </section>
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1647 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ply_nodes_header_module &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ply_nodes_header_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.8% of total for modules and submodules.">149 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ply_nodes_header_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/ply_nodes_header_module.f90.html'>ply_nodes_header_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ply_nodes_header_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#inters-0"
+         aria-expanded="false" aria-controls="inters-0">
+         <h4 class="card-header bg-primary text-white">Interfaces</h4>
+      </a>
+      <div id="inters-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-assignment%28%3D%29~2">assignment(=)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28%3D%3D%29~2">operator(==)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28SLASH%3D%29~2">operator(/=)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28lt%29~2">operator(<)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28lt%3D%29~2">operator(<=)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28gt%29~2">operator(>)</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#interface-operator%28gt%3D%29~2">operator(>=)</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#type-ply_nodes_header_type">ply_nodes_header_type</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-isequal~2">isEqual</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-isunequal~2">isUnequal</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-issmaller~2">isSmaller</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-issmallerorequal~2">isSmallerOrEqual</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-isgreater~2">isGreater</a>
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-isgreaterorequal~2">isGreaterOrEqual</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/ply_nodes_header_module.html#proc-copy_nodes_header">Copy_nodes_header</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~ply_nodes_header_module~~UsesGraph Pages: 1 -->
+<svg id="moduleply_nodes_header_moduleUsesGraph" width="277pt" height="32pt"
+ viewBox="0.00 0.00 277.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~ply_nodes_header_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~ply_nodes_header_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 273,-28 273,4 -4,4"/>
+<!-- module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsesGraph_node1" class="node">
+<title>module~ply_nodes_header_module</title>
+<polygon fill="none" stroke="black" points="269,-24 114,-24 114,0 269,0 269,-24"/>
+<text text-anchor="middle" x="191.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_nodes_header_module</text>
+</g>
+<!-- env_module -->
+<g id="module~~ply_nodes_header_module~~UsesGraph_node2" class="node">
+<title>env_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="78,-24 0,-24 0,0 78,0 78,-24"/>
+<text text-anchor="middle" x="39" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_nodes_header_module&#45;&gt;env_module -->
+<g id="module~~ply_nodes_header_module~~UsesGraph_edge1" class="edge">
+<title>module~ply_nodes_header_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M113.93,-12C105.25,-12 96.59,-12 88.42,-12"/>
+<polygon fill="#000000" stroke="#000000" points="88.37,-8.5 78.37,-12 88.37,-15.5 88.37,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~ply_nodes_header_module~~UsedByGraph Pages: 1 -->
+<svg id="moduleply_nodes_header_moduleUsedByGraph" width="641pt" height="135pt"
+ viewBox="0.00 0.00 641.00 135.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~ply_nodes_header_module~~UsedByGraph" class="graph" transform="scale(0.76 0.76) rotate(0) translate(4 175)">
+<title>module~~ply_nodes_header_module~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-175 843,-175 843,4 -4,4"/>
+<!-- module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node1" class="node">
+<title>module~ply_nodes_header_module</title>
+<polygon fill="none" stroke="black" points="155,-87 0,-87 0,-63 155,-63 155,-87"/>
+<text text-anchor="middle" x="77.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_nodes_header_module</text>
+</g>
+<!-- module~ply_fpt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node2" class="node">
+<title>module~ply_fpt_header_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node2"><a xlink:href="../module/ply_fpt_header_module.html" xlink:title="ply_fpt_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="329,-150 192,-150 192,-126 329,-126 329,-150"/>
+<text text-anchor="middle" x="260.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_fpt_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge1" class="edge">
+<title>module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M218.8,-125.96C209.62,-123.13 199.95,-120.04 191,-117 166.86,-108.8 140.12,-98.85 118.76,-90.7"/>
+<polygon fill="#000000" stroke="#000000" points="119.95,-87.4 109.36,-87.09 117.44,-93.94 119.95,-87.4"/>
+</g>
+<!-- module~ply_fxt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node3" class="node">
+<title>module~ply_fxt_header_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node3"><a xlink:href="../module/ply_fxt_header_module.html" xlink:title="ply_fxt_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="328.5,-108 192.5,-108 192.5,-84 328.5,-84 328.5,-108"/>
+<text text-anchor="middle" x="260.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_fxt_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_header_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge2" class="edge">
+<title>module~ply_fxt_header_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M192.36,-88.21C183.59,-87.19 174.5,-86.14 165.46,-85.09"/>
+<polygon fill="#000000" stroke="#000000" points="165.63,-81.59 155.3,-83.91 164.83,-88.54 165.63,-81.59"/>
+</g>
+<!-- module~ply_l2p_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node4" class="node">
+<title>module~ply_l2p_header_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node4"><a xlink:href="../module/ply_l2p_header_module.html" xlink:title="ply_l2p_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="330,-66 191,-66 191,-42 330,-42 330,-66"/>
+<text text-anchor="middle" x="260.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_l2p_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_l2p_header_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge3" class="edge">
+<title>module~ply_l2p_header_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.81,-61.97C182.4,-62.94 173.73,-63.95 165.1,-64.95"/>
+<polygon fill="#000000" stroke="#000000" points="164.54,-61.49 155.01,-66.12 165.34,-68.45 164.54,-61.49"/>
+</g>
+<!-- module~ply_nodes_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node5" class="node">
+<title>module~ply_nodes_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node5"><a xlink:href="../module/ply_nodes_module.html" xlink:title="ply_nodes_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="316.5,-24 204.5,-24 204.5,0 316.5,0 316.5,-24"/>
+<text text-anchor="middle" x="260.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_nodes_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_nodes_module&#45;&gt;module~ply_nodes_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge4" class="edge">
+<title>module~ply_nodes_module&#45;&gt;module~ply_nodes_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M218.8,-24.04C209.62,-26.87 199.95,-29.96 191,-33 166.86,-41.2 140.12,-51.15 118.76,-59.3"/>
+<polygon fill="#000000" stroke="#000000" points="117.44,-56.06 109.36,-62.91 119.95,-62.6 117.44,-56.06"/>
+</g>
+<!-- module~ply_fxt_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node6" class="node">
+<title>module~ply_fxt_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node6"><a xlink:href="../module/ply_fxt_module.html" xlink:title="ply_fxt_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="481,-87 388,-87 388,-63 481,-63 481,-87"/>
+<text text-anchor="middle" x="434.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_fxt_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_fxt_module&#45;&gt;module~ply_fxt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge7" class="edge">
+<title>module~ply_fxt_module&#45;&gt;module~ply_fxt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M387.86,-80.57C372.86,-82.4 355.74,-84.49 339.05,-86.53"/>
+<polygon fill="#000000" stroke="#000000" points="338.24,-83.1 328.74,-87.79 339.09,-90.05 338.24,-83.1"/>
+</g>
+<!-- module~ply_l2p_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node7" class="node">
+<title>module~ply_l2p_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node7"><a xlink:href="../module/ply_l2p_module.html" xlink:title="ply_l2p_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="482.5,-45 386.5,-45 386.5,-21 482.5,-21 482.5,-45"/>
+<text text-anchor="middle" x="434.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_l2p_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_l2p_module&#45;&gt;module~ply_l2p_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge9" class="edge">
+<title>module~ply_l2p_module&#45;&gt;module~ply_l2p_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M386.04,-38.79C371.85,-40.53 355.89,-42.48 340.26,-44.38"/>
+<polygon fill="#000000" stroke="#000000" points="339.55,-40.94 330.05,-45.63 340.4,-47.89 339.55,-40.94"/>
+</g>
+<!-- module~ply_legfpt_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node8" class="node">
+<title>module~ply_legfpt_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node8"><a xlink:href="../module/ply_legfpt_module.html" xlink:title="ply_legFpt_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="490.5,-171 378.5,-171 378.5,-147 490.5,-147 490.5,-171"/>
+<text text-anchor="middle" x="434.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_legFpt_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge5" class="edge">
+<title>module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M378.13,-152.24C365.69,-150.72 352.26,-149.08 339.1,-147.47"/>
+<polygon fill="#000000" stroke="#000000" points="339.46,-143.99 329.11,-146.25 338.61,-150.94 339.46,-143.99"/>
+</g>
+<!-- module~ply_prj_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node9" class="node">
+<title>module~ply_prj_header_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node9"><a xlink:href="../module/ply_prj_header_module.html" xlink:title="ply_prj_header_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="503,-129 366,-129 366,-105 503,-105 503,-129"/>
+<text text-anchor="middle" x="434.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_prj_header_module</text>
+</a>
+</g>
+</g>
+<!-- module~ply_prj_header_module&#45;&gt;module~ply_fpt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge6" class="edge">
+<title>module~ply_prj_header_module&#45;&gt;module~ply_fpt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M365.52,-125.3C356.95,-126.35 348.13,-127.42 339.42,-128.49"/>
+<polygon fill="#000000" stroke="#000000" points="338.77,-125.04 329.27,-129.73 339.62,-131.99 338.77,-125.04"/>
+</g>
+<!-- module~ply_prj_header_module&#45;&gt;module~ply_fxt_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge8" class="edge">
+<title>module~ply_prj_header_module&#45;&gt;module~ply_fxt_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M365.52,-108.7C356.72,-107.63 347.66,-106.52 338.72,-105.43"/>
+<polygon fill="#000000" stroke="#000000" points="339.05,-101.94 328.7,-104.21 338.21,-108.89 339.05,-101.94"/>
+</g>
+<!-- module~ply_prj_header_module&#45;&gt;module~ply_l2p_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge10" class="edge">
+<title>module~ply_prj_header_module&#45;&gt;module~ply_l2p_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M389.76,-104.98C381.74,-102.33 373.53,-99.31 366,-96 349.05,-88.53 346.97,-82.43 330,-75 325.53,-73.04 320.83,-71.2 316.07,-69.47"/>
+<polygon fill="#000000" stroke="#000000" points="316.86,-66.04 306.26,-66.09 314.58,-72.66 316.86,-66.04"/>
+</g>
+<!-- module~sdr_proto2treelm_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node10" class="node">
+<title>module~sdr_proto2treelm_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node10"><a xlink:href="../module/sdr_proto2treelm_module.html" xlink:title="sdr_proto2treelm_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="689,-150 540,-150 540,-126 689,-126 689,-150"/>
+<text text-anchor="middle" x="614.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge11" class="edge">
+<title>module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M539.82,-129.31C530.99,-128.27 521.96,-127.2 513.08,-126.15"/>
+<polygon fill="#000000" stroke="#000000" points="513.48,-122.68 503.14,-124.98 512.66,-129.63 513.48,-122.68"/>
+</g>
+<!-- module~sdr_subresolution_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node11" class="node">
+<title>module~sdr_subresolution_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node11"><a xlink:href="../module/sdr_subresolution_module.html" xlink:title="sdr_subresolution_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="690,-108 539,-108 539,-84 690,-84 690,-108"/>
+<text text-anchor="middle" x="614.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_subresolution_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge12" class="edge">
+<title>module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M538.79,-104.81C530.4,-105.8 521.84,-106.81 513.41,-107.81"/>
+<polygon fill="#000000" stroke="#000000" points="512.74,-104.36 503.22,-109.01 513.56,-111.31 512.74,-104.36"/>
+</g>
+<!-- module~sdr_config_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node12" class="node">
+<title>module~sdr_config_module</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node12"><a xlink:href="../module/sdr_config_module.html" xlink:title="sdr_config_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="839,-108 726,-108 726,-84 839,-84 839,-108"/>
+<text text-anchor="middle" x="782.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_config_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_config_module&#45;&gt;module~sdr_subresolution_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge14" class="edge">
+<title>module~sdr_config_module&#45;&gt;module~sdr_subresolution_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M725.76,-96C717.57,-96 708.98,-96 700.36,-96"/>
+<polygon fill="#000000" stroke="#000000" points="700.26,-92.5 690.26,-96 700.26,-99.5 700.26,-92.5"/>
+</g>
+<!-- program~seeder -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_node13" class="node">
+<title>program~seeder</title>
+<g id="a_module~~ply_nodes_header_module~~UsedByGraph_node13"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="809.5,-150 755.5,-150 755.5,-126 809.5,-126 809.5,-150"/>
+<text text-anchor="middle" x="782.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+</a>
+</g>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_proto2treelm_module -->
+<g id="module~~ply_nodes_header_module~~UsedByGraph_edge13" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_proto2treelm_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M755.2,-138C739.95,-138 719.8,-138 699.58,-138"/>
+<polygon fill="#000000" stroke="#000000" points="699.34,-134.5 689.34,-138 699.34,-141.5 699.34,-134.5"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panmoduleply_nodes_header_moduleUsedByGraph = svgPanZoom('#moduleply_nodes_header_moduleUsedByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+        <section>
+          <h2>Interfaces</h2>
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-assignment%28%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/assignment(=)~2.html'>assignment(=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure subroutine <a href='../proc/copy_nodes_header.html'>Copy_nodes_header</a>(left, right)  
+
+    </h3>
+    
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~9"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~9"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28%3D%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(==)~2.html'>operator(==)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isequal~2.html'>isEqual</a>(left, right) result(equality)  
+
+    </h3>
+    
+  <p>This function provides the test for equality of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~10"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~10"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28SLASH%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(SLASH=)~2.html'>operator(/=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isunequal~2.html'>isUnequal</a>(left, right) result(unequality)  
+
+    </h3>
+    
+  <p>This function provides the test for unequality of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~11"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~11"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is unequal??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28lt%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(lt)~2.html'>operator(<)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/issmaller~2.html'>isSmaller</a>(left, right) result(small)  
+
+    </h3>
+    
+  <p>This function provides a &lt; comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~12"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~12"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28lt%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(lt=)~2.html'>operator(<=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/issmallerorequal~2.html'>isSmallerOrEqual</a>(left, right) result(small)  
+
+    </h3>
+    
+  <p>This function provides a &lt;= comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~13"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~13"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28gt%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(gt)~2.html'>operator(>)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isgreater~2.html'>isGreater</a>(left, right) result(great)  
+
+    </h3>
+    
+  <p>This function provides a &gt; comparison of nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~14"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~14"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28gt%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(gt=)~2.html'>operator(>=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/isgreaterorequal~2.html'>isGreaterOrEqual</a>(left, right) result(great)  
+
+    </h3>
+    
+  <p>This function provides a &gt;= comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~15"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~15"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+          </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-ply_nodes_header_type"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nodes_kind~3"></span>
+              character(len=labelLen),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nodes_kind</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>which kind of nodes are used. For l2p projection the nodes are
+legendre-gauss and chebyshev nodes for using fpt</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lobattopoints~2"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lobattoPoints</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p>Logical to indicate whether Chebyshev-Lobatto points or simple
+Chebyshev points are used</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isequal~2"></span> <h3>private pure function <a href='../proc/isequal~2.html'>isEqual</a>(left, right) result(equality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for equality of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~10"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~10"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~2"></span> <h3>private pure function <a href='../proc/isunequal~2.html'>isUnequal</a>(left, right) result(unequality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for unequality of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~11"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~11"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is unequal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~2"></span> <h3>private pure function <a href='../proc/issmaller~2.html'>isSmaller</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt; comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~12"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~12"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~2"></span> <h3>private pure function <a href='../proc/issmallerorequal~2.html'>isSmallerOrEqual</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt;= comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~13"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~13"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~2"></span> <h3>private pure function <a href='../proc/isgreater~2.html'>isGreater</a>(left, right) result(great)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &gt; comparison of nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~14"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~14"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~2"></span> <h3>private pure function <a href='../proc/isgreaterorequal~2.html'>isGreaterOrEqual</a>(left, right) result(great)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &gt;= comparison of two nodes descriptions.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~15"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~15"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is greater??</p>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-copy_nodes_header"></span> <h3>private pure subroutine <a href='../proc/copy_nodes_header.html'>Copy_nodes_header</a>(left, right)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~9"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>fpt to copy to</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~9"></span>
+              type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>fpt to copy from</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../../favicon.png">
+
+    <title>Plane &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../../css/pygments.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/local.css" rel="stylesheet">
+      <link  href="../../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>Plane</h1>
+    <div class="container p-2 mb-4 bg-light border rounded-3">
+      <div class="row align-items-center justify-content-between">
+        <div class="col">
+          <ul class="list-inline" style="margin-bottom:0px; display:inline">
+          </ul>
+        </div>
+        <div class="col">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../index.html'>Build and run Seeder</a></li>
+                <li class="breadcrumb-item"><a href='index.html'>Testsuite tutorials</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Plane</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-3">
+        <div class="card card-body bg-light" id="sidebar-toc">
+          <ul class="nav flex-column align-items">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Build and run Seeder</a>
+            </li>
+          </ul>
+          <hr>
+          <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="../attributes/index.html">Attribute</a>
+              <a class="nav-link" href="../features/index.html">Feature Overview</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="../features/boundary_cond.html">Boundary conditions</a>
+              <a class="nav-link" href="../features/colored_seeds.html">Colored seeds</a>
+              <a class="nav-link" href="../features/stl.html">STL</a>
+              <a class="nav-link" href="../features/sub_boundaries.html">Subresolved boundaries</a>
+              <a class="nav-link" href="../features/transformation.html">Transformation</a>
+
+                </nav>
+              <a class="nav-link" href="../sdr_algorithm.html">Seeder Algorithm</a>
+              <a class="nav-link" href="index.html">Testsuite tutorials</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="boxes.html">Box</a>
+              <a class="nav-link" href="cylinder.html">Cylinders</a>
+              <a class="nav-link" href="ful_per_cube.html">Fully periodic cube</a>
+              <a class="nav-link" href="lines.html">Line</a>
+              <a class="nav-link" href="per_plane_example.html">How to define periodic planes in lua file?</a>
+              <a class="nav-link" href="periodic_planes.html">Periodic planes</a>
+              <a class="nav-link active disabled" href="planes.html">Plane</a>
+              <a class="nav-link" href="points.html">Points</a>
+              <a class="nav-link" href="special/index.html">Special geometries</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="special/spacer.html">Spacers</a>
+
+                </nav>
+              <a class="nav-link" href="sphere.html">Sphere</a>
+              <a class="nav-link" href="triangle.html">Triangle</a>
+
+                </nav>
+          </nav>
+        </div>
+      </div>
+
+    <div class="col-9" id='text'>
+      <p>Planes are defined by an origin and two vectors.
+Internally in the code, planes are converted into two triangles.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">vec2____________</span><span class="w"> </span>
+<span class="o">/</span><span class="err">\</span><span class="w">              </span><span class="o">|</span>
+<span class="o">|</span><span class="w">               </span><span class="o">|</span>
+<span class="o">|</span><span class="w">               </span><span class="o">|</span>
+<span class="o">|</span><span class="w">               </span><span class="o">|</span>
+<span class="o">|</span><span class="w">               </span><span class="o">|</span>
+<span class="o">|--------------&gt;|</span>
+<span class="n">origin</span><span class="w">      </span><span class="n">vec1</span><span class="w"> </span>
+</code></pre></div>
+
+<p>Defintion:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+      <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;plane1&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span><span class="o">=</span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">},</span>
+        <span class="n">vec</span><span class="o">=</span><span class="p">{{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+             <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">}},</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Seeder file to generate the mesh with plane is given below:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Geometry definition</span>
+
+<span class="n">height</span> <span class="o">=</span>  <span class="mf">0.41</span>
+<span class="n">length</span> <span class="o">=</span> <span class="n">height</span>
+<span class="c1">-- Use this file as template. Do not modify this file for running some testcases</span>
+
+<span class="c1">-- Location to write the mesh in</span>
+<span class="c1">-- Note the trailing path seperator, needed, if all mesh files should be </span>
+<span class="c1">-- directory. This directory has to exist before running Seeder in this </span>
+<span class="c1">-- case</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span> 
+
+<span class="c1">--A minimum level,by which all parts in the computational domain should</span>
+<span class="c1">--at least be resolved with .Default is 0</span>
+<span class="n">minlevel</span>  <span class="o">=</span> <span class="mi">6</span>
+
+<span class="c1">--Debug output can be used to output preliminary tree in restart format</span>
+<span class="c1">--and this restart file can be converted to vtu format by harvester. </span>
+<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span><span class="n">debugMode</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">debugFiles</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">debugMesh</span> <span class="o">=</span> <span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
+
+
+<span class="c1">-- boundingbox: two entries: origin and length in this</span>
+<span class="c1">-- order, if no keys are used</span>
+<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="p">},</span>
+               <span class="n">length</span> <span class="o">=</span> <span class="n">length</span><span class="o">*</span><span class="mf">2.0</span><span class="p">}</span>
+
+<span class="c1">-- Each spatial object is defined by an attribute and some geometric</span>
+<span class="c1">-- entity attached to this attribute. Attribute might be defined mulitple-- times.</span>
+<span class="c1">-- Attributes are described by a kind (boundary ,seed or Refinement)</span>
+<span class="c1">--  a level</span>
+<span class="n">spatial_object</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="p">},</span>
+
+<span class="c1">-- Geometric objects might by right now:</span>
+<span class="c1">-- canoND (point, line, plane or box)</span>
+<span class="c1">-- STL</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+                 <span class="n">object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+               <span class="p">}</span>
+    <span class="p">}</span> <span class="c1">-- geometry</span>
+  <span class="p">},</span> <span class="c1">-- seed</span>
+  <span class="p">{</span>
+
+  <span class="c1">-- Four edges bounding the plane (east, west, north and south)</span>
+  <span class="c1">-- this is for the lable&#39; east&#39;</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>    
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;east&#39;</span>           
+    <span class="p">},</span>
+
+  <span class="c1">-- for define the box object requires the origin and vector </span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span> <span class="p">{{</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},</span>
+              <span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">}}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+
+ <span class="c1">-- this is for label &#39;west&#39;</span>
+      <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;west&#39;</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span> <span class="p">{{</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},</span>
+              <span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">}}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+ <span class="c1">-- this is for label &#39;North&#39;</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;north&#39;</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">height</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span> <span class="p">{{</span><span class="n">length</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},</span>
+              <span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">}}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>  
+  <span class="p">{</span>
+ <span class="c1">-- this is for label &#39;South&#39;</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;south&#39;</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">length</span><span class="o">*</span><span class="mf">0.5</span><span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span> <span class="p">{{</span><span class="n">length</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},</span>
+              <span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">length</span><span class="p">}}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The mesh generated with plane inside mesh:</p>
+<p><img alt="plane" src="plane.png"></p>
+<p><img alt="plane_withedges" src="plane_withedges.png"></p>
+<p>Cut view of plane</p>
+<p><img alt="plane_cut" src="plane_cut.png"></p>
+<p>Example lua file is available at <code>testsuite/plane/seeder.lua</code>.</p>
+    </div>
+  </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

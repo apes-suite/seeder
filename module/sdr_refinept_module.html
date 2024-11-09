@@ -1,0 +1,1315 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sdr_refinePT_module &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>sdr_refinePT_module
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Kannan Masilamani</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 5.1% of total for modules and submodules.">432 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_refinePT_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_refinept_module.f90.html'>sdr_refinePT_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">sdr_refinePT_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-sdr_inherit_distancerefineobject">sdr_inHerit_distanceRefineObject</a>
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-sdr_refine_leaf">sdr_refine_leaf</a>
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-sdr_smooth_leaf">sdr_smooth_leaf</a>
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-inherit_intersectedobject">inHerit_intersectedObject</a>
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-check_bndlevel">check_bndLevel</a>
+            <a class="list-group-item" href="../module/sdr_refinept_module.html#proc-create_children">create_children</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p>This module contains routine to refine protoTree until the minlevel
+or level defined in the refinement object is reached</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_geometry_module.html'>tem_geometry_module</a></li>
+                  <li class="list-inline-item">sdr_attribute_module</li>
+                  <li class="list-inline-item">sdr_node_module</li>
+                  <li class="list-inline-item"><a href='sdr_config_module.html'>sdr_config_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_sphere_module.html'>tem_sphere_module</a></li>
+                  <li class="list-inline-item"><a href='sdr_prototree_module.html'>sdr_protoTree_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_timer_module.html'>tem_timer_module</a></li>
+                  <li class="list-inline-item"><a href='sdr_geometry_module.html'>sdr_geometry_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_param_module.html'>tem_param_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_cube_module.html'>tem_cube_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_tools_module.html'>tem_tools_module</a></li>
+                  <li class="list-inline-item">sdr_spatialObj_module</li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_dyn_array_module.html'>tem_dyn_array_module</a></li>
+                  <li class="list-inline-item"><a href='sdr_timer_module.html'>sdr_timer_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_grow_array_module.html'>tem_grow_array_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_topology_module.html'>tem_topology_module</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~sdr_refinept_module~~UsesGraph Pages: 1 -->
+<svg id="modulesdr_refinept_moduleUsesGraph" width="312pt" height="746pt"
+ viewBox="0.00 0.00 312.00 746.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sdr_refinept_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 742)">
+<title>module~~sdr_refinept_module~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-742 308,-742 308,4 -4,4"/>
+<!-- module~sdr_refinept_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node1" class="node">
+<title>module~sdr_refinept_module</title>
+<polygon fill="none" stroke="black" points="304,-381 180,-381 180,-357 304,-357 304,-381"/>
+<text text-anchor="middle" x="242" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_refinePT_module</text>
+</g>
+<!-- env_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node2" class="node">
+<title>env_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="111,-738 33,-738 33,-714 111,-714 111,-738"/>
+<text text-anchor="middle" x="72" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;env_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge1" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;env_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.36,-381.11C242.13,-429.39 238.36,-610.03 144,-705 137.68,-711.36 129.53,-715.81 121.03,-718.93"/>
+<polygon fill="#000000" stroke="#000000" points="119.87,-715.62 111.34,-721.9 121.93,-722.31 119.87,-715.62"/>
+</g>
+<!-- module~sdr_config_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node3" class="node">
+<title>module~sdr_config_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node3"><a xlink:href="../module/sdr_config_module.html" xlink:title="sdr_config_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="128.5,-696 15.5,-696 15.5,-672 128.5,-672 128.5,-696"/>
+<text text-anchor="middle" x="72" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_config_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_config_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge2" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_config_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.78,-381.12C239.32,-425.59 228.13,-581.45 144,-663 142.06,-664.88 139.96,-666.59 137.75,-668.15"/>
+<polygon fill="#000000" stroke="#000000" points="135.55,-665.38 128.67,-673.44 139.08,-671.43 135.55,-665.38"/>
+</g>
+<!-- module~sdr_geometry_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node4" class="node">
+<title>module~sdr_geometry_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node4"><a xlink:href="../module/sdr_geometry_module.html" xlink:title="sdr_geometry_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="138,-654 6,-654 6,-630 138,-630 138,-654"/>
+<text text-anchor="middle" x="72" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_geometry_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_geometry_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge3" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_geometry_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.03,-381.06C236.14,-421.36 218.06,-552.63 144,-621 142.7,-622.2 141.34,-623.33 139.92,-624.4"/>
+<polygon fill="#000000" stroke="#000000" points="137.88,-621.54 131.27,-629.83 141.6,-627.47 137.88,-621.54"/>
+</g>
+<!-- module~sdr_prototree_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node5" class="node">
+<title>module~sdr_prototree_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node5"><a xlink:href="../module/sdr_prototree_module.html" xlink:title="sdr_protoTree_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="137,-612 7,-612 7,-588 137,-588 137,-612"/>
+<text text-anchor="middle" x="72" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_protoTree_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_prototree_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge4" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_prototree_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239,-381.05C232.43,-416.86 208.1,-523.58 144,-579 142.47,-580.32 140.86,-581.56 139.18,-582.73"/>
+<polygon fill="#000000" stroke="#000000" points="137.19,-579.84 130.33,-587.91 140.73,-585.88 137.19,-579.84"/>
+</g>
+<!-- module~sdr_timer_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node6" class="node">
+<title>module~sdr_timer_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node6"><a xlink:href="../module/sdr_timer_module.html" xlink:title="sdr_timer_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="126.5,-570 17.5,-570 17.5,-546 126.5,-546 126.5,-570"/>
+<text text-anchor="middle" x="72" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_timer_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;module~sdr_timer_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge5" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;module~sdr_timer_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.44,-381.26C227.81,-412.24 198.23,-494.27 144,-537 141.43,-539.03 138.66,-540.86 135.77,-542.52"/>
+<polygon fill="#000000" stroke="#000000" points="134.17,-539.4 126.76,-546.97 137.28,-545.67 134.17,-539.4"/>
+</g>
+<!-- sdr_attribute_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node7" class="node">
+<title>sdr_attribute_module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="135,-528 9,-528 9,-504 135,-504 135,-528"/>
+<text text-anchor="middle" x="72" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_attribute_module</text>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;sdr_attribute_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge6" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;sdr_attribute_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M235.06,-381.09C222.11,-406.21 188.85,-464.24 144,-495 141.61,-496.64 139.1,-498.15 136.5,-499.54"/>
+<polygon fill="#000000" stroke="#000000" points="134.92,-496.42 127.37,-503.85 137.91,-502.75 134.92,-496.42"/>
+</g>
+<!-- sdr_node_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node8" class="node">
+<title>sdr_node_module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="125.5,-486 18.5,-486 18.5,-462 125.5,-462 125.5,-486"/>
+<text text-anchor="middle" x="72" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_node_module</text>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;sdr_node_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge7" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;sdr_node_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M230.29,-381.12C213.59,-399.29 179.57,-433.54 144,-453 140.55,-454.89 136.9,-456.63 133.16,-458.22"/>
+<polygon fill="#000000" stroke="#000000" points="131.78,-455.01 123.73,-461.9 134.32,-461.53 131.78,-455.01"/>
+</g>
+<!-- sdr_spatialObj_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node9" class="node">
+<title>sdr_spatialObj_module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="138.5,-444 5.5,-444 5.5,-420 138.5,-420 138.5,-444"/>
+<text text-anchor="middle" x="72" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_spatialObj_module</text>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;sdr_spatialObj_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge8" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;sdr_spatialObj_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M215.41,-381.09C196.04,-389.99 168.67,-402.05 144,-411 138.43,-413.02 132.56,-415 126.68,-416.88"/>
+<polygon fill="#000000" stroke="#000000" points="125.34,-413.63 116.83,-419.94 127.42,-420.31 125.34,-413.63"/>
+</g>
+<!-- tem_cube_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node10" class="node">
+<title>tem_cube_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node10"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_cube_module.html" xlink:title="tem_cube_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="127.5,-402 16.5,-402 16.5,-378 127.5,-378 127.5,-402"/>
+<text text-anchor="middle" x="72" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_cube_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_cube_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge9" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_cube_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.87,-376.64C166.13,-378.36 151.51,-380.19 137.63,-381.92"/>
+<polygon fill="#000000" stroke="#000000" points="137.17,-378.45 127.68,-383.16 138.04,-385.4 137.17,-378.45"/>
+</g>
+<!-- tem_dyn_array_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node11" class="node">
+<title>tem_dyn_array_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node11"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_dyn_array_module.html" xlink:title="tem_dyn_array_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="141,-360 3,-360 3,-336 141,-336 141,-360"/>
+<text text-anchor="middle" x="72" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_dyn_array_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_dyn_array_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge10" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_dyn_array_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.87,-361.36C170.54,-360.19 160.8,-358.98 151.17,-357.77"/>
+<polygon fill="#000000" stroke="#000000" points="151.54,-354.29 141.19,-356.52 150.67,-361.24 151.54,-354.29"/>
+</g>
+<!-- tem_geometry_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node12" class="node">
+<title>tem_geometry_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node12"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_geometry_module.html" xlink:title="tem_geometry_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="140,-318 4,-318 4,-294 140,-294 140,-318"/>
+<text text-anchor="middle" x="72" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_geometry_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_geometry_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge11" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_geometry_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M215.41,-356.91C196.04,-348.01 168.67,-335.95 144,-327 138.43,-324.98 132.56,-323 126.68,-321.12"/>
+<polygon fill="#000000" stroke="#000000" points="127.42,-317.69 116.83,-318.06 125.34,-324.37 127.42,-317.69"/>
+</g>
+<!-- tem_grow_array_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node13" class="node">
+<title>tem_grow_array_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node13"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_grow_array_module.html" xlink:title="tem_grow_array_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-276 0,-276 0,-252 144,-252 144,-276"/>
+<text text-anchor="middle" x="72" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_grow_array_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_grow_array_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge12" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_grow_array_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M230.29,-356.88C213.59,-338.71 179.57,-304.46 144,-285 140.55,-283.11 136.9,-281.37 133.16,-279.78"/>
+<polygon fill="#000000" stroke="#000000" points="134.32,-276.47 123.73,-276.1 131.78,-282.99 134.32,-276.47"/>
+</g>
+<!-- tem_logging_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node14" class="node">
+<title>tem_logging_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node14"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_logging_module.html" xlink:title="tem_logging_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="134,-234 10,-234 10,-210 134,-210 134,-234"/>
+<text text-anchor="middle" x="72" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_logging_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_logging_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge13" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_logging_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M235.06,-356.91C222.11,-331.79 188.85,-273.76 144,-243 141.61,-241.36 139.1,-239.85 136.5,-238.46"/>
+<polygon fill="#000000" stroke="#000000" points="137.91,-235.25 127.37,-234.15 134.92,-241.58 137.91,-235.25"/>
+</g>
+<!-- tem_param_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node15" class="node">
+<title>tem_param_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node15"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_param_module.html" xlink:title="tem_param_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="132,-192 12,-192 12,-168 132,-168 132,-192"/>
+<text text-anchor="middle" x="72" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_param_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_param_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge14" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_param_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.44,-356.74C227.81,-325.76 198.23,-243.73 144,-201 142.2,-199.58 140.3,-198.25 138.33,-197.02"/>
+<polygon fill="#000000" stroke="#000000" points="139.75,-193.81 129.29,-192.15 136.43,-199.97 139.75,-193.81"/>
+</g>
+<!-- tem_sphere_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node16" class="node">
+<title>tem_sphere_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node16"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_sphere_module.html" xlink:title="tem_sphere_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="132.5,-150 11.5,-150 11.5,-126 132.5,-126 132.5,-150"/>
+<text text-anchor="middle" x="72" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_sphere_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_sphere_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge15" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_sphere_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239,-356.95C232.43,-321.14 208.1,-214.42 144,-159 142.47,-157.68 140.86,-156.44 139.18,-155.27"/>
+<polygon fill="#000000" stroke="#000000" points="140.73,-152.12 130.33,-150.09 137.19,-158.16 140.73,-152.12"/>
+</g>
+<!-- tem_timer_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node17" class="node">
+<title>tem_timer_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node17"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_timer_module.html" xlink:title="tem_timer_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="128.5,-108 15.5,-108 15.5,-84 128.5,-84 128.5,-108"/>
+<text text-anchor="middle" x="72" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_timer_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_timer_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge16" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_timer_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.03,-356.94C236.14,-316.64 218.06,-185.37 144,-117 142.06,-115.21 139.97,-113.57 137.77,-112.07"/>
+<polygon fill="#000000" stroke="#000000" points="139.24,-108.87 128.82,-106.94 135.76,-114.95 139.24,-108.87"/>
+</g>
+<!-- tem_tools_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node18" class="node">
+<title>tem_tools_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node18"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_tools_module.html" xlink:title="tem_tools_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="127,-66 17,-66 17,-42 127,-42 127,-66"/>
+<text text-anchor="middle" x="72" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_tools_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_tools_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge17" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_tools_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.78,-356.88C239.32,-312.41 228.13,-156.55 144,-75 141.6,-72.67 138.96,-70.6 136.14,-68.76"/>
+<polygon fill="#000000" stroke="#000000" points="137.71,-65.63 127.26,-63.89 134.34,-71.77 137.71,-65.63"/>
+</g>
+<!-- tem_topology_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_node19" class="node">
+<title>tem_topology_module</title>
+<g id="a_module~~sdr_refinept_module~~UsesGraph_node19"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_topology_module.html" xlink:title="tem_topology_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="137.5,-24 6.5,-24 6.5,0 137.5,0 137.5,-24"/>
+<text text-anchor="middle" x="72" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_topology_module</text>
+</a>
+</g>
+</g>
+<!-- module~sdr_refinept_module&#45;&gt;tem_topology_module -->
+<g id="module~~sdr_refinept_module~~UsesGraph_edge18" class="edge">
+<title>module~sdr_refinept_module&#45;&gt;tem_topology_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.36,-356.89C242.13,-308.61 238.36,-127.97 144,-33 142.9,-31.89 141.74,-30.84 140.53,-29.84"/>
+<polygon fill="#000000" stroke="#000000" points="142.18,-26.73 131.94,-24.02 138.26,-32.53 142.18,-26.73"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~sdr_refinept_module~~UsedByGraph Pages: 1 -->
+<svg id="modulesdr_refinept_moduleUsedByGraph" width="222pt" height="32pt"
+ viewBox="0.00 0.00 222.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~sdr_refinept_module~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~sdr_refinept_module~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 218,-28 218,4 -4,4"/>
+<!-- module~sdr_refinept_module -->
+<g id="module~~sdr_refinept_module~~UsedByGraph_node1" class="node">
+<title>module~sdr_refinept_module</title>
+<polygon fill="none" stroke="black" points="124,-24 0,-24 0,0 124,0 124,-24"/>
+<text text-anchor="middle" x="62" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_refinePT_module</text>
+</g>
+<!-- program~seeder -->
+<g id="module~~sdr_refinept_module~~UsedByGraph_node2" class="node">
+<title>program~seeder</title>
+<g id="a_module~~sdr_refinept_module~~UsedByGraph_node2"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="214,-24 160,-24 160,0 214,0 214,-24"/>
+<text text-anchor="middle" x="187" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+</a>
+</g>
+</g>
+<!-- program~seeder&#45;&gt;module~sdr_refinept_module -->
+<g id="module~~sdr_refinept_module~~UsedByGraph_edge1" class="edge">
+<title>program~seeder&#45;&gt;module~sdr_refinept_module</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.91,-12C152.28,-12 143.54,-12 134.51,-12"/>
+<polygon fill="#000000" stroke="#000000" points="134.22,-8.5 124.22,-12 134.22,-15.5 134.22,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-sdr_inherit_distancerefineobject"></span> <h3>public  subroutine <a href='../proc/sdr_inherit_distancerefineobject.html'>sdr_inHerit_distanceRefineObject</a>(proto, geometry)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routines inherit distance refine sphere object from root node
+down to leaf node. 
+Only the object with level greater than node level are inHerited</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~6"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>The proto tree description with all the data to refine further</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~5"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+<p>type which contains all geometry object infos</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-sdr_refine_leaf"></span> <h3>public  subroutine <a href='../proc/sdr_refine_leaf.html'>sdr_refine_leaf</a>(proto, geometry)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routine extends the protoTree with max of minlevel or level of
+refinement object.</p><a href="../proc/sdr_refine_leaf.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~7"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>The proto tree description with all the data to refine further</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~6"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+<p>type which contains all geometry object infos</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-sdr_smooth_leaf"></span> <h3>public  subroutine <a href='../proc/sdr_smooth_leaf.html'>sdr_smooth_leaf</a>(proto, header, maxLevel)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routine smoothens fluid domain with maximum level jumps of 1.</p><a href="../proc/sdr_smooth_leaf.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~10"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>preliminary tree on which childern are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-header~4"></span>
+              type(<a href='../type/sdr_confhead_type.html'>sdr_confHead_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>header</strong></td>
+            <td>
+<p>some global information on solver name and version</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxlevel~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxLevel</strong></td>
+            <td>
+<p>Maximum level in the fluid domain</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-inherit_intersectedobject"></span> <h3>private  subroutine <a href='../proc/inherit_intersectedobject.html'>inHerit_intersectedObject</a>(proto, geometry, parent, parentID, testAll, intersected_object, grwObjPos, parent_objPos, leVal, child_intersected_object, child_nodePos, memLeft, isDistRefObj)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routine inherit the intersected boundary objects from parent to
+childrens</p><a href="../proc/inherit_intersectedobject.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~8"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>The proto tree description with all the data to refine further</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~7"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+<p>type which contains all geometry object infos</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parent~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parent</strong></td>
+            <td>
+<p>Position of parent node in protoTree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parentid~3"></span>
+              integer(kind=long_k),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parentID</strong></td>
+            <td>
+<p>TreeID of parent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testall~3"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testAll</strong></td>
+            <td>
+<p>To test all intersected objects</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-intersected_object"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_intarray_type.html'>grw_intarray_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>intersected_object</strong></td>
+            <td>
+<p>Growing array of intersected objects. 
+Could be user defined  or distance refine spatial objects</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grwobjpos"></span>
+              type(grw_intersectObjPosArray_type),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grwObjPos</strong></td>
+            <td>
+<p>First and last position of intersected object of all nodes in
+intersected_object list</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parent_objpos"></span>
+              type(sdr_intersectObjPos_type),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parent_objPos</strong></td>
+            <td>
+<p>Position of first ans last intersected object of parent node 
+in intersected_object list</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-leval~3"></span>
+              type(<a href='../type/levelvalues_type.html'>levelValues_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>leVal</strong></td>
+            <td>
+<p>contains information on current level on which children are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-child_intersected_object"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_intarray_type.html'>grw_intarray_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>child_intersected_object</strong></td>
+            <td>
+<p>Temporary array of intersected objects for 8 children</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-child_nodepos~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>child_nodePos</strong>(8)</td>
+            <td>
+<p>8 children node position in protoTree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-memleft~3"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>memLeft</strong></td>
+            <td>
+<p>memory of parent intersected object unused by children</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isdistrefobj"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isDistRefObj</strong></td>
+            <td>
+<p>Is this distance refine objects</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-check_bndlevel"></span> <h3>private  subroutine <a href='../proc/check_bndlevel.html'>check_bndLevel</a>(proto, parent, parent_ID_offset, leVal, maxLevel)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routine checks if neighbor node with intersected boundary is level 
+higher than current node level.</p><a href="../proc/check_bndlevel.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~9"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>preliminary tree on which childern are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parent~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parent</strong></td>
+            <td>
+<p>Position of parent node on the dynamic array of node%treeID and node_data
+in preliminary tree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parent_id_offset~3"></span>
+              integer(kind=long_k),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parent_ID_offset</strong></td>
+            <td>
+<p>first treeID of the parent</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-leval~4"></span>
+              type(<a href='../type/levelvalues_type.html'>levelValues_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>leVal</strong></td>
+            <td>
+<p>contains information on current level on which children are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxlevel~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxLevel</strong></td>
+            <td>
+<p>Maximum level to refine current node</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-create_children"></span> <h3>private  subroutine <a href='../proc/create_children.html'>create_children</a>(proto, parent, child_nodePos, grwTreeID)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This routine append 8 children to protoTree and inherit property bits from 
+parent. leaf bit is removed from parent.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~11"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+<p>preliminary tree on which childern are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parent~6"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parent</strong></td>
+            <td>
+<p>Position of parent node on the dynamic array of node%treeID and node_data
+in preliminary tree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-child_nodepos~5"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>child_nodePos</strong>(8)</td>
+            <td>
+<p>8 children node position in protoTree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grwtreeid~3"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_longarray_type.html'>grw_longarray_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grwTreeID</strong></td>
+            <td>
+<p>Temporary growing array of TreeID contains new leaf nodes in current level</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

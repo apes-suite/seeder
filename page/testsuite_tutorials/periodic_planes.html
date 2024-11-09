@@ -1,0 +1,248 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../../favicon.png">
+
+    <title>Periodic planes &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../../css/pygments.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/local.css" rel="stylesheet">
+      <link  href="../../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>Periodic planes</h1>
+    <div class="container p-2 mb-4 bg-light border rounded-3">
+      <div class="row align-items-center justify-content-between">
+        <div class="col">
+          <ul class="list-inline" style="margin-bottom:0px; display:inline">
+          </ul>
+        </div>
+        <div class="col">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../index.html'>Build and run Seeder</a></li>
+                <li class="breadcrumb-item"><a href='index.html'>Testsuite tutorials</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Periodic planes</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-3">
+        <div class="card card-body bg-light" id="sidebar-toc">
+          <ul class="nav flex-column align-items">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Build and run Seeder</a>
+            </li>
+          </ul>
+          <hr>
+          <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="../attributes/index.html">Attribute</a>
+              <a class="nav-link" href="../features/index.html">Feature Overview</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="../features/boundary_cond.html">Boundary conditions</a>
+              <a class="nav-link" href="../features/colored_seeds.html">Colored seeds</a>
+              <a class="nav-link" href="../features/stl.html">STL</a>
+              <a class="nav-link" href="../features/sub_boundaries.html">Subresolved boundaries</a>
+              <a class="nav-link" href="../features/transformation.html">Transformation</a>
+
+                </nav>
+              <a class="nav-link" href="../sdr_algorithm.html">Seeder Algorithm</a>
+              <a class="nav-link" href="index.html">Testsuite tutorials</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="boxes.html">Box</a>
+              <a class="nav-link" href="cylinder.html">Cylinders</a>
+              <a class="nav-link" href="ful_per_cube.html">Fully periodic cube</a>
+              <a class="nav-link" href="lines.html">Line</a>
+              <a class="nav-link" href="per_plane_example.html">How to define periodic planes in lua file?</a>
+              <a class="nav-link active disabled" href="periodic_planes.html">Periodic planes</a>
+              <a class="nav-link" href="planes.html">Plane</a>
+              <a class="nav-link" href="points.html">Points</a>
+              <a class="nav-link" href="special/index.html">Special geometries</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="special/spacer.html">Spacers</a>
+
+                </nav>
+              <a class="nav-link" href="sphere.html">Sphere</a>
+              <a class="nav-link" href="triangle.html">Triangle</a>
+
+                </nav>
+          </nav>
+        </div>
+      </div>
+
+    <div class="col-9" id='text'>
+      <p>The periodic boundary condition are used to represent the domain 
+with infinite length, which is used when the simulation domain is too long.
+It can be used to reduce the simulation domain from higher dimension 
+to lower dimension for example 3D to 2D or 3D to 1D.
+On the periodic boundary, the velocity at the outlet is copied to 
+the velocity at the inlet and vice versa. </p>
+<p>Periodic planes are used to define perodic boundary in the mesh.
+Periodic plane table contains two planes, plane1 and plane2 i.e
+fluid neighbor of plane1 is mapped to plane2 and vice versa. 
+Following conditions must be satisfied in defining periodic planes</p>
+<ul>
+<li>normal direction of plane1 and plane2 should point outwards
+  fluid domain. </li>
+</ul>
+<p>In seeder, the plane normals are 
+  defined by <b> right hand rule</b>, where thump finger represents 
+  the 1st vector and index finger represents the 2nd vector and middle finger
+  represents the normal direction. This right hand rule can be seen perfectly 
+  in the left plane in the figure below.</p>
+<p><img alt="plane_per" src="plane_per.png"></p>
+<p>Above image shows the normal directions for two planes pointing outwards 
+  the fluid domain.
+  Normal direction of the plane can be changed by just swaping the vectors
+  defining planes.i.e order of vector as shown in image below.</p>
+<p><img alt="plane1" src="plane1.png"></p>
+<ul>
+<li>refinement level on both planes should be the same and there should not
+  be any level jump on the periodic planes as shown below.</li>
+</ul>
+<p><img alt="multilevel_periodic_incorrect" src="multilevel_periodic_incorrect.png"></p>
+<p>Correct plane definition should look like below</p>
+<p><img alt="multilevel_periodic_correct" src="multilevel_periodic_correct.png"></p>
+<p>This can be achieved by shifting the plane by half of element size of
+  maximum refinement level intersecting the periodic planes.\n</p>
+<p><b> If any of the above condition is not satisfied then seeder will 
+  terminate an error message. </b></p>
+<p>In seeder, when the node intersect only with periodic planes then the 
+boundary id for that direction is set to huge number. So any node 
+with direction of boundary id greater than number of boundaries then
+the following algorithm is used for that direction.</p>
+<h2>Algorithm used to generate the periodic boundary</h2>
+<ul>
+<li>Find the barycenter of the current element with periodic neighbor</li>
+<li>Find the intersected periodic plane id and its assosiated opposite
+  plane id in the growing array of periodic planes. (periodic
+  plane definition is needed to project coordinate point from one plane
+  to another and also the normal direction to get to the fluid domain)</li>
+<li>Project the barycenter of current element on its neighbor periodic 
+  plane</li>
+<li>Translate the projected point to the opposite plane</li>
+<li>Use the current search direction to move to the fluid node.</li>
+<li>get the treeID of that node and set negative of this treeID to boundary id
+  for current direction.</li>
+<li>if the fluid node is intersected by a boundary then set boundary id
+  to minimun of intersected boundary.</li>
+<li>if the fluid node is again intersected by periodic boundary,
+  then move in the negative normal direction of opposite periodic plane
+  and do step 3 and 4.</li>
+</ul>
+<p>In the solver, the periodic boundaries are identified with the boundary
+id with negative values.</p>
+<p><a href="per_plane_example.html">How to define periodic planes in lua file?</a></p>
+<p>Example lua file to generate Channel with one element in z-direction
+is available in the repository at:
+<code>testsuite/periodic/seeder.lua</code></p>
+    </div>
+  </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

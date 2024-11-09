@@ -1,0 +1,751 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sdr_geometry_type &ndash; Seeder </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>sdr_geometry_type
+      <small>Derived Type</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p> 6.9% of total for derived types.</p>Including implementation: 17 statements,  6.9% of total for derived types.">17 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_geometry_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_geometry_module.f90.html'>sdr_geometry_module.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sdr_geometry_module.html'>sdr_geometry_module</a></li>
+            <li class="breadcrumb-item active" aria-current="page">sdr_geometry_type</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-universe">universe</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-point">point</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-line~2">line</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-triangle">triangle</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-box">box</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-periplane">periPlane</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-sphere">sphere</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-ellipsoid">ellipsoid</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-cylinder">cylinder</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-spacerinterwoven">spacerInterwoven</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-spatialobj~10">spatialObj</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-attribute~3">attribute</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-smoothbounds">smoothbounds</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-smoothlevels">smoothLevels</a>
+            <a class="list-group-item" href="../type/sdr_geometry_type.html#variable-nuserobjs">nUserObjs</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2 id="type-def-statement">
+        type, public :: sdr_geometry_type</h2>
+    <p>Geometric description of the space to mesh.</p>
+<br>      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Inherits</h3>
+        </div>
+        <div class="card-body">
+          <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: type~~sdr_geometry_type~~InheritsGraph Pages: 1 -->
+<svg id="typesdr_geometry_typeInheritsGraph" width="435pt" height="494pt"
+ viewBox="0.00 0.00 435.00 494.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~sdr_geometry_type~~InheritsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 490)">
+<title>type~~sdr_geometry_type~~InheritsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-490 431,-490 431,4 -4,4"/>
+<!-- type~sdr_geometry_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node1" class="node">
+<title>type~sdr_geometry_type</title>
+<polygon fill="none" stroke="black" points="427,-255 312,-255 312,-231 427,-231 427,-255"/>
+<text text-anchor="middle" x="369.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_geometry_type</text>
+</g>
+<!-- grw_boxarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node2" class="node">
+<title>grw_boxarray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_boxarray_type.html" xlink:title="grw_boxarray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="151.5,-486 38.5,-486 38.5,-462 151.5,-462 151.5,-486"/>
+<text text-anchor="middle" x="95" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_boxarray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_boxarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge5" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_boxarray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M367.82,-255.49C365.18,-290.55 352.62,-390.5 294,-439 257.48,-469.22 203.98,-477.23 161.8,-478.09"/>
+<polygon fill="#000000" stroke="#000000" points="161.59,-474.59 151.62,-478.16 161.64,-481.59 161.59,-474.59"/>
+<text text-anchor="middle" x="251" y="-475.4" font-family="Helvetica,sans-Serif" font-size="9.50">box</text>
+</g>
+<!-- grw_cylinderarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node3" class="node">
+<title>grw_cylinderarray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node3"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_cylinderarray_type.html" xlink:title="grw_cylinderarray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="163.5,-444 26.5,-444 26.5,-420 163.5,-420 163.5,-444"/>
+<text text-anchor="middle" x="95" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_cylinderarray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_cylinderarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge9" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_cylinderarray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M366.07,-255.16C359.72,-283.62 339.82,-354.78 294,-390 259.91,-416.2 213.18,-426.95 173.68,-431.04"/>
+<polygon fill="#000000" stroke="#000000" points="173.18,-427.57 163.54,-431.96 173.82,-434.54 173.18,-427.57"/>
+<text text-anchor="middle" x="251" y="-427.4" font-family="Helvetica,sans-Serif" font-size="9.50">cylinder</text>
+</g>
+<!-- grw_ellipsoidarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node4" class="node">
+<title>grw_ellipsoidarray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node4"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_ellipsoidarray_type.html" xlink:title="grw_ellipsoidarray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="164.5,-402 25.5,-402 25.5,-378 164.5,-378 164.5,-402"/>
+<text text-anchor="middle" x="95" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_ellipsoidarray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_ellipsoidarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge8" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_ellipsoidarray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M362.86,-255.3C352.43,-276.62 328.05,-320.31 294,-343 258.91,-366.38 213.51,-378.17 175.04,-384.1"/>
+<polygon fill="#000000" stroke="#000000" points="174.3,-380.67 164.9,-385.56 175.3,-387.6 174.3,-380.67"/>
+<text text-anchor="middle" x="251" y="-378.4" font-family="Helvetica,sans-Serif" font-size="9.50">ellipsoid</text>
+</g>
+<!-- grw_linearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node5" class="node">
+<title>grw_linearray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node5"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_linearray_type.html" xlink:title="grw_linearray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="152,-360 38,-360 38,-336 152,-336 152,-360"/>
+<text text-anchor="middle" x="95" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_linearray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_linearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge3" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_linearray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M356.11,-255.02C342.12,-267.95 318.15,-288.23 294,-300 252.61,-320.17 202.12,-332.24 162.49,-339.23"/>
+<polygon fill="#000000" stroke="#000000" points="161.67,-335.82 152.4,-340.94 162.84,-342.72 161.67,-335.82"/>
+<text text-anchor="middle" x="251" y="-331.4" font-family="Helvetica,sans-Serif" font-size="9.50">line</text>
+</g>
+<!-- grw_periPlaneArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node6" class="node">
+<title>grw_periPlaneArray_type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="167.5,-318 22.5,-318 22.5,-294 167.5,-294 167.5,-318"/>
+<text text-anchor="middle" x="95" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_periPlaneArray_type</text>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_periPlaneArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge6" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_periPlaneArray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.78,-255.04C322.88,-259.5 307.86,-264.36 294,-268 256.09,-277.95 213.46,-286.47 177.5,-292.9"/>
+<polygon fill="#000000" stroke="#000000" points="176.78,-289.47 167.54,-294.66 178,-296.36 176.78,-289.47"/>
+<text text-anchor="middle" x="251" y="-288.4" font-family="Helvetica,sans-Serif" font-size="9.50">periPlane</text>
+</g>
+<!-- grw_pointarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node7" class="node">
+<title>grw_pointarray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node7"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_pointarray_type.html" xlink:title="grw_pointarray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="155.5,-276 34.5,-276 34.5,-252 155.5,-252 155.5,-276"/>
+<text text-anchor="middle" x="95" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_pointarray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_pointarray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge2" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_pointarray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.71,-247.38C269.22,-250.65 210.88,-255.15 165.59,-258.64"/>
+<polygon fill="#000000" stroke="#000000" points="165.25,-255.15 155.55,-259.41 165.79,-262.13 165.25,-255.15"/>
+<text text-anchor="middle" x="251" y="-256.4" font-family="Helvetica,sans-Serif" font-size="9.50">point</text>
+</g>
+<!-- grw_spacerInterwovenArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node8" class="node">
+<title>grw_spacerInterwovenArray_type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="190,-234 0,-234 0,-210 190,-210 190,-234"/>
+<text text-anchor="middle" x="95" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_spacerInterwovenArray_type</text>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_spacerInterwovenArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge10" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_spacerInterwovenArray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.98,-236.68C305.92,-236.08 299.83,-235.5 294,-235 263.63,-232.37 230.59,-230.01 200.37,-228.04"/>
+<polygon fill="#000000" stroke="#000000" points="200.43,-224.54 190.23,-227.39 199.98,-231.52 200.43,-224.54"/>
+<text text-anchor="middle" x="251" y="-237.4" font-family="Helvetica,sans-Serif" font-size="9.50">spacerInterwoven</text>
+</g>
+<!-- grw_spatialObjArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node9" class="node">
+<title>grw_spatialObjArray_type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="169,-192 21,-192 21,-168 169,-168 169,-192"/>
+<text text-anchor="middle" x="95" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_spatialObjArray_type</text>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_spatialObjArray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge11" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_spatialObjArray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M341.35,-230.91C327.42,-225.1 310.05,-218.45 294,-214 256.83,-203.69 214.82,-195.94 179.09,-190.46"/>
+<polygon fill="#000000" stroke="#000000" points="179.59,-187 169.19,-188.98 178.56,-193.92 179.59,-187"/>
+<text text-anchor="middle" x="251" y="-216.4" font-family="Helvetica,sans-Serif" font-size="9.50">spatialObj</text>
+</g>
+<!-- grw_spherearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node10" class="node">
+<title>grw_spherearray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node10"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_spherearray_type.html" xlink:title="grw_spherearray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="160,-150 30,-150 30,-126 160,-126 160,-150"/>
+<text text-anchor="middle" x="95" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_spherearray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_spherearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge7" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_spherearray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M357.1,-230.68C343.45,-216.71 319.26,-194.28 294,-182 255.33,-163.21 208.51,-152.33 170.11,-146.1"/>
+<polygon fill="#000000" stroke="#000000" points="170.45,-142.61 160.03,-144.53 169.38,-149.52 170.45,-142.61"/>
+<text text-anchor="middle" x="251" y="-184.4" font-family="Helvetica,sans-Serif" font-size="9.50">sphere</text>
+</g>
+<!-- grw_trianglearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node11" class="node">
+<title>grw_trianglearray_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node11"><a xlink:href="https://apes-suite.github.io/treelm/type/grw_trianglearray_type.html" xlink:title="grw_trianglearray_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="163,-108 27,-108 27,-84 163,-84 163,-108"/>
+<text text-anchor="middle" x="95" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grw_trianglearray_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;grw_trianglearray_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge4" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;grw_trianglearray_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M363.39,-230.8C353.47,-208.73 329.45,-162.3 294,-139 258.38,-115.59 212.12,-104.7 173.27,-99.74"/>
+<polygon fill="#000000" stroke="#000000" points="173.39,-96.23 163.05,-98.54 172.58,-103.18 173.39,-96.23"/>
+<text text-anchor="middle" x="251" y="-141.4" font-family="Helvetica,sans-Serif" font-size="9.50">triangle</text>
+</g>
+<!-- sdr_attrList_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node12" class="node">
+<title>sdr_attrList_type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="145,-66 45,-66 45,-42 145,-42 145,-66"/>
+<text text-anchor="middle" x="95" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_attrList_type</text>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;sdr_attrList_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge12" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;sdr_attrList_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M366.31,-230.89C360.39,-201.84 341.2,-127.96 294,-92 254.52,-61.92 198.02,-53.5 155.47,-51.98"/>
+<polygon fill="#000000" stroke="#000000" points="155.33,-48.48 145.25,-51.74 155.17,-55.48 155.33,-48.48"/>
+<text text-anchor="middle" x="251" y="-94.4" font-family="Helvetica,sans-Serif" font-size="9.50">attribute</text>
+</g>
+<!-- tem_cube_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_node13" class="node">
+<title>tem_cube_type</title>
+<g id="a_type~~sdr_geometry_type~~InheritsGraph_node13"><a xlink:href="https://apes-suite.github.io/treelm/type/tem_cube_type.html" xlink:title="tem_cube_type">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="142,-24 48,-24 48,0 142,0 142,-24"/>
+<text text-anchor="middle" x="95" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_cube_type</text>
+</a>
+</g>
+</g>
+<!-- type~sdr_geometry_type&#45;&gt;tem_cube_type -->
+<g id="type~~sdr_geometry_type~~InheritsGraph_edge1" class="edge">
+<title>type~sdr_geometry_type&#45;&gt;tem_cube_type</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M368,-230.97C365.85,-195.76 354.41,-92.33 294,-43 254.58,-10.81 195.56,-5.28 152.22,-6.46"/>
+<polygon fill="#000000" stroke="#000000" points="151.97,-2.97 142.11,-6.86 152.24,-9.96 151.97,-2.97"/>
+<text text-anchor="middle" x="251" y="-45.4" font-family="Helvetica,sans-Serif" font-size="9.50">universe</text>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#InheritsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="InheritsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="186pt" height="32pt"
+ viewBox="0.00 0.00 185.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 181.5,-28 181.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="177.5,-24 72.5,-24 72.5,0 177.5,0 177.5,-24"/>
+<text text-anchor="middle" x="125" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a derived type to the parent type which it
+extends. Dashed arrows point from a derived type to the other
+types it contains as a components, with a label listing the name(s) of
+said component(s).
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <br>
+
+    <section>
+    <h2>Components</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-universe"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/tem_cube_type.html'>tem_cube_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>universe</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>The universe given as a bounding cube.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-point"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_pointarray_type.html'>grw_pointarray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>point</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of all points</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-line~2"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_linearray_type.html'>grw_linearray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>line</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of all lines</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-triangle"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_trianglearray_type.html'>grw_trianglearray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>triangle</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of all triangles</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-box"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_boxarray_type.html'>grw_boxarray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>box</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of all boxes</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-periplane"></span>
+              type(grw_periPlaneArray_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>periPlane</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of periodic plane objects</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sphere"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_spherearray_type.html'>grw_spherearray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sphere</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of spheres</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ellipsoid"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_ellipsoidarray_type.html'>grw_ellipsoidarray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ellipsoid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of spheres</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cylinder"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_cylinderarray_type.html'>grw_cylinderarray_type</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cylinder</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of cylinders</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-spacerinterwoven"></span>
+              type(grw_spacerInterwovenArray_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>spacerInterwoven</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>growing array of spacer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-spatialobj~10"></span>
+              type(grw_spatialObjArray_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>spatialObj</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>Growing array of geometrical objects.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-attribute~3"></span>
+              type(sdr_attrList_type),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>attribute</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>Dynamic Unique array of attributes connected to the objects
+(seed, boundary or refinement)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-smoothbounds"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>smoothbounds</strong></td>
+<td> =</td>
+                <td>.true.</td>
+            <td>
+                <p>Smooth refinement towards boundaries.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-smoothlevels"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>smoothLevels</strong></td>
+<td> =</td>
+                <td>.true.</td>
+            <td>
+                <p>Smooth level jumps, avoid level jump &gt; 1 in domain</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nuserobjs"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nUserObjs</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>Number of user defined spatial objects
+i.e excluding spatial objects created for distance refine</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+
+
+
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

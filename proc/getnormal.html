@@ -1,0 +1,678 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>getNormal &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>getNormal
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.0% of total for procedures.">77 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_boundary_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_boundary_module.f90.html'>sdr_boundary_module.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sdr_boundary_module.html'>sdr_boundary_module</a></li>
+            <li class="breadcrumb-item active" aria-current="page">getNormal</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  function getNormal(geometry, elemBary, node, node_pos, bcid) result(normal)  
+</h2>
+    
+
+    <p>Obtain the surface normal of the chosen boundary if the boundary has
+<code>store_normal</code> set. Otherwise a null vector is returned.</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~12"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elembary~3"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>elemBary</strong>(3)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node"></span>
+              type(sdr_node_type),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_pos~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_pos</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bcid~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bcid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-normal"></span>
+          real(kind=rk), (3)
+        </small>
+      </h3>
+      
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~getnormal~~CallsGraph Pages: 1 -->
+<svg id="procgetnormalCallsGraph" width="291pt" height="284pt"
+ viewBox="0.00 0.00 291.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~getnormal~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
+<title>proc~~getnormal~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-280 287,-280 287,4 -4,4"/>
+<!-- proc~getnormal -->
+<g id="proc~~getnormal~~CallsGraph_node1" class="node">
+<title>proc~getnormal</title>
+<polygon fill="none" stroke="black" points="69,-150 0,-150 0,-126 69,-126 69,-150"/>
+<text text-anchor="middle" x="34.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50">getNormal</text>
+</g>
+<!-- append -->
+<g id="proc~~getnormal~~CallsGraph_node2" class="node">
+<title>append</title>
+<g id="a_proc~~getnormal~~CallsGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/interface/append~26.html" xlink:title="append">
+<polygon fill="#a7506f" stroke="#a7506f" points="221,-276 167,-276 167,-252 221,-252 221,-276"/>
+<text text-anchor="middle" x="194" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">append</text>
+</a>
+</g>
+</g>
+<!-- proc~getnormal&#45;&gt;append -->
+<g id="proc~~getnormal~~CallsGraph_edge1" class="edge">
+<title>proc~getnormal&#45;&gt;append</title>
+<path fill="none" stroke="#000000" d="M40.05,-150.24C48.94,-172.4 70.78,-219.07 105,-243 120.03,-253.51 139.66,-258.8 156.56,-261.45"/>
+<polygon fill="#000000" stroke="#000000" points="156.3,-264.94 166.67,-262.78 157.21,-258 156.3,-264.94"/>
+</g>
+<!-- destroy -->
+<g id="proc~~getnormal~~CallsGraph_node3" class="node">
+<title>destroy</title>
+<g id="a_proc~~getnormal~~CallsGraph_node3"><a xlink:href="https://apes-suite.github.io/treelm/interface/destroy~25.html" xlink:title="destroy">
+<polygon fill="#a7506f" stroke="#a7506f" points="221,-234 167,-234 167,-210 221,-210 221,-234"/>
+<text text-anchor="middle" x="194" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">destroy</text>
+</a>
+</g>
+</g>
+<!-- proc~getnormal&#45;&gt;destroy -->
+<g id="proc~~getnormal~~CallsGraph_edge2" class="edge">
+<title>proc~getnormal&#45;&gt;destroy</title>
+<path fill="none" stroke="#000000" d="M45.47,-150.18C57.9,-164.54 80.51,-188.09 105,-201 120.84,-209.35 140.03,-214.43 156.44,-217.5"/>
+<polygon fill="#000000" stroke="#000000" points="156.32,-221.02 166.76,-219.23 157.48,-214.12 156.32,-221.02"/>
+</g>
+<!-- init -->
+<g id="proc~~getnormal~~CallsGraph_node4" class="node">
+<title>init</title>
+<g id="a_proc~~getnormal~~CallsGraph_node4"><a xlink:href="https://apes-suite.github.io/treelm/interface/init~24.html" xlink:title="init">
+<polygon fill="#a7506f" stroke="#a7506f" points="221,-192 167,-192 167,-168 221,-168 221,-192"/>
+<text text-anchor="middle" x="194" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init</text>
+</a>
+</g>
+</g>
+<!-- proc~getnormal&#45;&gt;init -->
+<g id="proc~~getnormal~~CallsGraph_edge3" class="edge">
+<title>proc~getnormal&#45;&gt;init</title>
+<path fill="none" stroke="#000000" d="M69.32,-148.66C80.62,-152.1 93.32,-155.84 105,-159 121.92,-163.57 140.8,-168.14 156.73,-171.85"/>
+<polygon fill="#000000" stroke="#000000" points="156.18,-175.32 166.71,-174.16 157.76,-168.5 156.18,-175.32"/>
+</g>
+<!-- kindpos -->
+<g id="proc~~getnormal~~CallsGraph_node5" class="node">
+<title>kindpos</title>
+<polygon fill="#777777" stroke="#777777" points="221,-150 167,-150 167,-126 221,-126 221,-150"/>
+<text text-anchor="middle" x="194" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kindpos</text>
+</g>
+<!-- proc~getnormal&#45;&gt;kindpos -->
+<g id="proc~~getnormal~~CallsGraph_edge4" class="edge">
+<title>proc~getnormal&#45;&gt;kindpos</title>
+<path fill="none" stroke="#000000" d="M69.29,-138C94.87,-138 129.97,-138 156.25,-138"/>
+<polygon fill="#000000" stroke="#000000" points="156.56,-141.5 166.56,-138 156.56,-134.5 156.56,-141.5"/>
+</g>
+<!-- mrgrnk -->
+<g id="proc~~getnormal~~CallsGraph_node6" class="node">
+<title>mrgrnk</title>
+<g id="a_proc~~getnormal~~CallsGraph_node6"><a xlink:href="https://apes-suite.github.io/treelm/interface/mrgrnk.html" xlink:title="mrgrnk">
+<polygon fill="#a7506f" stroke="#a7506f" points="221,-108 167,-108 167,-84 221,-84 221,-108"/>
+<text text-anchor="middle" x="194" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mrgrnk</text>
+</a>
+</g>
+</g>
+<!-- proc~getnormal&#45;&gt;mrgrnk -->
+<g id="proc~~getnormal~~CallsGraph_edge5" class="edge">
+<title>proc~getnormal&#45;&gt;mrgrnk</title>
+<path fill="none" stroke="#000000" d="M69.32,-127.34C80.62,-123.9 93.32,-120.16 105,-117 121.92,-112.43 140.8,-107.86 156.73,-104.15"/>
+<polygon fill="#000000" stroke="#000000" points="157.76,-107.5 166.71,-101.84 156.18,-100.68 157.76,-107.5"/>
+</g>
+<!-- tem_triangle_normal_proximity -->
+<g id="proc~~getnormal~~CallsGraph_node7" class="node">
+<title>tem_triangle_normal_proximity</title>
+<g id="a_proc~~getnormal~~CallsGraph_node7"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_triangle_normal_proximity.html" xlink:title="tem_triangle_normal_proximity">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-66 105,-66 105,-42 283,-42 283,-66"/>
+<text text-anchor="middle" x="194" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_triangle_normal_proximity</text>
+</a>
+</g>
+</g>
+<!-- proc~getnormal&#45;&gt;tem_triangle_normal_proximity -->
+<g id="proc~~getnormal~~CallsGraph_edge6" class="edge">
+<title>proc~getnormal&#45;&gt;tem_triangle_normal_proximity</title>
+<path fill="none" stroke="#000000" d="M45.47,-125.82C57.9,-111.46 80.51,-87.91 105,-75 108.75,-73.02 112.69,-71.23 116.73,-69.6"/>
+<polygon fill="#000000" stroke="#000000" points="118.14,-72.81 126.33,-66.1 115.73,-66.24 118.14,-72.81"/>
+</g>
+<!-- val -->
+<g id="proc~~getnormal~~CallsGraph_node8" class="node">
+<title>val</title>
+<polygon fill="#777777" stroke="#777777" points="221,-24 167,-24 167,0 221,0 221,-24"/>
+<text text-anchor="middle" x="194" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">val</text>
+</g>
+<!-- proc~getnormal&#45;&gt;val -->
+<g id="proc~~getnormal~~CallsGraph_edge7" class="edge">
+<title>proc~getnormal&#45;&gt;val</title>
+<path fill="none" stroke="#000000" d="M40.05,-125.76C48.94,-103.6 70.78,-56.93 105,-33 120.03,-22.49 139.66,-17.2 156.56,-14.55"/>
+<polygon fill="#000000" stroke="#000000" points="157.21,-18 166.67,-13.22 156.3,-11.06 157.21,-18"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~getnormal~~CalledByGraph Pages: 1 -->
+<svg id="procgetnormalCalledByGraph" width="619pt" height="50pt"
+ viewBox="0.00 0.00 619.00 50.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~getnormal~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 46)">
+<title>proc~~getnormal~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-46 615,-46 615,4 -4,4"/>
+<!-- proc~getnormal -->
+<g id="proc~~getnormal~~CalledByGraph_node1" class="node">
+<title>proc~getnormal</title>
+<polygon fill="none" stroke="black" points="611,-24 542,-24 542,0 611,0 611,-24"/>
+<text text-anchor="middle" x="576.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">getNormal</text>
+</g>
+<!-- proc~sdr_identify_boundary -->
+<g id="proc~~getnormal~~CalledByGraph_node2" class="node">
+<title>proc~sdr_identify_boundary</title>
+<g id="a_proc~~getnormal~~CalledByGraph_node2"><a xlink:href="../proc/sdr_identify_boundary.html" xlink:title="sdr_identify_boundary">
+<polygon fill="#d9534f" stroke="#d9534f" points="506,-24 376,-24 376,0 506,0 506,-24"/>
+<text text-anchor="middle" x="441" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_identify_boundary</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_identify_boundary&#45;&gt;proc~getnormal -->
+<g id="proc~~getnormal~~CalledByGraph_edge1" class="edge">
+<title>proc~sdr_identify_boundary&#45;&gt;proc~getnormal</title>
+<path fill="none" stroke="#000000" d="M506.01,-12C514.76,-12 523.58,-12 531.85,-12"/>
+<polygon fill="#000000" stroke="#000000" points="532,-15.5 542,-12 532,-8.5 532,-15.5"/>
+</g>
+<!-- proc~proto2treelm -->
+<g id="proc~~getnormal~~CalledByGraph_node3" class="node">
+<title>proc~proto2treelm</title>
+<g id="a_proc~~getnormal~~CalledByGraph_node3"><a xlink:href="../proc/proto2treelm.html" xlink:title="proto2Treelm">
+<polygon fill="#d9534f" stroke="#d9534f" points="340,-24 258,-24 258,0 340,0 340,-24"/>
+<text text-anchor="middle" x="299" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">proto2Treelm</text>
+</a>
+</g>
+</g>
+<!-- proc~proto2treelm&#45;&gt;proc~sdr_identify_boundary -->
+<g id="proc~~getnormal~~CalledByGraph_edge2" class="edge">
+<title>proc~proto2treelm&#45;&gt;proc~sdr_identify_boundary</title>
+<path fill="none" stroke="#000000" d="M340.12,-12C348.13,-12 356.79,-12 365.54,-12"/>
+<polygon fill="#000000" stroke="#000000" points="365.82,-15.5 375.82,-12 365.82,-8.5 365.82,-15.5"/>
+</g>
+<!-- proc~traverse_tree -->
+<g id="proc~~getnormal~~CalledByGraph_node4" class="node">
+<title>proc~traverse_tree</title>
+<g id="a_proc~~getnormal~~CalledByGraph_node4"><a xlink:href="../proc/traverse_tree.html" xlink:title="traverse_tree">
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 139,-24 139,0 222,0 222,-24"/>
+<text text-anchor="middle" x="180.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">traverse_tree</text>
+</a>
+</g>
+</g>
+<!-- proc~traverse_tree&#45;&gt;proc~proto2treelm -->
+<g id="proc~~getnormal~~CalledByGraph_edge3" class="edge">
+<title>proc~traverse_tree&#45;&gt;proc~proto2treelm</title>
+<path fill="none" stroke="#000000" d="M222.25,-12C230.46,-12 239.18,-12 247.67,-12"/>
+<polygon fill="#000000" stroke="#000000" points="247.87,-15.5 257.87,-12 247.87,-8.5 247.87,-15.5"/>
+</g>
+<!-- proc~traverse_tree&#45;&gt;proc~traverse_tree -->
+<g id="proc~~getnormal~~CalledByGraph_edge5" class="edge">
+<title>proc~traverse_tree&#45;&gt;proc~traverse_tree</title>
+<path fill="none" stroke="#000000" d="M160.99,-24.01C154.18,-32.97 160.68,-42 180.5,-42 192.58,-42 199.71,-38.65 201.9,-34"/>
+<polygon fill="#000000" stroke="#000000" points="205.31,-33.19 200.01,-24.01 198.43,-34.49 205.31,-33.19"/>
+</g>
+<!-- proc~sdr_proto2treelm -->
+<g id="proc~~getnormal~~CalledByGraph_node5" class="node">
+<title>proc~sdr_proto2treelm</title>
+<g id="a_proc~~getnormal~~CalledByGraph_node5"><a xlink:href="../proc/sdr_proto2treelm.html" xlink:title="sdr_proto2treelm">
+<polygon fill="#d9534f" stroke="#d9534f" points="103,-24 0,-24 0,0 103,0 103,-24"/>
+<text text-anchor="middle" x="51.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_proto2treelm&#45;&gt;proc~traverse_tree -->
+<g id="proc~~getnormal~~CalledByGraph_edge4" class="edge">
+<title>proc~sdr_proto2treelm&#45;&gt;proc~traverse_tree</title>
+<path fill="none" stroke="#000000" d="M103.06,-12C111.52,-12 120.3,-12 128.76,-12"/>
+<polygon fill="#000000" stroke="#000000" points="128.88,-15.5 138.88,-12 128.88,-8.5 128.88,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

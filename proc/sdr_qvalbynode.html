@@ -1,0 +1,753 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Mesh generator, providing the mesh with tree information.">
+    <meta name="author" content="University of Siegen" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sdr_qValByNode &ndash; Seeder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Seeder </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../page/index.html">Build and run Seeder</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>sdr_qValByNode
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.6% of total for procedures.">42 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/sdr_boundary_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_boundary_module.f90.html'>sdr_boundary_module.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sdr_boundary_module.html'>sdr_boundary_module</a></li>
+            <li class="breadcrumb-item active" aria-current="page">sdr_qValByNode</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine sdr_qValByNode(proto, geometry, dx, iDir, origin, node_pos, qVal)  
+</h2>
+    
+
+    <p>This routine computes the minimum distance of a given link and all the
+geometries in a given node:\n
+the link is given by a vector and a origin point.\n
+the node is given by the node position in the protoTree.\n
+If there is no intersection, qVal returns -1.0</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-proto~16"></span>
+              type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>proto</strong></td>
+            <td>
+                <p>preliminary tree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-geometry~11"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>geometry</strong></td>
+            <td>
+                <p>contains all geometrical objects</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dx~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dx</strong></td>
+            <td>
+                <p>dx of current level</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idir~10"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iDir</strong></td>
+            <td>
+                <p>Direction</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-origin~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>origin</strong>(3)</td>
+            <td>
+                <p>current element barycenter</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node_pos~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>node_pos</strong></td>
+            <td>
+                <p>position of node to find the geometries</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qval~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>qVal</strong></td>
+            <td>
+                <p>distance from boundary for all 26 neighbor directions</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~sdr_qvalbynode~~CallsGraph Pages: 1 -->
+<svg id="procsdr_qvalbynodeCallsGraph" width="268pt" height="116pt"
+ viewBox="0.00 0.00 268.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~sdr_qvalbynode~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>proc~~sdr_qvalbynode~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 264,-112 264,4 -4,4"/>
+<!-- proc~sdr_qvalbynode -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_node1" class="node">
+<title>proc~sdr_qvalbynode</title>
+<polygon fill="none" stroke="black" points="98,-66 0,-66 0,-42 98,-42 98,-66"/>
+<text text-anchor="middle" x="49" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_qValByNode</text>
+</g>
+<!-- fraction_PointLine -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_node2" class="node">
+<title>fraction_PointLine</title>
+<g id="a_proc~~sdr_qvalbynode~~CallsGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/proc/fraction_pointline.html" xlink:title="fraction_PointLine">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="251,-108 143,-108 143,-84 251,-84 251,-108"/>
+<text text-anchor="middle" x="197" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fraction_PointLine</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_qvalbynode&#45;&gt;fraction_PointLine -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_edge1" class="edge">
+<title>proc~sdr_qvalbynode&#45;&gt;fraction_PointLine</title>
+<path fill="none" stroke="#000000" d="M91.84,-66.04C108.18,-70.74 127.09,-76.18 144.27,-81.12"/>
+<polygon fill="#000000" stroke="#000000" points="143.58,-84.56 154.16,-83.96 145.51,-77.83 143.58,-84.56"/>
+</g>
+<!-- intersect_RayTriangle -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_node3" class="node">
+<title>intersect_RayTriangle</title>
+<g id="a_proc~~sdr_qvalbynode~~CallsGraph_node3"><a xlink:href="https://apes-suite.github.io/treelm/proc/intersect_raytriangle.html" xlink:title="intersect_RayTriangle">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="260,-66 134,-66 134,-42 260,-42 260,-66"/>
+<text text-anchor="middle" x="197" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">intersect_RayTriangle</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_qvalbynode&#45;&gt;intersect_RayTriangle -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_edge2" class="edge">
+<title>proc~sdr_qvalbynode&#45;&gt;intersect_RayTriangle</title>
+<path fill="none" stroke="#000000" d="M98.21,-54C106.39,-54 115.04,-54 123.68,-54"/>
+<polygon fill="#000000" stroke="#000000" points="123.78,-57.5 133.78,-54 123.78,-50.5 123.78,-57.5"/>
+</g>
+<!-- val -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_node4" class="node">
+<title>val</title>
+<polygon fill="#777777" stroke="#777777" points="224,-24 170,-24 170,0 224,0 224,-24"/>
+<text text-anchor="middle" x="197" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">val</text>
+</g>
+<!-- proc~sdr_qvalbynode&#45;&gt;val -->
+<g id="proc~~sdr_qvalbynode~~CallsGraph_edge3" class="edge">
+<title>proc~sdr_qvalbynode&#45;&gt;val</title>
+<path fill="none" stroke="#000000" d="M91.84,-41.96C113.42,-35.76 139.47,-28.26 160.12,-22.32"/>
+<polygon fill="#000000" stroke="#000000" points="161.14,-25.67 169.78,-19.54 159.2,-18.94 161.14,-25.67"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~sdr_qvalbynode~~CalledByGraph Pages: 1 -->
+<svg id="procsdr_qvalbynodeCalledByGraph" width="641pt" height="72pt"
+ viewBox="0.00 0.00 641.00 72.28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~sdr_qvalbynode~~CalledByGraph" class="graph" transform="scale(0.63 0.63) rotate(0) translate(4 110)">
+<title>proc~~sdr_qvalbynode~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-110 1007,-110 1007,4 -4,4"/>
+<!-- proc~sdr_qvalbynode -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node1" class="node">
+<title>proc~sdr_qvalbynode</title>
+<polygon fill="none" stroke="black" points="1003,-64 905,-64 905,-40 1003,-40 1003,-64"/>
+<text text-anchor="middle" x="954" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50">sdr_qValByNode</text>
+</g>
+<!-- proc~flood_periphery -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node2" class="node">
+<title>proc~flood_periphery</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node2"><a xlink:href="../proc/flood_periphery.html" xlink:title="flood_periphery">
+<polygon fill="#d9534f" stroke="#d9534f" points="839,-106 742,-106 742,-82 839,-82 839,-106"/>
+<text text-anchor="middle" x="790.5" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flood_periphery</text>
+</a>
+</g>
+</g>
+<!-- proc~flood_periphery&#45;&gt;proc~sdr_qvalbynode -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge1" class="edge">
+<title>proc~flood_periphery&#45;&gt;proc~sdr_qvalbynode</title>
+<path fill="none" stroke="#000000" d="M837.78,-81.96C856.19,-77.18 877.55,-71.62 896.84,-66.6"/>
+<polygon fill="#000000" stroke="#000000" points="897.92,-69.94 906.71,-64.04 896.15,-63.17 897.92,-69.94"/>
+</g>
+<!-- proc~getbcid_and_calcqval -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node3" class="node">
+<title>proc~getbcid_and_calcqval</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node3"><a xlink:href="../proc/getbcid_and_calcqval.html" xlink:title="getBCID_and_calcQval">
+<polygon fill="#d9534f" stroke="#d9534f" points="676,-24 544,-24 544,0 676,0 676,-24"/>
+<text text-anchor="middle" x="610" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">getBCID_and_calcQval</text>
+</a>
+</g>
+</g>
+<!-- proc~getbcid_and_calcqval&#45;&gt;proc~sdr_qvalbynode -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge2" class="edge">
+<title>proc~getbcid_and_calcqval&#45;&gt;proc~sdr_qvalbynode</title>
+<path fill="none" stroke="#000000" d="M676.04,-13.71C728.42,-15.82 803.81,-20.53 869,-31 879.46,-32.68 890.53,-35.03 901.07,-37.55"/>
+<polygon fill="#000000" stroke="#000000" points="900.44,-40.99 910.99,-40 902.12,-34.2 900.44,-40.99"/>
+</g>
+<!-- proc~sdr_find_periodic_neighbor -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node4" class="node">
+<title>proc~sdr_find_periodic_neighbor</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node4"><a xlink:href="../proc/sdr_find_periodic_neighbor.html" xlink:title="sdr_find_periodic_neighbor">
+<polygon fill="#d9534f" stroke="#d9534f" points="869,-64 712,-64 712,-40 869,-40 869,-64"/>
+<text text-anchor="middle" x="790.5" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_find_periodic_neighbor</text>
+</a>
+</g>
+</g>
+<!-- proc~getbcid_and_calcqval&#45;&gt;proc~sdr_find_periodic_neighbor -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge7" class="edge">
+<title>proc~getbcid_and_calcqval&#45;&gt;proc~sdr_find_periodic_neighbor</title>
+<path fill="none" stroke="#000000" d="M664.56,-24C683.79,-28.31 705.68,-33.22 725.71,-37.7"/>
+<polygon fill="#000000" stroke="#000000" points="725.15,-41.17 735.67,-39.94 726.68,-34.34 725.15,-41.17"/>
+</g>
+<!-- proc~sdr_find_periodic_neighbor&#45;&gt;proc~sdr_qvalbynode -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge3" class="edge">
+<title>proc~sdr_find_periodic_neighbor&#45;&gt;proc~sdr_qvalbynode</title>
+<path fill="none" stroke="#000000" d="M869.41,-52C877.92,-52 886.47,-52 894.68,-52"/>
+<polygon fill="#000000" stroke="#000000" points="894.88,-55.5 904.88,-52 894.88,-48.5 894.88,-55.5"/>
+</g>
+<!-- proc~create_target -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node5" class="node">
+<title>proc~create_target</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node5"><a xlink:href="../proc/create_target.html" xlink:title="create_target">
+<polygon fill="#d9534f" stroke="#d9534f" points="342,-66 258,-66 258,-42 342,-42 342,-66"/>
+<text text-anchor="middle" x="300" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">create_target</text>
+</a>
+</g>
+</g>
+<!-- proc~create_target&#45;&gt;proc~sdr_find_periodic_neighbor -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge6" class="edge">
+<title>proc~create_target&#45;&gt;proc~sdr_find_periodic_neighbor</title>
+<path fill="none" stroke="#000000" d="M342.23,-53.83C421.22,-53.51 595.47,-52.79 701.66,-52.36"/>
+<polygon fill="#000000" stroke="#000000" points="701.73,-55.86 711.71,-52.32 701.7,-48.86 701.73,-55.86"/>
+</g>
+<!-- proc~sdr_flood_tree -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node6" class="node">
+<title>proc~sdr_flood_tree</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node6"><a xlink:href="../proc/sdr_flood_tree.html" xlink:title="sdr_flood_tree">
+<polygon fill="#d9534f" stroke="#d9534f" points="654,-106 566,-106 566,-82 654,-82 654,-106"/>
+<text text-anchor="middle" x="610" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_flood_tree</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_flood_tree&#45;&gt;proc~flood_periphery -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge4" class="edge">
+<title>proc~sdr_flood_tree&#45;&gt;proc~flood_periphery</title>
+<path fill="none" stroke="#000000" d="M654.21,-94C677.52,-94 706.59,-94 731.81,-94"/>
+<polygon fill="#000000" stroke="#000000" points="731.98,-97.5 741.98,-94 731.98,-90.5 731.98,-97.5"/>
+</g>
+<!-- proc~sdr_identify_boundary -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node7" class="node">
+<title>proc~sdr_identify_boundary</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node7"><a xlink:href="../proc/sdr_identify_boundary.html" xlink:title="sdr_identify_boundary">
+<polygon fill="#d9534f" stroke="#d9534f" points="508,-24 378,-24 378,0 508,0 508,-24"/>
+<text text-anchor="middle" x="443" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_identify_boundary</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_identify_boundary&#45;&gt;proc~getbcid_and_calcqval -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge5" class="edge">
+<title>proc~sdr_identify_boundary&#45;&gt;proc~getbcid_and_calcqval</title>
+<path fill="none" stroke="#000000" d="M508.27,-12C516.56,-12 525.12,-12 533.58,-12"/>
+<polygon fill="#000000" stroke="#000000" points="533.82,-15.5 543.82,-12 533.82,-8.5 533.82,-15.5"/>
+</g>
+<!-- proc~proto2treelm -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node8" class="node">
+<title>proc~proto2treelm</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node8"><a xlink:href="../proc/proto2treelm.html" xlink:title="proto2Treelm">
+<polygon fill="#d9534f" stroke="#d9534f" points="341,-24 259,-24 259,0 341,0 341,-24"/>
+<text text-anchor="middle" x="300" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">proto2Treelm</text>
+</a>
+</g>
+</g>
+<!-- proc~proto2treelm&#45;&gt;proc~sdr_identify_boundary -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge10" class="edge">
+<title>proc~proto2treelm&#45;&gt;proc~sdr_identify_boundary</title>
+<path fill="none" stroke="#000000" d="M341.03,-12C349.46,-12 358.61,-12 367.84,-12"/>
+<polygon fill="#000000" stroke="#000000" points="367.87,-15.5 377.87,-12 367.87,-8.5 367.87,-15.5"/>
+</g>
+<!-- proc~traverse_tree -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node9" class="node">
+<title>proc~traverse_tree</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node9"><a xlink:href="../proc/traverse_tree.html" xlink:title="traverse_tree">
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-45 139,-45 139,-21 222,-21 222,-45"/>
+<text text-anchor="middle" x="180.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">traverse_tree</text>
+</a>
+</g>
+</g>
+<!-- proc~traverse_tree&#45;&gt;proc~create_target -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge8" class="edge">
+<title>proc~traverse_tree&#45;&gt;proc~create_target</title>
+<path fill="none" stroke="#000000" d="M222.27,-40.29C230.56,-41.77 239.37,-43.34 247.97,-44.88"/>
+<polygon fill="#000000" stroke="#000000" points="247.45,-48.34 257.91,-46.66 248.68,-41.45 247.45,-48.34"/>
+</g>
+<!-- proc~traverse_tree&#45;&gt;proc~proto2treelm -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge11" class="edge">
+<title>proc~traverse_tree&#45;&gt;proc~proto2treelm</title>
+<path fill="none" stroke="#000000" d="M222.27,-25.71C230.84,-24.18 239.98,-22.55 248.85,-20.96"/>
+<polygon fill="#000000" stroke="#000000" points="249.47,-24.41 258.7,-19.2 248.24,-17.52 249.47,-24.41"/>
+</g>
+<!-- proc~traverse_tree&#45;&gt;proc~traverse_tree -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge13" class="edge">
+<title>proc~traverse_tree&#45;&gt;proc~traverse_tree</title>
+<path fill="none" stroke="#000000" d="M160.99,-45.01C154.18,-53.97 160.68,-63 180.5,-63 192.58,-63 199.71,-59.65 201.9,-55"/>
+<polygon fill="#000000" stroke="#000000" points="205.31,-54.19 200.01,-45.01 198.43,-55.49 205.31,-54.19"/>
+</g>
+<!-- program~seeder -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node10" class="node">
+<title>program~seeder</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node10"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="470,-106 416,-106 416,-82 470,-82 470,-106"/>
+<text text-anchor="middle" x="443" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+</a>
+</g>
+</g>
+<!-- program~seeder&#45;&gt;proc~sdr_flood_tree -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge9" class="edge">
+<title>program~seeder&#45;&gt;proc~sdr_flood_tree</title>
+<path fill="none" stroke="#000000" d="M470.14,-94C493.05,-94 527.05,-94 555.68,-94"/>
+<polygon fill="#000000" stroke="#000000" points="555.95,-97.5 565.95,-94 555.95,-90.5 555.95,-97.5"/>
+</g>
+<!-- proc~sdr_proto2treelm -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_node11" class="node">
+<title>proc~sdr_proto2treelm</title>
+<g id="a_proc~~sdr_qvalbynode~~CalledByGraph_node11"><a xlink:href="../proc/sdr_proto2treelm.html" xlink:title="sdr_proto2treelm">
+<polygon fill="#d9534f" stroke="#d9534f" points="103,-45 0,-45 0,-21 103,-21 103,-45"/>
+<text text-anchor="middle" x="51.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm</text>
+</a>
+</g>
+</g>
+<!-- proc~sdr_proto2treelm&#45;&gt;proc~traverse_tree -->
+<g id="proc~~sdr_qvalbynode~~CalledByGraph_edge12" class="edge">
+<title>proc~sdr_proto2treelm&#45;&gt;proc~traverse_tree</title>
+<path fill="none" stroke="#000000" d="M103.06,-33C111.52,-33 120.3,-33 128.76,-33"/>
+<polygon fill="#000000" stroke="#000000" points="128.88,-36.5 138.88,-33 128.88,-29.5 128.88,-36.5"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocsdr_qvalbynodeCalledByGraph = svgPanZoom('#procsdr_qvalbynodeCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Seeder
+ was developed by University of Siegen<br>              &copy; 2024 
+<br /><small>09089c1df7dd</small></p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-09T23:33:28.201504             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
