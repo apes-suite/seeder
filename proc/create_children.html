@@ -80,20 +80,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.4% of total for procedures.">32 statements</a>
+                 title=" 2.3% of total for procedures.">172 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/sdr_refinePT_module.f90"> Source File</a>
+              <a href="../src/sdr_protoTree_module.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/sdr_refinept_module.f90.html'>sdr_refinePT_module.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/sdr_refinept_module.html'>sdr_refinePT_module</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_prototree_module.f90.html'>sdr_protoTree_module.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sdr_prototree_module.html'>sdr_protoTree_module</a></li>
             <li class="breadcrumb-item active" aria-current="page">create_children</li>
           </ol>
         </nav>
@@ -139,12 +139,30 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine create_children(proto, parent, child_nodePos, grwTreeID)  
+    <h2>private  subroutine create_children(me, parent, geometry, leVal, testAll, minlevel)  
 </h2>
     
 
-    <p>This routine append 8 children to protoTree and inherit property bits from 
-parent. leaf bit is removed from parent.</p>
+    <p>This routine creates children for each parent if children
+ intersect with boundary object.</p>
+<p>First loop over 8 children, and test for intersection of each child cube
+ with the geometry objects inherited from the parent node.
+ Then check for various object kinds, that might be intersected:
+ If BOUNDARY objects are intersected, record the minimal bcID for later,
+ boundaries are only marked as a leaf if the maxlevel has been reached.
+ If NO BOUNDARY are intersected, the refinement can stop early here, and
+ the node is marked as leaf. This avoids overly many elements before
+ flooding.
+ If a leaf is intersecting a SEED object, mark it already as flooded here.
+ Children that do not intersect any objects do not need to be refined
+ further at this stage and are marked as leaf nodes.</p>
+<div class="alert alert-success">
+<p class="alert-title h4">Todo</p>
+<p>HK: The content of the childLoop should probably move into its
+          own subroutine, it could then also be used to define the root
+          node (treeID=0). Though this might just add a 9th check on
+          all defined objects in most cases. Needs further thinking.</p>
+</div>
 
 
     <h3>Arguments</h3>
@@ -160,7 +178,7 @@ parent. leaf bit is removed from parent.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-proto~11"></span>
+              <span class="anchor" id="variable-me~14"></span>
               type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
             </td>
 <td>intent(inout)</td>
@@ -168,14 +186,14 @@ parent. leaf bit is removed from parent.</p>
               
             </td>
             <td>::</td>
-            <td><strong>proto</strong></td>
+            <td><strong>me</strong></td>
             <td>
                 <p>preliminary tree on which childern are created</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-parent~6"></span>
+              <span class="anchor" id="variable-parent~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -185,38 +203,68 @@ parent. leaf bit is removed from parent.</p>
             <td>::</td>
             <td><strong>parent</strong></td>
             <td>
-                <p>Position of parent node on the dynamic array of node%treeID and node_data
+                <p>Position of parent node on the growing array of node_treeID and node_data
 in preliminary tree</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-child_nodepos~5"></span>
-              integer,
+              <span class="anchor" id="variable-geometry~7"></span>
+              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
             </td>
-<td>intent(out)</td>
+<td>intent(in)</td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>child_nodePos</strong>(8)</td>
+            <td><strong>geometry</strong></td>
             <td>
-                <p>8 children node position in protoTree</p>
+                <p>type which contains all geometry object infos</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grwtreeid~3"></span>
-              type(<a href='https://apes-suite.github.io/treelm/type/grw_longarray_type.html'>grw_longarray_type</a>),
+              <span class="anchor" id="variable-leval~6"></span>
+              type(<a href='../type/levelvalues_type.html'>levelValues_type</a>),
             </td>
-<td>intent(inout)</td>
+<td>intent(in)</td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>grwTreeID</strong></td>
+            <td><strong>leVal</strong></td>
             <td>
-                <p>Temporary growing array of TreeID contains new leaf nodes in current level</p>
+                <p>contains information on current level on which children are created</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testall~2"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testAll</strong></td>
+            <td>
+                <p>testAll objects only for root node</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-minlevel~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>minlevel</strong></td>
+            <td>
+                
             </td>
         </tr>
     </tbody>
@@ -234,94 +282,304 @@ in preliminary tree</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~create_children~~CallsGraph Pages: 1 -->
-<svg id="proccreate_childrenCallsGraph" width="314pt" height="242pt"
- viewBox="0.00 0.00 314.00 242.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~create_children~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 238)">
+<svg id="proccreate_childrenCallsGraph" width="569pt" height="570pt"
+ viewBox="0.00 0.00 569.00 570.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~create_children~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 566)">
 <title>proc~~create_children~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-238 310,-238 310,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-566 565,-566 565,4 -4,4"/>
 <!-- proc~create_children -->
 <g id="proc~~create_children~~CallsGraph_node1" class="node">
 <title>proc~create_children</title>
-<polygon fill="none" stroke="black" points="94,-129 0,-129 0,-105 94,-105 94,-129"/>
-<text text-anchor="middle" x="47" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50">create_children</text>
+<polygon fill="none" stroke="black" points="94,-230 0,-230 0,-206 94,-206 94,-230"/>
+<text text-anchor="middle" x="47" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50">create_children</text>
 </g>
 <!-- append -->
 <g id="proc~~create_children~~CallsGraph_node2" class="node">
 <title>append</title>
-<g id="a_proc~~create_children~~CallsGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/interface/append~26.html" xlink:title="append">
-<polygon fill="#a7506f" stroke="#a7506f" points="245,-234 191,-234 191,-210 245,-210 245,-234"/>
-<text text-anchor="middle" x="218" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">append</text>
+<g id="a_proc~~create_children~~CallsGraph_node2"><a xlink:href="https://apes-suite.github.io/treelm/interface/append~13.html" xlink:title="append">
+<polygon fill="#a7506f" stroke="#a7506f" points="256.5,-436 202.5,-436 202.5,-412 256.5,-412 256.5,-436"/>
+<text text-anchor="middle" x="229.5" y="-421.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">append</text>
 </a>
 </g>
 </g>
 <!-- proc~create_children&#45;&gt;append -->
 <g id="proc~~create_children~~CallsGraph_edge1" class="edge">
 <title>proc~create_children&#45;&gt;append</title>
-<path fill="none" stroke="#000000" d="M56.29,-129.1C69.61,-147.56 97.58,-182.56 130,-201 145.4,-209.76 164.34,-214.88 180.61,-217.87"/>
-<polygon fill="#000000" stroke="#000000" points="180.42,-221.38 190.86,-219.54 181.55,-214.48 180.42,-221.38"/>
+<path fill="none" stroke="#000000" d="M49.58,-230.22C54.59,-263.6 73.26,-356.95 130,-403 147.34,-417.08 171.9,-422.33 192.16,-424.07"/>
+<polygon fill="#000000" stroke="#000000" points="192.1,-427.57 202.3,-424.68 192.53,-420.58 192.1,-427.57"/>
 </g>
-<!-- sdr_clear_nodeprop_bit -->
+<!-- bc_color_id -->
 <g id="proc~~create_children~~CallsGraph_node3" class="node">
-<title>sdr_clear_nodeprop_bit</title>
-<polygon fill="#777777" stroke="#777777" points="286,-192 150,-192 150,-168 286,-168 286,-192"/>
-<text text-anchor="middle" x="218" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_clear_nodeprop_bit</text>
+<title>bc_color_id</title>
+<polygon fill="#777777" stroke="#777777" points="266,-394 193,-394 193,-370 266,-370 266,-394"/>
+<text text-anchor="middle" x="229.5" y="-379.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bc_color_id</text>
 </g>
-<!-- proc~create_children&#45;&gt;sdr_clear_nodeprop_bit -->
+<!-- proc~create_children&#45;&gt;bc_color_id -->
 <g id="proc~~create_children~~CallsGraph_edge2" class="edge">
-<title>proc~create_children&#45;&gt;sdr_clear_nodeprop_bit</title>
-<path fill="none" stroke="#000000" d="M68.28,-129.1C84.51,-138.36 108.1,-150.88 130,-159 136.02,-161.23 142.37,-163.29 148.78,-165.18"/>
-<polygon fill="#000000" stroke="#000000" points="148.29,-168.67 158.86,-167.99 150.17,-161.93 148.29,-168.67"/>
+<title>proc~create_children&#45;&gt;bc_color_id</title>
+<path fill="none" stroke="#000000" d="M51.29,-230.27C59.48,-258.28 83.52,-327.11 130,-361 145.12,-372.02 164.8,-377.5 182.6,-380.14"/>
+<polygon fill="#000000" stroke="#000000" points="182.46,-383.65 192.81,-381.39 183.31,-376.7 182.46,-383.65"/>
+</g>
+<!-- proc~is_intersecting -->
+<g id="proc~~create_children~~CallsGraph_node4" class="node">
+<title>proc~is_intersecting</title>
+<g id="a_proc~~create_children~~CallsGraph_node4"><a xlink:href="../proc/is_intersecting.html" xlink:title="is_intersecting">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="274,-352 185,-352 185,-328 274,-328 274,-352"/>
+<text text-anchor="middle" x="229.5" y="-337.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">is_intersecting</text>
+</a>
+</g>
+</g>
+<!-- proc~create_children&#45;&gt;proc~is_intersecting -->
+<g id="proc~~create_children~~CallsGraph_edge3" class="edge">
+<title>proc~create_children&#45;&gt;proc~is_intersecting</title>
+<path fill="none" stroke="#000000" d="M54.9,-230.08C67.24,-250.58 95.11,-292.08 130,-314 143.39,-322.41 159.44,-328.12 174.67,-331.99"/>
+<polygon fill="#000000" stroke="#000000" points="173.98,-335.42 184.51,-334.27 175.56,-328.6 173.98,-335.42"/>
+</g>
+<!-- proc~mark_leafnode -->
+<g id="proc~~create_children~~CallsGraph_node5" class="node">
+<title>proc~mark_leafnode</title>
+<g id="a_proc~~create_children~~CallsGraph_node5"><a xlink:href="../proc/mark_leafnode.html" xlink:title="mark_leafNode">
+<polygon fill="#d9534f" stroke="#d9534f" points="276.5,-24 182.5,-24 182.5,0 276.5,0 276.5,-24"/>
+<text text-anchor="middle" x="229.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mark_leafNode</text>
+</a>
+</g>
+</g>
+<!-- proc~create_children&#45;&gt;proc~mark_leafnode -->
+<g id="proc~~create_children~~CallsGraph_edge4" class="edge">
+<title>proc~create_children&#45;&gt;proc~mark_leafnode</title>
+<path fill="none" stroke="#000000" d="M49.58,-205.78C54.59,-172.4 73.26,-79.05 130,-33 141.86,-23.38 157.09,-17.87 172.01,-14.8"/>
+<polygon fill="#000000" stroke="#000000" points="172.99,-18.19 182.25,-13.04 171.8,-11.29 172.99,-18.19"/>
+</g>
+<!-- sdr_append_childintersectedobject -->
+<g id="proc~~create_children~~CallsGraph_node6" class="node">
+<title>sdr_append_childintersectedobject</title>
+<polygon fill="#777777" stroke="#777777" points="329,-272 130,-272 130,-248 329,-248 329,-272"/>
+<text text-anchor="middle" x="229.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_append_childintersectedobject</text>
+</g>
+<!-- proc~create_children&#45;&gt;sdr_append_childintersectedobject -->
+<g id="proc~~create_children~~CallsGraph_edge5" class="edge">
+<title>proc~create_children&#45;&gt;sdr_append_childintersectedobject</title>
+<path fill="none" stroke="#000000" d="M93.89,-230.1C105.64,-233.1 118.27,-236.25 130,-239 139.7,-241.28 149.97,-243.58 160.06,-245.79"/>
+<polygon fill="#000000" stroke="#000000" points="159.56,-249.26 170.08,-247.95 161.05,-242.42 159.56,-249.26"/>
 </g>
 <!-- sdr_inheritbnd_eligiblechildren -->
-<g id="proc~~create_children~~CallsGraph_node4" class="node">
+<g id="proc~~create_children~~CallsGraph_node7" class="node">
 <title>sdr_inheritbnd_eligiblechildren</title>
-<polygon fill="#777777" stroke="#777777" points="306,-150 130,-150 130,-126 306,-126 306,-150"/>
-<text text-anchor="middle" x="218" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_inheritbnd_eligiblechildren</text>
+<polygon fill="#777777" stroke="#777777" points="317.5,-230 141.5,-230 141.5,-206 317.5,-206 317.5,-230"/>
+<text text-anchor="middle" x="229.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_inheritbnd_eligiblechildren</text>
 </g>
 <!-- proc~create_children&#45;&gt;sdr_inheritbnd_eligiblechildren -->
-<g id="proc~~create_children~~CallsGraph_edge3" class="edge">
+<g id="proc~~create_children~~CallsGraph_edge6" class="edge">
 <title>proc~create_children&#45;&gt;sdr_inheritbnd_eligiblechildren</title>
-<path fill="none" stroke="#000000" d="M94.18,-122.74C102.27,-123.74 110.96,-124.82 119.85,-125.93"/>
-<polygon fill="#000000" stroke="#000000" points="119.58,-129.42 129.93,-127.18 120.44,-122.47 119.58,-129.42"/>
+<path fill="none" stroke="#000000" d="M94.01,-218C105.47,-218 118.19,-218 131.11,-218"/>
+<polygon fill="#000000" stroke="#000000" points="131.49,-221.5 141.49,-218 131.49,-214.5 131.49,-221.5"/>
+</g>
+<!-- sdr_mark_floodnode -->
+<g id="proc~~create_children~~CallsGraph_node8" class="node">
+<title>sdr_mark_floodnode</title>
+<polygon fill="#777777" stroke="#777777" points="290,-188 169,-188 169,-164 290,-164 290,-188"/>
+<text text-anchor="middle" x="229.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_mark_floodnode</text>
+</g>
+<!-- proc~create_children&#45;&gt;sdr_mark_floodnode -->
+<g id="proc~~create_children~~CallsGraph_edge7" class="edge">
+<title>proc~create_children&#45;&gt;sdr_mark_floodnode</title>
+<path fill="none" stroke="#000000" d="M93.89,-205.9C105.64,-202.9 118.27,-199.75 130,-197 139.7,-194.72 149.97,-192.42 160.06,-190.21"/>
+<polygon fill="#000000" stroke="#000000" points="161.05,-193.58 170.08,-188.05 159.56,-186.74 161.05,-193.58"/>
 </g>
 <!-- sdr_set_nodeprop_bit -->
-<g id="proc~~create_children~~CallsGraph_node5" class="node">
+<g id="proc~~create_children~~CallsGraph_node9" class="node">
 <title>sdr_set_nodeprop_bit</title>
-<polygon fill="#777777" stroke="#777777" points="280.5,-108 155.5,-108 155.5,-84 280.5,-84 280.5,-108"/>
-<text text-anchor="middle" x="218" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_set_nodeprop_bit</text>
+<polygon fill="#777777" stroke="#777777" points="525.5,-83 400.5,-83 400.5,-59 525.5,-59 525.5,-83"/>
+<text text-anchor="middle" x="463" y="-68.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_set_nodeprop_bit</text>
 </g>
 <!-- proc~create_children&#45;&gt;sdr_set_nodeprop_bit -->
-<g id="proc~~create_children~~CallsGraph_edge4" class="edge">
+<g id="proc~~create_children~~CallsGraph_edge8" class="edge">
 <title>proc~create_children&#45;&gt;sdr_set_nodeprop_bit</title>
-<path fill="none" stroke="#000000" d="M94.18,-111.26C109.95,-109.3 127.97,-107.06 145.27,-104.91"/>
-<polygon fill="#000000" stroke="#000000" points="145.85,-108.37 155.34,-103.66 144.99,-101.42 145.85,-108.37"/>
+<path fill="none" stroke="#000000" d="M59.85,-205.93C74.81,-191.46 101.99,-167.57 130,-155 212.15,-118.13 242,-140.22 329,-117 360.61,-108.56 395.53,-96.37 421.66,-86.65"/>
+<polygon fill="#000000" stroke="#000000" points="423.09,-89.86 431.22,-83.07 420.63,-83.3 423.09,-89.86"/>
+</g>
+<!-- tem_CoordOfId -->
+<g id="proc~~create_children~~CallsGraph_node10" class="node">
+<title>tem_CoordOfId</title>
+<g id="a_proc~~create_children~~CallsGraph_node10"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_coordofid.html" xlink:title="tem_CoordOfId">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="276,-108 183,-108 183,-84 276,-84 276,-108"/>
+<text text-anchor="middle" x="229.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_CoordOfId</text>
+</a>
+</g>
+</g>
+<!-- proc~create_children&#45;&gt;tem_CoordOfId -->
+<g id="proc~~create_children~~CallsGraph_edge9" class="edge">
+<title>proc~create_children&#45;&gt;tem_CoordOfId</title>
+<path fill="none" stroke="#000000" d="M54.9,-205.92C67.24,-185.42 95.11,-143.92 130,-122 142.78,-113.97 157.98,-108.41 172.57,-104.56"/>
+<polygon fill="#000000" stroke="#000000" points="173.63,-107.9 182.53,-102.15 171.99,-101.09 173.63,-107.9"/>
 </g>
 <!-- tem_directChildren -->
-<g id="proc~~create_children~~CallsGraph_node6" class="node">
+<g id="proc~~create_children~~CallsGraph_node11" class="node">
 <title>tem_directChildren</title>
-<g id="a_proc~~create_children~~CallsGraph_node6"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_directchildren.html" xlink:title="tem_directChildren">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="274.5,-66 161.5,-66 161.5,-42 274.5,-42 274.5,-66"/>
-<text text-anchor="middle" x="218" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_directChildren</text>
+<g id="a_proc~~create_children~~CallsGraph_node11"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_directchildren.html" xlink:title="tem_directChildren">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="286,-66 173,-66 173,-42 286,-42 286,-66"/>
+<text text-anchor="middle" x="229.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_directChildren</text>
 </a>
 </g>
 </g>
 <!-- proc~create_children&#45;&gt;tem_directChildren -->
-<g id="proc~~create_children~~CallsGraph_edge5" class="edge">
+<g id="proc~~create_children~~CallsGraph_edge10" class="edge">
 <title>proc~create_children&#45;&gt;tem_directChildren</title>
-<path fill="none" stroke="#000000" d="M68.28,-104.9C84.51,-95.64 108.1,-83.12 130,-75 136.81,-72.47 144.04,-70.17 151.3,-68.09"/>
-<polygon fill="#000000" stroke="#000000" points="152.45,-71.4 161.18,-65.4 150.61,-64.65 152.45,-71.4"/>
+<path fill="none" stroke="#000000" d="M51.29,-205.73C59.48,-177.72 83.52,-108.89 130,-75 139.71,-67.92 151.31,-63.12 163.09,-59.9"/>
+<polygon fill="#000000" stroke="#000000" points="164.06,-63.27 172.98,-57.55 162.44,-56.46 164.06,-63.27"/>
 </g>
 <!-- val -->
-<g id="proc~~create_children~~CallsGraph_node7" class="node">
+<g id="proc~~create_children~~CallsGraph_node12" class="node">
 <title>val</title>
-<polygon fill="#777777" stroke="#777777" points="245,-24 191,-24 191,0 245,0 245,-24"/>
-<text text-anchor="middle" x="218" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">val</text>
+<polygon fill="#777777" stroke="#777777" points="490,-184 436,-184 436,-160 490,-160 490,-184"/>
+<text text-anchor="middle" x="463" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">val</text>
 </g>
 <!-- proc~create_children&#45;&gt;val -->
-<g id="proc~~create_children~~CallsGraph_edge6" class="edge">
+<g id="proc~~create_children~~CallsGraph_edge11" class="edge">
 <title>proc~create_children&#45;&gt;val</title>
-<path fill="none" stroke="#000000" d="M56.29,-104.9C69.61,-86.44 97.58,-51.44 130,-33 145.4,-24.24 164.34,-19.12 180.61,-16.13"/>
-<polygon fill="#000000" stroke="#000000" points="181.55,-19.52 190.86,-14.46 180.42,-12.62 181.55,-19.52"/>
+<path fill="none" stroke="#000000" d="M58.75,-230.16C73.17,-245.46 100.42,-270.95 130,-281 213.74,-309.45 255.57,-330.3 329,-281 364.08,-257.45 332.62,-220.15 365,-193 381.75,-178.95 405.73,-173.67 425.65,-171.92"/>
+<polygon fill="#000000" stroke="#000000" points="425.88,-175.41 435.64,-171.29 425.44,-168.42 425.88,-175.41"/>
+</g>
+<!-- proc~is_intersecting&#45;&gt;val -->
+<g id="proc~~create_children~~CallsGraph_edge21" class="edge">
+<title>proc~is_intersecting&#45;&gt;val</title>
+<path fill="none" stroke="#000000" d="M274.44,-337.83C293.41,-334.72 314.52,-328.03 329,-314 369.29,-274.95 323.85,-231.14 365,-193 381.14,-178.04 405.33,-172.78 425.51,-171.27"/>
+<polygon fill="#000000" stroke="#000000" points="425.81,-174.76 435.63,-170.78 425.48,-167.76 425.81,-174.76"/>
+</g>
+<!-- sdr_periodicplanecubeoverlap -->
+<g id="proc~~create_children~~CallsGraph_node13" class="node">
+<title>sdr_periodicplanecubeoverlap</title>
+<polygon fill="#777777" stroke="#777777" points="550.5,-478 375.5,-478 375.5,-454 550.5,-454 550.5,-478"/>
+<text text-anchor="middle" x="463" y="-463.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_periodicplanecubeoverlap</text>
+</g>
+<!-- proc~is_intersecting&#45;&gt;sdr_periodicplanecubeoverlap -->
+<g id="proc~~create_children~~CallsGraph_edge12" class="edge">
+<title>proc~is_intersecting&#45;&gt;sdr_periodicplanecubeoverlap</title>
+<path fill="none" stroke="#000000" d="M274.08,-340.59C292.76,-342.89 313.74,-348.45 329,-361 360.38,-386.79 333.66,-419.16 365,-445 366.6,-446.32 368.25,-447.55 369.97,-448.72"/>
+<polygon fill="#000000" stroke="#000000" points="368.54,-451.94 378.94,-453.96 372.07,-445.89 368.54,-451.94"/>
+</g>
+<!-- sdr_spacerinterwovencubeoverlap -->
+<g id="proc~~create_children~~CallsGraph_node14" class="node">
+<title>sdr_spacerinterwovencubeoverlap</title>
+<polygon fill="#777777" stroke="#777777" points="561,-436 365,-436 365,-412 561,-412 561,-436"/>
+<text text-anchor="middle" x="463" y="-421.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_spacerinterwovencubeoverlap</text>
+</g>
+<!-- proc~is_intersecting&#45;&gt;sdr_spacerinterwovencubeoverlap -->
+<g id="proc~~create_children~~CallsGraph_edge13" class="edge">
+<title>proc~is_intersecting&#45;&gt;sdr_spacerinterwovencubeoverlap</title>
+<path fill="none" stroke="#000000" d="M274.43,-343.19C292.33,-346.01 312.62,-351.26 329,-361 350.14,-373.56 343.88,-390.41 365,-403 368.05,-404.82 371.24,-406.48 374.53,-408"/>
+<polygon fill="#000000" stroke="#000000" points="373.43,-411.34 384.01,-411.92 376.1,-404.87 373.43,-411.34"/>
+</g>
+<!-- tem_boxCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node15" class="node">
+<title>tem_boxCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node15"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_boxcubeoverlap.html" xlink:title="tem_boxCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="526.5,-394 399.5,-394 399.5,-370 526.5,-370 526.5,-394"/>
+<text text-anchor="middle" x="463" y="-379.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_boxCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_boxCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge14" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_boxCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.04,-347.9C306.51,-353.79 351.58,-361.97 389.46,-368.84"/>
+<polygon fill="#000000" stroke="#000000" points="388.96,-372.31 399.42,-370.65 390.21,-365.42 388.96,-372.31"/>
+</g>
+<!-- tem_cylinderCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node16" class="node">
+<title>tem_cylinderCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node16"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_cylindercubeoverlap.html" xlink:title="tem_cylinderCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="538.5,-352 387.5,-352 387.5,-328 538.5,-328 538.5,-352"/>
+<text text-anchor="middle" x="463" y="-337.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_cylinderCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_cylinderCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge15" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_cylinderCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.04,-340C303.01,-340 342.02,-340 377,-340"/>
+<polygon fill="#000000" stroke="#000000" points="377.23,-343.5 387.23,-340 377.23,-336.5 377.23,-343.5"/>
+</g>
+<!-- tem_ellipsoidCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node17" class="node">
+<title>tem_ellipsoidCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node17"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_ellipsoidcubeoverlap.html" xlink:title="tem_ellipsoidCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="539.5,-310 386.5,-310 386.5,-286 539.5,-286 539.5,-310"/>
+<text text-anchor="middle" x="463" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_ellipsoidCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_ellipsoidCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge16" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_ellipsoidCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.04,-332.1C305.29,-326.43 348.23,-318.64 385.17,-311.94"/>
+<polygon fill="#000000" stroke="#000000" points="386.21,-315.31 395.42,-310.08 384.96,-308.42 386.21,-315.31"/>
+</g>
+<!-- tem_lineCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node18" class="node">
+<title>tem_lineCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node18"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_linecubeoverlap.html" xlink:title="tem_lineCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="527,-268 399,-268 399,-244 527,-244 527,-268"/>
+<text text-anchor="middle" x="463" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_lineCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_lineCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge17" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_lineCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.17,-333.74C292.02,-329.88 312.35,-323.72 329,-314 348.81,-302.43 344.93,-288.12 365,-277 372.56,-272.81 380.87,-269.46 389.36,-266.77"/>
+<polygon fill="#000000" stroke="#000000" points="390.34,-270.14 398.99,-264.02 388.41,-263.41 390.34,-270.14"/>
+</g>
+<!-- tem_pointCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node19" class="node">
+<title>tem_pointCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node19"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_pointcubeoverlap.html" xlink:title="tem_pointCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="531,-226 395,-226 395,-202 531,-202 531,-226"/>
+<text text-anchor="middle" x="463" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_pointCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_pointCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge18" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_pointCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.07,-336.79C292.74,-333.46 313.72,-326.88 329,-314 358.5,-289.12 334.95,-259.21 365,-235 371.08,-230.1 378.06,-226.27 385.41,-223.3"/>
+<polygon fill="#000000" stroke="#000000" points="386.62,-226.58 394.9,-219.97 384.3,-219.98 386.62,-226.58"/>
+</g>
+<!-- tem_sphereCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node20" class="node">
+<title>tem_sphereCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node20"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_spherecubeoverlap.html" xlink:title="tem_sphereCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="535.5,-562 390.5,-562 390.5,-538 535.5,-538 535.5,-562"/>
+<text text-anchor="middle" x="463" y="-547.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_sphereCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_sphereCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge19" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_sphereCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.03,-339.14C293.27,-341.06 314.71,-346.73 329,-361 383.02,-414.97 311.06,-474.95 365,-529 369.63,-533.64 375.03,-537.37 380.87,-540.35"/>
+<polygon fill="#000000" stroke="#000000" points="379.78,-543.69 390.35,-544.44 382.56,-537.26 379.78,-543.69"/>
+</g>
+<!-- tem_triangleCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_node21" class="node">
+<title>tem_triangleCubeOverlap</title>
+<g id="a_proc~~create_children~~CallsGraph_node21"><a xlink:href="https://apes-suite.github.io/treelm/proc/tem_trianglecubeoverlap.html" xlink:title="tem_triangleCubeOverlap">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="538,-520 388,-520 388,-496 538,-496 538,-520"/>
+<text text-anchor="middle" x="463" y="-505.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_triangleCubeOverlap</text>
+</a>
+</g>
+</g>
+<!-- proc~is_intersecting&#45;&gt;tem_triangleCubeOverlap -->
+<g id="proc~~create_children~~CallsGraph_edge20" class="edge">
+<title>proc~is_intersecting&#45;&gt;tem_triangleCubeOverlap</title>
+<path fill="none" stroke="#000000" d="M274.35,-339.66C293.31,-341.74 314.43,-347.39 329,-361 371.56,-400.75 322.5,-447.18 365,-487 369.09,-490.83 373.7,-494.02 378.64,-496.68"/>
+<polygon fill="#000000" stroke="#000000" points="377.29,-499.92 387.84,-500.92 380.22,-493.56 377.29,-499.92"/>
+</g>
+<!-- proc~mark_leafnode&#45;&gt;sdr_set_nodeprop_bit -->
+<g id="proc~~create_children~~CallsGraph_edge22" class="edge">
+<title>proc~mark_leafnode&#45;&gt;sdr_set_nodeprop_bit</title>
+<path fill="none" stroke="#000000" d="M276.75,-21.18C293.29,-24.64 312.03,-28.77 329,-33 356.98,-39.97 387.97,-48.76 412.99,-56.13"/>
+<polygon fill="#000000" stroke="#000000" points="412.03,-59.5 422.62,-58.98 414.02,-52.79 412.03,-59.5"/>
 </g>
 </g>
 </svg>
@@ -415,67 +673,46 @@ implementation in a submodule of an interface in a parent module.
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~create_children~~CalledByGraph Pages: 1 -->
-<svg id="proccreate_childrenCalledByGraph" width="328pt" height="74pt"
- viewBox="0.00 0.00 328.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~create_children~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<svg id="proccreate_childrenCalledByGraph" width="343pt" height="32pt"
+ viewBox="0.00 0.00 343.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~create_children~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~create_children~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 324,-70 324,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 339,-28 339,4 -4,4"/>
 <!-- proc~create_children -->
 <g id="proc~~create_children~~CalledByGraph_node1" class="node">
 <title>proc~create_children</title>
-<polygon fill="none" stroke="black" points="320,-45 226,-45 226,-21 320,-21 320,-45"/>
-<text text-anchor="middle" x="273" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">create_children</text>
+<polygon fill="none" stroke="black" points="335,-24 241,-24 241,0 335,0 335,-24"/>
+<text text-anchor="middle" x="288" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">create_children</text>
 </g>
-<!-- proc~sdr_refine_leaf -->
+<!-- proc~sdr_build_prototree -->
 <g id="proc~~create_children~~CalledByGraph_node2" class="node">
-<title>proc~sdr_refine_leaf</title>
-<g id="a_proc~~create_children~~CalledByGraph_node2"><a xlink:href="../proc/sdr_refine_leaf.html" xlink:title="sdr_refine_leaf">
-<polygon fill="#d9534f" stroke="#d9534f" points="185.5,-66 94.5,-66 94.5,-42 185.5,-42 185.5,-66"/>
-<text text-anchor="middle" x="140" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_refine_leaf</text>
+<title>proc~sdr_build_prototree</title>
+<g id="a_proc~~create_children~~CalledByGraph_node2"><a xlink:href="../proc/sdr_build_prototree.html" xlink:title="sdr_build_protoTree">
+<polygon fill="#d9534f" stroke="#d9534f" points="205,-24 90,-24 90,0 205,0 205,-24"/>
+<text text-anchor="middle" x="147.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_build_protoTree</text>
 </a>
 </g>
 </g>
-<!-- proc~sdr_refine_leaf&#45;&gt;proc~create_children -->
+<!-- proc~sdr_build_prototree&#45;&gt;proc~create_children -->
 <g id="proc~~create_children~~CalledByGraph_edge1" class="edge">
-<title>proc~sdr_refine_leaf&#45;&gt;proc~create_children</title>
-<path fill="none" stroke="#000000" d="M185.72,-46.83C195.39,-45.28 205.74,-43.62 215.79,-42.01"/>
-<polygon fill="#000000" stroke="#000000" points="216.38,-45.46 225.7,-40.42 215.27,-38.55 216.38,-45.46"/>
-</g>
-<!-- proc~sdr_smooth_leaf -->
-<g id="proc~~create_children~~CalledByGraph_node3" class="node">
-<title>proc~sdr_smooth_leaf</title>
-<g id="a_proc~~create_children~~CalledByGraph_node3"><a xlink:href="../proc/sdr_smooth_leaf.html" xlink:title="sdr_smooth_leaf">
-<polygon fill="#d9534f" stroke="#d9534f" points="190,-24 90,-24 90,0 190,0 190,-24"/>
-<text text-anchor="middle" x="140" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_smooth_leaf</text>
-</a>
-</g>
-</g>
-<!-- proc~sdr_smooth_leaf&#45;&gt;proc~create_children -->
-<g id="proc~~create_children~~CalledByGraph_edge2" class="edge">
-<title>proc~sdr_smooth_leaf&#45;&gt;proc~create_children</title>
-<path fill="none" stroke="#000000" d="M190.15,-19.88C198.41,-21.2 207.04,-22.59 215.47,-23.94"/>
-<polygon fill="#000000" stroke="#000000" points="215.18,-27.44 225.61,-25.56 216.29,-20.52 215.18,-27.44"/>
+<title>proc~sdr_build_prototree&#45;&gt;proc~create_children</title>
+<path fill="none" stroke="#000000" d="M205.23,-12C213.62,-12 222.27,-12 230.65,-12"/>
+<polygon fill="#000000" stroke="#000000" points="230.71,-15.5 240.71,-12 230.71,-8.5 230.71,-15.5"/>
 </g>
 <!-- program~seeder -->
-<g id="proc~~create_children~~CalledByGraph_node4" class="node">
+<g id="proc~~create_children~~CalledByGraph_node3" class="node">
 <title>program~seeder</title>
-<g id="a_proc~~create_children~~CalledByGraph_node4"><a xlink:href="../program/seeder.html" xlink:title="seeder">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-45 0,-45 0,-21 54,-21 54,-45"/>
-<text text-anchor="middle" x="27" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
+<g id="a_proc~~create_children~~CalledByGraph_node3"><a xlink:href="../program/seeder.html" xlink:title="seeder">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
 </a>
 </g>
 </g>
-<!-- program~seeder&#45;&gt;proc~sdr_refine_leaf -->
-<g id="proc~~create_children~~CalledByGraph_edge3" class="edge">
-<title>program~seeder&#45;&gt;proc~sdr_refine_leaf</title>
-<path fill="none" stroke="#000000" d="M54.02,-37.92C63.15,-39.65 73.78,-41.66 84.37,-43.66"/>
-<polygon fill="#000000" stroke="#000000" points="83.98,-47.15 94.45,-45.57 85.28,-40.27 83.98,-47.15"/>
-</g>
-<!-- program~seeder&#45;&gt;proc~sdr_smooth_leaf -->
-<g id="proc~~create_children~~CalledByGraph_edge4" class="edge">
-<title>program~seeder&#45;&gt;proc~sdr_smooth_leaf</title>
-<path fill="none" stroke="#000000" d="M54.02,-28.08C61.75,-26.61 70.56,-24.95 79.5,-23.26"/>
-<polygon fill="#000000" stroke="#000000" points="80.43,-26.64 89.6,-21.35 79.13,-19.77 80.43,-26.64"/>
+<!-- program~seeder&#45;&gt;proc~sdr_build_prototree -->
+<g id="proc~~create_children~~CalledByGraph_edge2" class="edge">
+<title>program~seeder&#45;&gt;proc~sdr_build_prototree</title>
+<path fill="none" stroke="#000000" d="M54.01,-12C61.81,-12 70.75,-12 79.93,-12"/>
+<polygon fill="#000000" stroke="#000000" points="79.95,-15.5 89.95,-12 79.95,-8.5 79.95,-15.5"/>
 </g>
 </g>
 </svg>
@@ -589,7 +826,7 @@ implementation in a submodule of an interface in a parent module.
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-09T23:33:28.201504             </p>
+ on 2024-11-11T16:20:47.539531             </p>
           </div>
         </div>
         <br>
