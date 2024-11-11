@@ -13,3 +13,4 @@
 [submodule "sdr"]
 	path = sdr
 	url = ../seeder-source.git
+	branch = replace_request
