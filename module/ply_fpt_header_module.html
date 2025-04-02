@@ -12,14 +12,29 @@
 
     <title>ply_fpt_header_module &ndash; Seeder</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -100,9 +115,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -141,7 +158,7 @@
       </a>
       <div id="inters-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-assignment%28%3D%29~5">assignment(=)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-assignment%28%3D%29~3">assignment(=)</a>
             <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28%3D%3D%29~3">operator(==)</a>
             <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28SLASH%3D%29~3">operator(/=)</a>
             <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28lt%29~3">operator(<)</a>
@@ -264,24 +281,24 @@
    temporary memory. The default setting for this option is <code>'scalar'</code>.</li>
 <li><code>striplen</code> determines the length for vectorized loops to be used in the
    matrix operation. It defaults to the <code>vlen</code> setting defined in
-   <a href="../https:/apes-suite.github.io/treelm/module/tem_compileconf_module.html">tem_compileconf_module</a> during compilation.
+   <a href="https://apes-suite.github.io/treelm/module/tem_compileconf_module.html">tem_compileconf_module</a> during compilation.
    Depending on the computing architecture, different values may provide
    more efficient computations.</li>
 <li><code>subblockingWidth</code> defines striding in the multiplication of the diagonal
    elements in the transformation matrix. The default for this setting is 8.</li>
 </ul>
 <p>The configuration table for the FPT table may, for example, look as follows:</p>
-<div class="codehilite"><pre><span></span><code>  <span class="n">projection</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span>              <span class="o">=</span> <span class="s1">&#39;fpt&#39;</span><span class="p">,</span>
-    <span class="n">factor</span>            <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span>
-    <span class="n">adapt_factor_pow2</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">lobattoPoints</span>     <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="n">blocksize</span>         <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
-    <span class="n">approx_terms</span>      <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
-    <span class="n">implementation</span>    <span class="o">=</span> <span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
-    <span class="n">striplen</span>          <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
-    <span class="n">subblockingWidth</span>  <span class="o">=</span> <span class="mi">8</span>
-  <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nv">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fpt&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">factor</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">adapt_factor_pow2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">lobattoPoints</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">blocksize</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">approx_terms</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">implementation</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">striplen</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">subblockingWidth</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
@@ -289,15 +306,15 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_float_module.html'>tem_float_module</a></li>
+                  <li class="list-inline-item"><a href='ply_nodes_header_module.html'>ply_nodes_header_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_compileconf_module.html'>tem_compileconf_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_float_module.html'>tem_float_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_tools_module.html'>tem_tools_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_compileconf_module.html'>tem_compileconf_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
-                  <li class="list-inline-item"><a href='ply_nodes_header_module.html'>ply_nodes_header_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -899,8 +916,8 @@ parameter
           <h2>Interfaces</h2>
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-assignment%28%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/assignment(=)~5.html'>assignment(=)</a> 
+      <span class="anchor" id="interface-assignment%28%3D%29~3"></span>
+      <h3>public        interface <a href='../interface/assignment(=)~3.html'>assignment(=)</a> 
       </h3>
     </div>
     <ul class="list-group">
@@ -925,7 +942,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~18"></span>
+              <span class="anchor" id="variable-left~15"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -940,7 +957,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~18"></span>
+              <span class="anchor" id="variable-right~15"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -991,7 +1008,7 @@ fpt_blocksize or the factor are equal.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~19"></span>
+              <span class="anchor" id="variable-left~16"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1006,7 +1023,7 @@ fpt_blocksize or the factor are equal.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~19"></span>
+              <span class="anchor" id="variable-right~16"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1062,7 +1079,7 @@ fpt_blocksize or the factor are not equal.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~20"></span>
+              <span class="anchor" id="variable-left~17"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1077,7 +1094,7 @@ fpt_blocksize or the factor are not equal.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~20"></span>
+              <span class="anchor" id="variable-right~17"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1133,7 +1150,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~21"></span>
+              <span class="anchor" id="variable-left~18"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1148,7 +1165,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~21"></span>
+              <span class="anchor" id="variable-right~18"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1204,7 +1221,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~22"></span>
+              <span class="anchor" id="variable-left~19"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1219,7 +1236,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~22"></span>
+              <span class="anchor" id="variable-right~19"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1275,7 +1292,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~23"></span>
+              <span class="anchor" id="variable-left~20"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1290,7 +1307,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~23"></span>
+              <span class="anchor" id="variable-right~20"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1346,7 +1363,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~24"></span>
+              <span class="anchor" id="variable-left~21"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1361,7 +1378,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~24"></span>
+              <span class="anchor" id="variable-right~21"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1419,7 +1436,7 @@ fpt method later on</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-nodes_header~2"></span>
+              <span class="anchor" id="variable-nodes_header~3"></span>
               type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
             </td>
               <td>public</td>
@@ -1436,7 +1453,7 @@ fpt method later on</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-factor~3"></span>
+              <span class="anchor" id="variable-factor~4"></span>
               real(kind=rk),
             </td>
               <td>public</td>
@@ -1600,6 +1617,186 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
+              <span class="anchor" id="variable-left~16"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~16"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~3"></span> <h3>private pure function <a href='../proc/isunequal~3.html'>isUnequal</a>(left, right) result(unequality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for unequality of two projections.</p><a href="../proc/isunequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~17"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~17"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is unequal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~3"></span> <h3>private pure function <a href='../proc/issmaller~3.html'>isSmaller</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt; comparison of two projections.</p><a href="../proc/issmaller~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~18"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~18"></span>
+              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~3"></span> <h3>private pure function <a href='../proc/issmallerorequal~3.html'>isSmallerOrEqual</a>(left, right) result(small)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides a &lt;= comparison of two projections.</p><a href="../proc/issmallerorequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
               <span class="anchor" id="variable-left~19"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
@@ -1635,17 +1832,17 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     Return Value
     <small>logical</small>
     </h4>
-    <p>is equal??</p>
+    <p>is smaller??</p>
 
     </div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~3"></span> <h3>private pure function <a href='../proc/isunequal~3.html'>isUnequal</a>(left, right) result(unequality)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~3"></span> <h3>private pure function <a href='../proc/isgreater~3.html'>isGreater</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides the test for unequality of two projections.</p><a href="../proc/isunequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt; comparison of two projections.</p><a href="../proc/isgreater~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1695,17 +1892,17 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     Return Value
     <small>logical</small>
     </h4>
-    <p>is unequal??</p>
+    <p>is greater??</p>
 
     </div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~3"></span> <h3>private pure function <a href='../proc/issmaller~3.html'>isSmaller</a>(left, right) result(small)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~3"></span> <h3>private pure function <a href='../proc/isgreaterorequal~3.html'>isGreaterOrEqual</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &lt; comparison of two projections.</p><a href="../proc/issmaller~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt;= comparison of two projections.</p><a href="../proc/isgreaterorequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1736,186 +1933,6 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         <tr>
             <td>
               <span class="anchor" id="variable-right~21"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>right</strong></td>
-            <td>
-<p>projection to compare against</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>is smaller??</p>
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~3"></span> <h3>private pure function <a href='../proc/issmallerorequal~3.html'>isSmallerOrEqual</a>(left, right) result(small)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>This function provides a &lt;= comparison of two projections.</p><a href="../proc/issmallerorequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-left~22"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>left</strong></td>
-            <td>
-<p>projection to compare</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-right~22"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>right</strong></td>
-            <td>
-<p>projection to compare against</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>is smaller??</p>
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~3"></span> <h3>private pure function <a href='../proc/isgreater~3.html'>isGreater</a>(left, right) result(great)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>This function provides a &gt; comparison of two projections.</p><a href="../proc/isgreater~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-left~23"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>left</strong></td>
-            <td>
-<p>projection to compare</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-right~23"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>right</strong></td>
-            <td>
-<p>projection to compare against</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>is greater??</p>
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~3"></span> <h3>private pure function <a href='../proc/isgreaterorequal~3.html'>isGreaterOrEqual</a>(left, right) result(great)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>This function provides a &gt;= comparison of two projections.</p><a href="../proc/isgreaterorequal~3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-left~24"></span>
-              type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>left</strong></td>
-            <td>
-<p>projection to compare</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-right~24"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1966,7 +1983,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~32"></span>
+              <span class="anchor" id="variable-me~23"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1981,7 +1998,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-conf~25"></span>
+              <span class="anchor" id="variable-conf~18"></span>
               type(<a href='https://apes-suite.github.io/aotus/type/flu_state.html'>flu_State</a>),
             </td>
 <td>intent(inout)</td>
@@ -1996,7 +2013,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-thandle~18"></span>
+              <span class="anchor" id="variable-thandle~14"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2036,7 +2053,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~33"></span>
+              <span class="anchor" id="variable-me~24"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -2067,7 +2084,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-factor~4"></span>
+              <span class="anchor" id="variable-factor~5"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -2077,7 +2094,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
             <td>::</td>
             <td><strong>factor</strong></td>
             <td>
-<p>Oversampling factor to use.</p><a href="../proc/ply_fpt_header_define.html#variable-factor~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Oversampling factor to use.</p><a href="../proc/ply_fpt_header_define.html#variable-factor~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2125,7 +2142,7 @@ Defaults to <a href="../module/ply_fpt_header_module.html#variable-ply_fpt_defau
             <td><strong>striplen</strong></td>
             <td>
 <p>Length of strips to use in the transformation implementation.
-Defaults to <a href="../https:/apes-suite.github.io/treelm/module/tem_compileconf_module.html#variable-vlen">vlen</a>.</p>
+Defaults to <a href="https://apes-suite.github.io/treelm/module/tem_compileconf_module.html#variable-vlen">vlen</a>.</p>
             </td>
         </tr>
         <tr>
@@ -2205,7 +2222,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~34"></span>
+              <span class="anchor" id="variable-me~25"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2220,7 +2237,7 @@ not. Defaults to .false..</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-conf~26"></span>
+              <span class="anchor" id="variable-conf~19"></span>
               type(<a href='https://apes-suite.github.io/aotus/type/aot_out_type.html'>aot_out_type</a>),
             </td>
 <td>intent(inout)</td>
@@ -2260,7 +2277,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~35"></span>
+              <span class="anchor" id="variable-me~26"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2300,7 +2317,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~18"></span>
+              <span class="anchor" id="variable-left~15"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -2315,7 +2332,7 @@ not. Defaults to .false..</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~18"></span>
+              <span class="anchor" id="variable-right~15"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2351,40 +2368,18 @@ not. Defaults to .false..</p>
           <div class="col">
             <p>
               Seeder
- was developed by University of Siegen<br>              &copy; 2024 
+ was developed by University of Siegen<br>              &copy; 2025 
 <br /><small>a841d9bb270b</small></p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-11T17:06:58.397855             </p>
+ on 2025-04-02T20:58:41.712915+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

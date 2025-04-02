@@ -12,14 +12,29 @@
 
     <title>ply_LegPolyProjection_module &ndash; Seeder</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -100,9 +115,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -171,8 +188,8 @@
             <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_gauleg">ply_gauleg</a>
             <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_initqlegprojcoeff">ply_initQLegProjCoeff</a>
             <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_doftoqpoly">ply_dofToQPoly</a>
-            <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_subsampledata">ply_subsampleData</a>
-            <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_projdatatochild">ply_projDataToChild</a>
+            <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_subsampledata~2">ply_subsampleData</a>
+            <a class="list-group-item" href="../module/ply_legpolyprojection_module.html#proc-ply_projdatatochild~2">ply_projDataToChild</a>
         </div>
       </div>
     </div>
@@ -199,10 +216,10 @@ to child cells.</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_param_module.html'>tem_param_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/treelmesh_module.html'>treelmesh_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -433,7 +450,7 @@ elements.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-isactive"></span>
+              <span class="anchor" id="variable-isactive~2"></span>
               logical,
             </td>
               <td>public</td>
@@ -450,7 +467,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sampling_lvl"></span>
+              <span class="anchor" id="variable-sampling_lvl~2"></span>
               integer,
             </td>
               <td>public</td>
@@ -484,7 +501,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-caplevel"></span>
+              <span class="anchor" id="variable-caplevel~2"></span>
               integer,
             </td>
               <td>public</td>
@@ -501,7 +518,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-minsub"></span>
+              <span class="anchor" id="variable-minsub~2"></span>
               integer,
             </td>
               <td>public</td>
@@ -518,7 +535,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-maxsub"></span>
+              <span class="anchor" id="variable-maxsub~2"></span>
               integer,
             </td>
               <td>public</td>
@@ -535,7 +552,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eps_osci"></span>
+              <span class="anchor" id="variable-eps_osci~3"></span>
               real(kind=rk),
             </td>
               <td>public</td>
@@ -553,7 +570,7 @@ For adaptive subsampling only.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-dofreducfactor"></span>
+              <span class="anchor" id="variable-dofreducfactor~3"></span>
               real(kind=rk),
             </td>
               <td>public</td>
@@ -571,7 +588,7 @@ step (per spatial direction).</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-adaptivedofreduction"></span>
+              <span class="anchor" id="variable-adaptivedofreduction~3"></span>
               logical,
             </td>
               <td>public</td>
@@ -588,7 +605,7 @@ step (per spatial direction).</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-absupperboundlevel"></span>
+              <span class="anchor" id="variable-absupperboundlevel~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -637,7 +654,7 @@ step (per spatial direction).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-dat~2"></span>
+              <span class="anchor" id="variable-dat~4"></span>
               real(kind=rk),
             </td>
               <td>public,</td>
@@ -852,7 +869,7 @@ The first polynomial has index 1.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-points~5"></span>
+              <span class="anchor" id="variable-points~3"></span>
               real(kind=rk),
             </td>
 <td>intent(in)</td>
@@ -867,7 +884,7 @@ The first polynomial has index 1.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-npoints~4"></span>
+              <span class="anchor" id="variable-npoints~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -882,7 +899,7 @@ The first polynomial has index 1.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-maxpolydegree~2"></span>
+              <span class="anchor" id="variable-maxpolydegree"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -934,7 +951,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-subsamp"></span>
+              <span class="anchor" id="variable-subsamp~3"></span>
               type(<a href='../type/ply_subsample_type.html'>ply_subsample_type</a>),
             </td>
 <td>intent(in)</td>
@@ -949,7 +966,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-dofreduction"></span>
+              <span class="anchor" id="variable-dofreduction~2"></span>
               real(kind=rk),
             </td>
 <td>intent(in)</td>
@@ -964,7 +981,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-tree~4"></span>
+              <span class="anchor" id="variable-tree~5"></span>
               type(<a href='https://apes-suite.github.io/treelm/type/treelmesh_type.html'>treelmesh_type</a>),
             </td>
 <td>intent(in)</td>
@@ -979,7 +996,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-meshdata"></span>
+              <span class="anchor" id="variable-meshdata~3"></span>
               type(<a href='../type/ply_array_type.html'>ply_array_type</a>),
             </td>
 <td>intent(in)</td>
@@ -994,7 +1011,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vardofs"></span>
+              <span class="anchor" id="variable-vardofs~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1009,7 +1026,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~6"></span>
+              <span class="anchor" id="variable-ndims~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1039,7 +1056,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-refine_tree"></span>
+              <span class="anchor" id="variable-refine_tree~3"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -1054,7 +1071,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-new_refine_tree"></span>
+              <span class="anchor" id="variable-new_refine_tree~3"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -1069,7 +1086,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-newmeshdata"></span>
+              <span class="anchor" id="variable-newmeshdata~3"></span>
               type(<a href='../type/ply_array_type.html'>ply_array_type</a>),
             </td>
 <td>intent(out),</td>
@@ -1084,7 +1101,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-newvardofs"></span>
+              <span class="anchor" id="variable-newvardofs~2"></span>
               integer,
             </td>
 <td>intent(out),</td>
@@ -1155,7 +1172,7 @@ integration on the interval [x1,x2].</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x"></span>
+              <span class="anchor" id="variable-x~3"></span>
               real(kind=rk),
             </td>
 <td>intent(inout),</td>
@@ -1244,7 +1261,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~6"></span>
+              <span class="anchor" id="variable-ndofs~10"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1259,7 +1276,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~7"></span>
+              <span class="anchor" id="variable-ndims~6"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1274,7 +1291,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nchilds~2"></span>
+              <span class="anchor" id="variable-nchilds~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1289,7 +1306,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nchilddofs~2"></span>
+              <span class="anchor" id="variable-nchilddofs~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1304,7 +1321,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~3"></span>
+              <span class="anchor" id="variable-projection~4"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1360,7 +1377,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~7"></span>
+              <span class="anchor" id="variable-ndofs~11"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1375,7 +1392,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~8"></span>
+              <span class="anchor" id="variable-ndims~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1441,7 +1458,7 @@ Q-Polynomials.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ply_subsampledata"></span> <h3>private  subroutine <a href='../proc/ply_subsampledata.html'>ply_subsampleData</a>(tree, meshData, nDofs, nChildDofs, nComponents, projection, projection_oneDof, refine_tree, new_refine_tree, ndims, subsamp, newMeshData)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_subsampledata~2"></span> <h3>private  subroutine <a href='../proc/ply_subsampledata~2.html'>ply_subsampleData</a>(tree, meshData, nDofs, nChildDofs, nComponents, projection, projection_oneDof, refine_tree, new_refine_tree, ndims, subsamp, newMeshData)  
 </h3></div>
     <div class="card-body">
           
@@ -1460,7 +1477,7 @@ Q-Polynomials.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-tree~5"></span>
+              <span class="anchor" id="variable-tree~6"></span>
               type(<a href='https://apes-suite.github.io/treelm/type/treelmesh_type.html'>treelmesh_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1475,7 +1492,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-meshdata~2"></span>
+              <span class="anchor" id="variable-meshdata~4"></span>
               real(kind=rk),
             </td>
 <td>intent(in)</td>
@@ -1490,7 +1507,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~8"></span>
+              <span class="anchor" id="variable-ndofs~12"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1505,7 +1522,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nchilddofs~3"></span>
+              <span class="anchor" id="variable-nchilddofs~6"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1521,7 +1538,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ncomponents~3"></span>
+              <span class="anchor" id="variable-ncomponents~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1536,7 +1553,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~4"></span>
+              <span class="anchor" id="variable-projection~5"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1567,7 +1584,7 @@ degree of 0.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-refine_tree~2"></span>
+              <span class="anchor" id="variable-refine_tree~4"></span>
               logical,
             </td>
 <td>intent(in),</td>
@@ -1583,7 +1600,7 @@ sampling lvl.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-new_refine_tree~2"></span>
+              <span class="anchor" id="variable-new_refine_tree~4"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -1598,7 +1615,7 @@ sampling lvl.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~9"></span>
+              <span class="anchor" id="variable-ndims~8"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1613,7 +1630,7 @@ sampling lvl.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-subsamp~2"></span>
+              <span class="anchor" id="variable-subsamp~4"></span>
               type(<a href='../type/ply_subsample_type.html'>ply_subsample_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1628,7 +1645,7 @@ sampling lvl.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-newmeshdata~2"></span>
+              <span class="anchor" id="variable-newmeshdata~4"></span>
               real(kind=rk),
             </td>
 <td>intent(out),</td>
@@ -1649,7 +1666,7 @@ sampling lvl.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ply_projdatatochild"></span> <h3>private  subroutine <a href='../proc/ply_projdatatochild.html'>ply_projDataToChild</a>(parentData, nParentDofs, nChildDofs, nComponents, nChilds, projection, childData)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ply_projdatatochild~2"></span> <h3>private  subroutine <a href='../proc/ply_projdatatochild~2.html'>ply_projDataToChild</a>(parentData, nParentDofs, nChildDofs, nComponents, nChilds, projection, childData)  
 </h3></div>
     <div class="card-body">
           
@@ -1669,7 +1686,7 @@ its children.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-parentdata"></span>
+              <span class="anchor" id="variable-parentdata~2"></span>
               real(kind=rk),
             </td>
 <td>intent(in)</td>
@@ -1685,7 +1702,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nparentdofs"></span>
+              <span class="anchor" id="variable-nparentdofs~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1700,7 +1717,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nchilddofs~4"></span>
+              <span class="anchor" id="variable-nchilddofs~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1715,7 +1732,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ncomponents~4"></span>
+              <span class="anchor" id="variable-ncomponents~8"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1730,7 +1747,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nchilds~4"></span>
+              <span class="anchor" id="variable-nchilds~6"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1745,7 +1762,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~5"></span>
+              <span class="anchor" id="variable-projection~6"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1761,7 +1778,7 @@ dofs to the child dofs.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-childdata~2"></span>
+              <span class="anchor" id="variable-childdata~4"></span>
               real(kind=rk),
             </td>
 <td>intent(out)</td>
@@ -1797,40 +1814,18 @@ dofs to the child dofs.</p>
           <div class="col">
             <p>
               Seeder
- was developed by University of Siegen<br>              &copy; 2024 
+ was developed by University of Siegen<br>              &copy; 2025 
 <br /><small>a841d9bb270b</small></p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-11T17:06:58.397855             </p>
+ on 2025-04-02T20:58:41.712915+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

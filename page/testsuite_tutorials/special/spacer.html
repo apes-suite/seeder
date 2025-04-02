@@ -12,14 +12,29 @@
 
     <title>Spacers &ndash; Seeder</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../../../css/pygments.css" rel="stylesheet">
-    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../../../css/brands.min.css" rel="stylesheet">
+    <link href="../../../css/regular.min.css" rel="stylesheet">
+    <link href="../../../css/solid.min.css" rel="stylesheet">
+    <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../../../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../../../css/local.css" rel="stylesheet">
-      <link  href="../../../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../../../css/pygments.css" rel="stylesheet">
     <script src="../../../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -139,27 +154,27 @@
 other along the width. Each spacer filament is defined by the \ref cylinders
 and distance between consecutive spacer filaments</p>
 <p>Valid definition:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">geometry</span><span class="o">=</span><span class="p">{</span>
-  <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;spacer&#39;</span><span class="p">,</span> 
-    <span class="n">object</span><span class="o">=</span><span class="p">{</span>
-      <span class="n">length</span><span class="o">=</span><span class="p">{</span>
-        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span> <span class="c1">-- starting point of the spacer</span>
-        <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span> <span class="o">-</span><span class="n">length</span> <span class="ow">and</span> <span class="n">axis</span> <span class="n">of</span> <span class="n">first</span> <span class="n">filament</span>
-        <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1">-- radius of the filament</span>
-        <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- If not defined default is set to false</span>
-        <span class="n">filament_gap</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">,</span> <span class="c1">-- distance between filament</span>
-      <span class="p">},</span>
-      <span class="n">width</span><span class="o">=</span><span class="p">{</span>
-        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-        <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">},</span>
-        <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span>
-        <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- If not defined default is set to false</span>
-        <span class="n">filament_gap</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="n">interwoven</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">--switch between interwoven and non-interwoven</span>
-                        <span class="c1">-- spacer generation</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="c1">-- single spacer</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">geometry</span><span class="o">=</span><span class="p">{</span>
+<span class="w">  </span><span class="nv">kind</span><span class="o">=</span><span class="s1">&#39;spacer&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nv">object</span><span class="o">=</span><span class="p">{</span>
+<span class="w">      </span><span class="nv">length</span><span class="o">=</span><span class="p">{</span>
+<span class="w">        </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span><span class="w"> </span><span class="c1">-- starting point of the spacer</span>
+<span class="w">        </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span><span class="w"> </span><span class="o">-</span><span class="nv">length</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">axis</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">first</span><span class="w"> </span><span class="nv">filament</span>
+<span class="w">        </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="w"> </span><span class="c1">-- radius of the filament</span>
+<span class="w">        </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">-- If not defined default is set to false</span>
+<span class="w">        </span><span class="nv">filament_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span><span class="w"> </span><span class="c1">-- distance between filament</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nv">width</span><span class="o">=</span><span class="p">{</span>
+<span class="w">        </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">        </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">},</span>
+<span class="w">        </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="w">        </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">-- If not defined default is set to false</span>
+<span class="w">        </span><span class="nv">filament_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nv">interwoven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">--switch between interwoven and non-interwoven</span>
+<span class="w">                        </span><span class="c1">-- spacer generation</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">-- single spacer</span>
 </code></pre></div>
 
 <p>The following seeder file is to generate mesh with spacer inside:</p>
@@ -171,25 +186,25 @@ and distance between consecutive spacer filaments</p>
 <span class="c1">-- Location to write the mesh in.</span>
 <span class="c1">-- Note the trailing path seperator, needed, if all mesh files should be in a</span>
 <span class="c1">-- directory. This directory has to exist before running Seeder in this case!</span>
-<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span>
+<span class="nv">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mesh/&#39;</span>
 
 <span class="c1">-- Some comment, you might want to put into the mesh file for later reference.</span>
-<span class="n">comment</span> <span class="o">=</span> <span class="s1">&#39;Simple Sample Seeder Mesh&#39;</span>
+<span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Simple Sample Seeder Mesh&#39;</span>
 
 <span class="c1">-- Debug output can be used to output prelimnary tree in restart format</span>
 <span class="c1">-- and this restart file can be converted to vtu format by Harvester</span>
-<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span> <span class="n">debugMode</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">debugMesh</span> <span class="o">=</span> <span class="s1">&#39;debug/&#39;</span> <span class="p">}</span>
+<span class="nv">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">debugMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugMesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;debug/&#39;</span><span class="w"> </span><span class="p">}</span>
 
 <span class="c1">-- Bounding cube: the root node of the octree, defining the complete universe,</span>
 <span class="c1">-- from which all elements are derived by recursive bisection.</span>
 <span class="c1">-- The origin is the corner from which on the cube is spanned with the given</span>
 <span class="c1">-- length in each direction.</span>
-<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">},</span>
-                  <span class="n">length</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="p">}</span>
+<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">},</span>
+<span class="w">                  </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="p">}</span>
 
 <span class="c1">-- A minimum level, by which all parts in the computational domain should at</span>
 <span class="c1">-- least be resolved with. Default is 0.</span>
-<span class="n">minlevel</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nv">minlevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
 
 <span class="c1">-- *********************** Table of spatial objects *********************** --</span>
 <span class="c1">-- Each spatial object is defined by an attribute and some geometric entity</span>
@@ -204,36 +219,36 @@ and distance between consecutive spacer filaments</p>
 <span class="c1">--</span>
 <span class="c1">-- Periodic boundaries are special, spatial objects of this kind can only make</span>
 <span class="c1">-- use of geometric objects of the kind &#39;periodic&#39;.</span>
-<span class="n">spatial_object</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">{</span>
-    <span class="c1">-- Defining a domain boundary</span>
-    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span> <span class="c1">-- or seed, refinement</span>
-                  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span>   <span class="c1">-- some label to identify the boundary</span>
-                                     <span class="c1">-- condition</span>
-                  <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>          <span class="c1">-- level to refine this object with,</span>
-                                     <span class="c1">-- default = 0</span>
-                <span class="p">},</span>
-    <span class="c1">-- Example for spacer</span>
-    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>                  <span class="c1">-- defining the geometry of the spacer</span>
-      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;spacer&#39;</span><span class="p">,</span>
-      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">length</span> <span class="o">=</span> <span class="p">{</span>
-          <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-          <span class="n">filament_gap</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-          <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">,</span>
-          <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span>
-        <span class="p">},</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="p">{</span> 
-          <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">},</span>
-          <span class="n">filament_gap</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-          <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">,</span>
-          <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span>
-        <span class="p">},</span>
-          <span class="n">interwoven</span> <span class="o">=</span> <span class="kc">true</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="c1">-- Example for rotated spacer</span>
+<span class="nv">spatial_object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">-- Defining a domain boundary</span>
+<span class="w">    </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">-- or seed, refinement</span>
+<span class="w">                  </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;solid&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">-- some label to identify the boundary</span>
+<span class="w">                                     </span><span class="c1">-- condition</span>
+<span class="w">                  </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">          </span><span class="c1">-- level to refine this object with,</span>
+<span class="w">                                     </span><span class="c1">-- default = 0</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">    </span><span class="c1">-- Example for spacer</span>
+<span class="w">    </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="c1">-- defining the geometry of the spacer</span>
+<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;spacer&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">          </span><span class="nv">filament_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">          </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.10</span><span class="p">,</span>
+<span class="w">          </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nv">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">          </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">},</span>
+<span class="w">          </span><span class="nv">filament_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">          </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.10</span><span class="p">,</span>
+<span class="w">          </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">          </span><span class="nv">interwoven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="c1">-- Example for rotated spacer</span>
 <span class="c1">--    geometry = {</span>
 <span class="c1">--      kind = &#39;spacer&#39;,</span>
 <span class="c1">--      object = {</span>
@@ -256,17 +271,17 @@ and distance between consecutive spacer filaments</p>
 <span class="c1">--    }</span>
 <span class="c1">--  },</span>
 
-  <span class="p">{</span>
-    <span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
-    <span class="c1">-- the universe cube.</span>
-    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span> <span class="p">},</span>
-    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- single point definition with a canoND object.</span>
-                 <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-                 <span class="n">object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">}</span> <span class="p">}</span>
-               <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
+<span class="w">    </span><span class="c1">-- the universe cube.</span>
+<span class="w">    </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">-- single point definition with a canoND object.</span>
+<span class="w">                 </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="p">}</span> <span class="c1">-- end of spatial objects</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">-- end of spatial objects</span>
 <span class="c1">-- ************************************************************************ --</span>
 </code></pre></div>
 
@@ -283,40 +298,18 @@ and distance between consecutive spacer filaments</p>
           <div class="col">
             <p>
               Seeder
- was developed by University of Siegen<br>              &copy; 2024 
+ was developed by University of Siegen<br>              &copy; 2025 
 <br /><small>a841d9bb270b</small></p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-11T17:06:58.397855             </p>
+ on 2025-04-02T20:58:41.712915+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../../../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../../../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../../../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

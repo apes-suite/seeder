@@ -12,14 +12,29 @@
 
     <title>How to define periodic planes in lua file? &ndash; Seeder</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../../css/pygments.css" rel="stylesheet">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../../css/brands.min.css" rel="stylesheet">
+    <link href="../../css/regular.min.css" rel="stylesheet">
+    <link href="../../css/solid.min.css" rel="stylesheet">
+    <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../../css/local.css" rel="stylesheet">
-      <link  href="../../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../../css/pygments.css" rel="stylesheet">
     <script src="../../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -142,20 +157,20 @@
   file since they are treated explicitly while building the neighbor array.</li>
 </ul>
 <p>In the example below, the following variables are fixed.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">length</span><span class="o">=</span><span class="mf">1.0</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">length</span><span class="o">=</span><span class="mf">1.0</span>
 <span class="c1">-- minimum refinement level</span>
-<span class="n">minrefine</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="nv">minrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
 <span class="c1">-- maximum refinement level</span>
-<span class="n">maxrefine</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nv">maxrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
 
 <span class="c1">-- mesh size</span>
 <span class="c1">-- The offset distance between periodic planes dx is computed from </span>
 <span class="c1">-- the maximum refinement level.</span>
-<span class="n">dx</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">maxrefine</span><span class="p">)</span>
+<span class="nv">dx</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="nv">maxrefine</span><span class="p">)</span>
 
 <span class="c1">-- bounding box defining the complete domain</span>
-<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-               <span class="n">length</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
+<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">               </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
 </code></pre></div>
 
 <ul>
@@ -165,28 +180,28 @@
 <ul>
 <li>Single periodic plane in z-direction</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="n">dx</span><span class="o">+</span><span class="n">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">dx</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="nv">dx</span><span class="o">+</span><span class="nv">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">dx</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -194,75 +209,75 @@
 <ul>
 <li>Multiple periodic planes</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="n">dx</span><span class="o">+</span><span class="n">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">dx</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="nv">dx</span><span class="o">+</span><span class="nv">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">dx</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -273,102 +288,102 @@
 </ul>
 <p>For multi-level periodic planes, the minimum offset distance <em>dxmin</em> is computed from the maximum refinement level in the refinement box such that
   periodic planes are aligned perfectly parallel to each other as shown in the figure below. Two refinement box are used in this example-</p>
-<div class="codehilite"><pre><span></span><code><span class="n">length</span><span class="o">=</span><span class="mf">2.0</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">length</span><span class="o">=</span><span class="mf">2.0</span>
 <span class="c1">-- minimum refinement level</span>
-<span class="n">minrefine</span> <span class="o">=</span> <span class="mi">4</span> 
+<span class="nv">minrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span>
 <span class="c1">-- maximum refinement level</span>
-<span class="n">maxrefine</span> <span class="o">=</span> <span class="n">minrefine</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="nv">maxrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">minrefine</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span>
 
 <span class="c1">-- mesh size</span>
 <span class="c1">-- The offset distance between periodic planes dx is computed from </span>
 <span class="c1">-- the maximum refinement level.</span>
-<span class="n">dx</span><span class="o">=</span><span class="n">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">minrefine</span><span class="p">)</span>
-<span class="n">dxmin</span><span class="o">=</span><span class="n">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">maxrefine</span><span class="p">)</span>
+<span class="nv">dx</span><span class="o">=</span><span class="nv">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="nv">minrefine</span><span class="p">)</span>
+<span class="nv">dxmin</span><span class="o">=</span><span class="nv">length</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="nv">maxrefine</span><span class="p">)</span>
 
 <span class="c1">-- Location to write the mesh in.</span>
 <span class="c1">-- Note the trailing path seperator, needed, if all mesh files should be in a</span>
 <span class="c1">-- directory. This directory has to exist before running Seeder in this case!</span>
-<span class="n">folder</span><span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span>
+<span class="nv">folder</span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mesh/&#39;</span>
 
 <span class="c1">-- Debug output can be used to output preliminary tree in restart format</span>
 <span class="c1">-- and this restart file can be converted to vtu format by Harvester</span>
 
-<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span><span class="n">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
+<span class="nv">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
 
 <span class="c1">-- bounding box defining the complete domain</span>
-<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
-                 <span class="n">length</span> <span class="o">=</span> <span class="n">length</span><span class="p">}</span>
+<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">                 </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">length</span><span class="p">}</span>
 
 <span class="c1">-- refinebox: three entries: origin, length and refinementlevel</span>
-<span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+<span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;refinement&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="n">maxrefine</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">0.25</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
-       <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-               <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-               <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">dx</span><span class="o">-</span><span class="n">dxmin</span><span class="p">}</span>
-             <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;refinement&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxrefine</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">0.25</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.25</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="nv">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">       </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">               </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">               </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="nv">dx</span><span class="o">-</span><span class="nv">dxmin</span><span class="p">}</span>
+<span class="w">             </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;refinement&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="n">maxrefine</span><span class="o">-</span><span class="mi">1</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
-       <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-               <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-               <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">dx</span><span class="o">-</span><span class="n">dxmin</span><span class="p">}</span>
-             <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;refinement&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxrefine</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="nv">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">       </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">               </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">               </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="nv">dx</span><span class="o">-</span><span class="nv">dxmin</span><span class="p">}</span>
+<span class="w">             </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
- <span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
- <span class="c1">-- the universe cube.</span>
+<span class="w"> </span><span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
+<span class="w"> </span><span class="c1">-- the universe cube.</span>
 
-<span class="p">{</span> 
-    <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,},</span>
-    <span class="n">geometry</span>    <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-                                <span class="n">object</span> <span class="o">=</span><span class="p">{</span><span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="p">,},</span>
+<span class="w">    </span><span class="nv">geometry</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="p">{</span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="nv">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">},</span>
 
 
 <span class="p">}</span>
 
-<span class="nb">table.insert</span><span class="p">(</span><span class="n">spatial_object</span><span class="p">,{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="n">minrefine</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">dx</span><span class="o">+</span><span class="n">dxmin</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span><span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="nb">table.insert</span><span class="p">(</span><span class="nv">spatial_object</span><span class="p">,{</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">minrefine</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nv">dx</span><span class="o">+</span><span class="nv">dxmin</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nv">dxmin</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">})</span>
 </code></pre></div>
 
@@ -379,113 +394,113 @@
 <div class="codehilite"><pre><span></span><code><span class="c1">-- Location to write the mesh in.</span>
 <span class="c1">-- Note the trailing path seperator, needed, if all mesh files should be in a</span>
 <span class="c1">-- directory. This directory has to exist before running Seeder in this case!</span>
-<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span>
+<span class="nv">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mesh/&#39;</span>
 
 <span class="c1">-- Some comment,you might want to put into the mesh file for later reference.</span>
-<span class="n">comment</span> <span class="o">=</span> <span class="s1">&#39;multipleperiodicplanes&#39;</span>
+<span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;multipleperiodicplanes&#39;</span>
 
 <span class="c1">-- Debug output can be used to output preliminary tree in restart format</span>
 <span class="c1">-- and this restart file can be converted to vtu format by Harvester</span>
-<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span> <span class="n">debugMode</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">debugFiles</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">debugMesh</span> <span class="o">=</span> <span class="s1">&#39;debug/&#39;</span> <span class="p">}</span>
+<span class="nv">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">debugMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">debugMesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;debug/&#39;</span><span class="w"> </span><span class="p">}</span>
 
-<span class="n">length</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="nv">length</span><span class="o">=</span><span class="mf">1.0</span>
 
 <span class="c1">--minimum refinement level</span>
-<span class="n">minrefine</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="nv">minrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
 <span class="c1">-- maximum refinement level</span>
-<span class="n">maxrefine</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nv">maxrefine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
 
 <span class="c1">-- mesh size</span>
 <span class="c1">-- The offset distance between periodic planes dx is computed from </span>
 <span class="c1">-- the maximum refinement level.</span>
-<span class="n">dx</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="n">maxrefine</span><span class="p">)</span>
+<span class="nv">dx</span><span class="o">=</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="o">/</span><span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="nv">maxrefine</span><span class="p">)</span>
 
 <span class="c1">-- bounding box defining the complete domain</span>
-<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-               <span class="n">length</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
+<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">               </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
 
-<span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+<span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">4</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="n">dx</span><span class="o">+</span><span class="n">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">dx</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="nv">dx</span><span class="o">+</span><span class="nv">dx</span><span class="o">/</span><span class="mf">2.</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">dx</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">4</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
-    <span class="n">level</span> <span class="o">=</span> <span class="mi">4</span>
-  <span class="p">},</span>
-  <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
-    <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="n">plane1</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
-               <span class="p">}</span>
-       <span class="p">},</span>
-       <span class="n">plane2</span><span class="o">=</span><span class="p">{</span>
-         <span class="n">origin</span> <span class="o">=</span><span class="p">{</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">,</span><span class="o">-</span><span class="n">length</span><span class="p">},</span>
-         <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-                 <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="n">length</span><span class="p">}</span>
-               <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;periodic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nv">plane1</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nv">plane2</span><span class="o">=</span><span class="p">{</span>
+<span class="w">         </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="p">{</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">,</span><span class="o">-</span><span class="nv">length</span><span class="p">},</span>
+<span class="w">         </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.</span><span class="o">*</span><span class="nv">length</span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="p">{</span>
- <span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
- <span class="c1">-- the universe cube.</span>
- <span class="c1">-- single point definition with a canoND object.</span>
+<span class="w"> </span><span class="c1">-- Defining a seed to identify the part of the computational domain in</span>
+<span class="w"> </span><span class="c1">-- the universe cube.</span>
+<span class="w"> </span><span class="c1">-- single point definition with a canoND object.</span>
 
- <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span> <span class="p">},</span>
-    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
-                 <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-                 <span class="n">object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="n">dx</span><span class="o">*</span><span class="mf">0.5</span><span class="p">}</span> <span class="p">}</span> 
-               <span class="p">}</span>
-       <span class="p">}</span>
+<span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                 </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="nv">dx</span><span class="o">*</span><span class="mf">0.5</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">       </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -502,40 +517,18 @@
           <div class="col">
             <p>
               Seeder
- was developed by University of Siegen<br>              &copy; 2024 
+ was developed by University of Siegen<br>              &copy; 2025 
 <br /><small>a841d9bb270b</small></p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-11T17:06:58.397855             </p>
+ on 2025-04-02T20:58:41.712915+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
