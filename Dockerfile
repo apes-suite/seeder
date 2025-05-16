@@ -4,4 +4,4 @@ FROM ghcr.io/apes-suite/apes-pyenv:${PYENV_VERSION}
 SHELL ["/bin/bash", "-c"]
 
 COPY --chown=apes . ./seeder
-RUN cd seeder && bin/waf configure install --prefix=$VIRTUAL_ENV
+RUN cd seeder && FC=mpif90 bin/waf configure install --prefix=$VIRTUAL_ENV
