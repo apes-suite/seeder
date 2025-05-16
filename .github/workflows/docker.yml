@@ -2,6 +2,11 @@ name: Create and publish a Docker image
 
 on:
   workflow_dispatch:
+    inputs:
+      PyenvVersion:
+        description: "APES-Pyenv Version"
+        default: "main"
+        required: true
   push:
     tags:
       - 'v[0-9]+.[0-9]+'
@@ -45,7 +50,7 @@ jobs:
         with:
           context: .
           push: true
-          build-args: PYENV_VERSION=${{ vars.PYENV_VERSION }}
+          build-args: PYENV_VERSION=${{ inputs.PyenvVersion || vars.PYENV_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
