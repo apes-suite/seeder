@@ -5,7 +5,7 @@ on:
     inputs:
       PyenvVersion:
         description: "APES-Pyenv Version"
-        default: "main"
+        default: "main-u24.04"
         required: true
   push:
     tags:
@@ -13,6 +13,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  PYENV: ${{ inputs.PyenvVersion || vars.PYENV_VERSION }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -42,6 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804
         with:
+          flavor: suffix=-env.${{ env.PYENV }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
@@ -50,7 +52,7 @@ jobs:
         with:
           context: .
           push: true
-          build-args: PYENV_VERSION=${{ inputs.PyenvVersion || vars.PYENV_VERSION }}
+          build-args: PYENV_VERSION=${{ env.PYENV }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
