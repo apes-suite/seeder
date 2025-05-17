@@ -102,7 +102,6 @@ program sdr_harvesting
 
   ! Initialize environment.
   call tem_start( codeName = 'sdr_harvesting', &
-    &             version  = '0.1',            &
     &             general  = general           )
 
 

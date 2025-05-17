@@ -70,7 +70,6 @@ program seeder
 
   ! Initialize environment.
   call tem_start(codeName = 'Seeder',      &
-    &            version  = 'pre2.0',      &
     &            general  = header%general )
   
   ! add a timer object to measure time in different steps of seeder 
