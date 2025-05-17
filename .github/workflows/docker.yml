@@ -5,7 +5,7 @@ on:
     inputs:
       PyenvVersion:
         description: "APES-Pyenv Version"
-        default: "main-u24.04"
+        default: "v2025.2-u24.04"
         required: true
   push:
     tags:
