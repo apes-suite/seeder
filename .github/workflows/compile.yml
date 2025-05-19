@@ -15,19 +15,7 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install gfortran
-        run: |
-          sudo apt install -y gfortran
-
-      - name: Install Open MPI
-        run: |
-          sudo apt install -y openmpi-bin openmpi-common libopenmpi-dev
-
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-
       - name: Build Seeder
-        run: |
-          FC=mpif90 bin/waf --mpicmd 'mpiexec --oversubscribe' distclean configure build debug
+        uses: apes-suite/build-action@v1
+        with:
+          waf-args: "configure build debug"
