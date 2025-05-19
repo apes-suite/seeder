@@ -1,7 +1,6 @@
-ARG PYENV_VERSION=main
-FROM ghcr.io/apes-suite/apes-pyenv:${PYENV_VERSION}
+FROM ghcr.io/apes-suite/apes-pyenv:2025.4
+ARG SEEDER_VERSION
+ENV SEEDER_VERSION=${SEEDER_VERSION}
 
-SHELL ["/bin/bash", "-c"]
-
-COPY --chown=apes . ./seeder
-RUN cd seeder && FC=mpif90 bin/waf configure install --mpicmd 'mpiexec --oversubscribe' --prefix=$VIRTUAL_ENV
+COPY . /tmp/seeder
+RUN (cd /tmp/seeder && bin/waf configure install --notests --prefix=$VIRTUAL_ENV) && rm -rf /tmp/seeder

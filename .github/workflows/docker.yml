@@ -2,18 +2,12 @@ name: Create and publish a Docker image
 
 on:
   workflow_dispatch:
-    inputs:
-      PyenvVersion:
-        description: "APES-Pyenv Version"
-        default: "v2025.2-u24.04"
-        required: true
   push:
     tags:
-      - 'v[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   REGISTRY: ghcr.io
-  PYENV: ${{ inputs.PyenvVersion || vars.PYENV_VERSION }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -43,8 +37,14 @@ jobs:
         id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804
         with:
-          flavor: suffix=-env.${{ env.PYENV }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=ref,event=pr
 
       - name: Build and push Docker image
         id: push
@@ -52,7 +52,7 @@ jobs:
         with:
           context: .
           push: true
-          build-args: PYENV_VERSION=${{ env.PYENV }}
+          build-args: SEEDER_VERSION=${{ steps.meta.outputs.version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
