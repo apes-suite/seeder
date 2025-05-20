@@ -1,4 +1,4 @@
-name: CheckCompilation
+name: Compilation and Unit Tests
 
 on:
   pull_request:
@@ -16,6 +16,6 @@ jobs:
           submodules: recursive
 
       - name: Build Seeder
-        uses: apes-suite/build-action@v1
+        uses: apes-suite/build-action@v1.1.1
         with:
           waf-args: "configure build debug"
