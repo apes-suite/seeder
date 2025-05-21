@@ -1,4 +1,4 @@
-FROM ghcr.io/apes-suite/apes-pyenv:2025.4
+FROM ghcr.io/apes-suite/apes-pyenv:2025.7
 ARG SEEDER_VERSION
 ENV SEEDER_VERSION=${SEEDER_VERSION}
 
