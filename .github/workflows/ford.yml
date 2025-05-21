@@ -1,6 +1,7 @@
 name: Fordoc
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -21,34 +22,14 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install gfortran
-        run: |
-          sudo apt install -y gfortran
-
-      - name: Install Open MPI
-        run: |
-          sudo apt install -y openmpi-bin openmpi-common libopenmpi-dev
-
-      - name: Install Python
-        uses: actions/setup-python@v5
+      - name: Build Seeder Documentation
+        uses: apes-suite/build-action@v1.1.1
         with:
-          python-version: '3.13'
-
-      - name: Install Graphviz
-        uses: ts-graphviz/setup-graphviz@v2
-
-      - name: Install FORD
-        run: |
-          python -m pip install --upgrade pip
-          pip install ford
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Build FORD Documentation
-        run: |
-          FC=mpif90 bin/waf --fordonline distclean configure docu
+          waf-args: "--fordonline configure docu"
+          obtain: "build/ford/sdr/docu"
 
       - name: Deploy Documentation
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: build/ford/sdr/docu
+          folder: docu
