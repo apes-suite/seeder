@@ -218,8 +218,8 @@ to child cells.</p>
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/treelmesh_module.html'>treelmesh_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_param_module.html'>tem_param_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
               </ul>
             </li>
         </ul>
@@ -503,7 +503,7 @@ step (per spatial direction).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-dat~2"></span>
+              <span class="anchor" id="variable-dat"></span>
               real(kind=rk),
             </td>
               <td>public,</td>
@@ -718,7 +718,7 @@ The first polynomial has index 1.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-points~3"></span>
+              <span class="anchor" id="variable-points~2"></span>
               real(kind=rk),
             </td>
 <td>intent(in)</td>
@@ -733,7 +733,7 @@ The first polynomial has index 1.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-npoints~12"></span>
+              <span class="anchor" id="variable-npoints~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -748,7 +748,7 @@ The first polynomial has index 1.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-maxpolydegree~2"></span>
+              <span class="anchor" id="variable-maxpolydegree"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -830,7 +830,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-tree~4"></span>
+              <span class="anchor" id="variable-tree"></span>
               type(<a href='https://apes-suite.github.io/treelm/type/treelmesh_type.html'>treelmesh_type</a>),
             </td>
 <td>intent(in)</td>
@@ -875,7 +875,7 @@ Therefore the dimension of this array is (maxPolyDegree+1, nPoints)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~3"></span>
+              <span class="anchor" id="variable-ndims"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1021,7 +1021,7 @@ integration on the interval [x1,x2].</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~8"></span>
+              <span class="anchor" id="variable-x~5"></span>
               real(kind=rk),
             </td>
 <td>intent(inout),</td>
@@ -1110,7 +1110,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~10"></span>
+              <span class="anchor" id="variable-ndofs~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1125,7 +1125,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~4"></span>
+              <span class="anchor" id="variable-ndims~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1170,7 +1170,7 @@ freedoms are Q-Legendre polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~3"></span>
+              <span class="anchor" id="variable-projection~2"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1226,7 +1226,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~11"></span>
+              <span class="anchor" id="variable-ndofs~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1241,7 +1241,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~5"></span>
+              <span class="anchor" id="variable-ndims~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1326,7 +1326,7 @@ Q-Polynomials.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-tree~5"></span>
+              <span class="anchor" id="variable-tree~2"></span>
               type(<a href='https://apes-suite.github.io/treelm/type/treelmesh_type.html'>treelmesh_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1356,7 +1356,7 @@ Q-Polynomials.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndofs~12"></span>
+              <span class="anchor" id="variable-ndofs~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1387,7 +1387,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ncomponents~3"></span>
+              <span class="anchor" id="variable-ncomponents~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1402,7 +1402,7 @@ elements.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~4"></span>
+              <span class="anchor" id="variable-projection~3"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1464,7 +1464,7 @@ sampling lvl.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ndims~6"></span>
+              <span class="anchor" id="variable-ndims~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1581,7 +1581,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ncomponents~4"></span>
+              <span class="anchor" id="variable-ncomponents~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1611,7 +1611,7 @@ and a single degree of freedom of the parent cell.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-projection~5"></span>
+              <span class="anchor" id="variable-projection~4"></span>
               type(<a href='../type/ply_projcoeff_type.html'>ply_ProjCoeff_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1670,7 +1670,7 @@ dofs to the child dofs.</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-21T14:34:30.997944+0000             </p>
+ on 2025-05-21T16:46:50.783557+0000             </p>
           </div>
         </div>
         <br>
