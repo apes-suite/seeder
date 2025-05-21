@@ -1,4 +1,4 @@
-name: Compilation and Unit Tests
+name: Compilation and UTests
 
 on:
   pull_request:
@@ -8,6 +8,9 @@ on:
 
 jobs:
   compilation:
+    permissions:
+      checks: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -19,3 +22,10 @@ jobs:
         uses: apes-suite/build-action@v1.1.1
         with:
           waf-args: "configure build debug"
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2.19.0
+        with:
+          files: |
+            build/**/waf-utest.xml
+          check_name: "Waf Unit Tests"
