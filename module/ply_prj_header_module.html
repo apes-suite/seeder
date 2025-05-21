@@ -219,16 +219,16 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item">fftw_wrap</li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_tools_module.html'>tem_tools_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
                   <li class="list-inline-item"><a href='ply_fpt_header_module.html'>ply_fpt_header_module</a></li>
+                  <li class="list-inline-item">fftw_wrap</li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
                   <li class="list-inline-item"><a href='ply_l2p_header_module.html'>ply_l2p_header_module</a></li>
                   <li class="list-inline-item"><a href='ply_fxt_header_module.html'>ply_fxt_header_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
               </ul>
             </li>
         </ul>
@@ -271,7 +271,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~32"></span>
+              <span class="anchor" id="variable-left~31"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -286,7 +286,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~32"></span>
+              <span class="anchor" id="variable-right~31"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -339,7 +339,7 @@ consideration.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~33"></span>
+              <span class="anchor" id="variable-left~32"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -354,7 +354,7 @@ consideration.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~33"></span>
+              <span class="anchor" id="variable-right~32"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -411,7 +411,7 @@ fpt-header or l2p_header are not equal.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~34"></span>
+              <span class="anchor" id="variable-left~33"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -426,7 +426,7 @@ fpt-header or l2p_header are not equal.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~34"></span>
+              <span class="anchor" id="variable-right~33"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -468,6 +468,77 @@ fpt-header or l2p_header are not equal.</p>
   <p>This function provides a &lt; comparison of the header of two projections.</p>
 <p>Sorting of projections is given by the kind, fpt_header and
 last by l2p_header.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-left~34"></span>
+              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~34"></span>
+              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is smaller??</p>
+
+          </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-operator%28lt%3D%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(lt=)~5.html'>operator(<=)</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+
+    </h3>
+    
+  <p>This function provides a &lt;= comparison of the header of two projections.</p>
+<p>Sorting of projections is given by kind, fpt_header and
+last by the l2p header.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -525,20 +596,20 @@ last by l2p_header.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28lt%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(lt=)~5.html'>operator(<=)</a> 
+      <span class="anchor" id="interface-operator%28gt%29~5"></span>
+      <h3>public        interface <a href='../interface/operator(gt)~5.html'>operator(>)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+    private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
 
     </h3>
     
-  <p>This function provides a &lt;= comparison of the header of two projections.</p>
+  <p>This function provides a &gt; comparison of the header of two projections.</p>
 <p>Sorting of projections is given by kind, fpt_header and
-last by the l2p header.</p>
+last by l2p_header.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -569,77 +640,6 @@ last by the l2p header.</p>
         <tr>
             <td>
               <span class="anchor" id="variable-right~36"></span>
-              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>right</strong></td>
-            <td>
-<p>projection to compare against</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>is smaller??</p>
-
-          </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28gt%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(gt)~5.html'>operator(>)</a> 
-      </h3>
-    </div>
-    <ul class="list-group">
-          <li class="list-group-item">
-                <h3>
-    private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
-
-    </h3>
-    
-  <p>This function provides a &gt; comparison of the header of two projections.</p>
-<p>Sorting of projections is given by kind, fpt_header and
-last by l2p_header.</p>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-left~37"></span>
-              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>left</strong></td>
-            <td>
-<p>projection to compare</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-right~37"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -695,7 +695,7 @@ last by l2p_header.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~38"></span>
+              <span class="anchor" id="variable-left~37"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -710,7 +710,7 @@ last by l2p_header.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~38"></span>
+              <span class="anchor" id="variable-right~37"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -870,6 +870,67 @@ projections.</p><a href="../proc/isequal~5.html" class="pull-right"><emph>Read m
     <tbody>
         <tr>
             <td>
+              <span class="anchor" id="variable-left~32"></span>
+              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>left</strong></td>
+            <td>
+<p>projection to compare</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-right~32"></span>
+              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>right</strong></td>
+            <td>
+<p>projection to compare against</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    <p>is equal??</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~5"></span> <h3>private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>This function provides the test for unequality of the header of two
+projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
               <span class="anchor" id="variable-left~33"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
@@ -905,18 +966,17 @@ projections.</p><a href="../proc/isequal~5.html" class="pull-right"><emph>Read m
     Return Value
     <small>logical</small>
     </h4>
-    <p>is equal??</p>
+    <p>is unequal??</p>
 
     </div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~5"></span> <h3>private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~5"></span> <h3>private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides the test for unequality of the header of two
-projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &lt; comparison of the header of two projections.</p><a href="../proc/issmaller~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -966,17 +1026,17 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     Return Value
     <small>logical</small>
     </h4>
-    <p>is unequal??</p>
+    <p>is smaller??</p>
 
     </div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~5"></span> <h3>private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
+    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~5"></span> <h3>private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &lt; comparison of the header of two projections.</p><a href="../proc/issmaller~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &lt;= comparison of the header of two projections.</p><a href="../proc/issmallerorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1032,11 +1092,11 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~5"></span> <h3>private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~5"></span> <h3>private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &lt;= comparison of the header of two projections.</p><a href="../proc/issmallerorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt; comparison of the header of two projections.</p><a href="../proc/isgreater~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1086,17 +1146,17 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     Return Value
     <small>logical</small>
     </h4>
-    <p>is smaller??</p>
+    <p>is greater??</p>
 
     </div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~5"></span> <h3>private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~5"></span> <h3>private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &gt; comparison of the header of two projections.</p><a href="../proc/isgreater~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt;= comparison of the header of two projections.</p><a href="../proc/isgreaterorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1151,66 +1211,6 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     </div>
   </div>
 
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~5"></span> <h3>private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
-</h3></div>
-    <div class="card-body">
-          
-  <p>This function provides a &gt;= comparison of the header of two projections.</p><a href="../proc/isgreaterorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-left~38"></span>
-              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>left</strong></td>
-            <td>
-<p>projection to compare</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-right~38"></span>
-              type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>right</strong></td>
-            <td>
-<p>projection to compare against</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>logical</small>
-    </h4>
-    <p>is greater??</p>
-
-    </div>
-  </div>
-
         </section>
         <br>
 
@@ -1236,7 +1236,7 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~45"></span>
+              <span class="anchor" id="variable-me~44"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1306,7 +1306,7 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~46"></span>
+              <span class="anchor" id="variable-me~45"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1361,7 +1361,7 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~32"></span>
+              <span class="anchor" id="variable-left~31"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1376,7 +1376,7 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~32"></span>
+              <span class="anchor" id="variable-right~31"></span>
               type(<a href='../type/ply_prj_header_type.html'>ply_prj_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1419,7 +1419,7 @@ projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-21T13:21:29.223747+0000             </p>
+ on 2025-05-21T14:34:30.997944+0000             </p>
           </div>
         </div>
         <br>

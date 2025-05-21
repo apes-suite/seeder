@@ -95,20 +95,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 2.3% of total for procedures.">172 statements</a>
+                 title=" 0.4% of total for procedures.">32 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/sdr_protoTree_module.f90"> Source File</a>
+              <a href="../src/sdr_refinePT_module.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/sdr_prototree_module.f90.html'>sdr_protoTree_module.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/sdr_prototree_module.html'>sdr_protoTree_module</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/sdr_refinept_module.f90.html'>sdr_refinePT_module.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sdr_refinept_module.html'>sdr_refinePT_module</a></li>
             <li class="breadcrumb-item active" aria-current="page">create_children</li>
           </ol>
         </nav>
@@ -156,30 +156,12 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine create_children(me, parent, geometry, leVal, testAll, minlevel)  
+    <h2>private  subroutine create_children(proto, parent, child_nodePos, grwTreeID)  
 </h2>
     
 
-    <p>This routine creates children for each parent if children
- intersect with boundary object.</p>
-<p>First loop over 8 children, and test for intersection of each child cube
- with the geometry objects inherited from the parent node.
- Then check for various object kinds, that might be intersected:
- If BOUNDARY objects are intersected, record the minimal bcID for later,
- boundaries are only marked as a leaf if the maxlevel has been reached.
- If NO BOUNDARY are intersected, the refinement can stop early here, and
- the node is marked as leaf. This avoids overly many elements before
- flooding.
- If a leaf is intersecting a SEED object, mark it already as flooded here.
- Children that do not intersect any objects do not need to be refined
- further at this stage and are marked as leaf nodes.</p>
-<div class="alert alert-success">
-<p class="alert-title h4">Todo</p>
-<p>HK: The content of the childLoop should probably move into its
-          own subroutine, it could then also be used to define the root
-          node (treeID=0). Though this might just add a 9th check on
-          all defined objects in most cases. Needs further thinking.</p>
-</div>
+    <p>This routine append 8 children to protoTree and inherit property bits from 
+parent. leaf bit is removed from parent.</p>
 
 
     <h3>Arguments</h3>
@@ -195,7 +177,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~22"></span>
+              <span class="anchor" id="variable-proto~27"></span>
               type(<a href='../type/sdr_prototree_type.html'>sdr_protoTree_type</a>),
             </td>
 <td>intent(inout)</td>
@@ -203,14 +185,14 @@
               
             </td>
             <td>::</td>
-            <td><strong>me</strong></td>
+            <td><strong>proto</strong></td>
             <td>
                 <p>preliminary tree on which childern are created</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-parent~10"></span>
+              <span class="anchor" id="variable-parent~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -220,68 +202,38 @@
             <td>::</td>
             <td><strong>parent</strong></td>
             <td>
-                <p>Position of parent node on the growing array of node_treeID and node_data
+                <p>Position of parent node on the dynamic array of node%treeID and node_data
 in preliminary tree</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-geometry~17"></span>
-              type(<a href='../type/sdr_geometry_type.html'>sdr_geometry_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>geometry</strong></td>
-            <td>
-                <p>type which contains all geometry object infos</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-leval~13"></span>
-              type(<a href='../type/levelvalues_type.html'>levelValues_type</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>leVal</strong></td>
-            <td>
-                <p>contains information on current level on which children are created</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-testall~5"></span>
-              logical,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>testAll</strong></td>
-            <td>
-                <p>testAll objects only for root node</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-minlevel~3"></span>
+              <span class="anchor" id="variable-child_nodepos~6"></span>
               integer,
             </td>
-<td>intent(in)</td>
+<td>intent(out)</td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>minlevel</strong></td>
+            <td><strong>child_nodePos</strong>(8)</td>
             <td>
-                
+                <p>8 children node position in protoTree</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grwtreeid~3"></span>
+              type(<a href='https://apes-suite.github.io/treelm/type/grw_longarray_type.html'>grw_longarray_type</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grwTreeID</strong></td>
+            <td>
+                <p>Temporary growing array of TreeID contains new leaf nodes in current level</p>
             </td>
         </tr>
     </tbody>
@@ -318,7 +270,7 @@ in preliminary tree</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-21T13:21:29.223747+0000             </p>
+ on 2025-05-21T14:34:30.997944+0000             </p>
           </div>
         </div>
         <br>
