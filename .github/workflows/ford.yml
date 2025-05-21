@@ -1,7 +1,6 @@
 name: Fordoc
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -27,6 +26,10 @@ jobs:
         with:
           waf-args: "--fordonline configure docu"
           obtain: "build/ford/sdr/docu"
+
+      - name: Change docu ownership
+        run: |
+          sudo chown -R $USER docu
 
       - name: Deploy Documentation
         uses: JamesIves/github-pages-deploy-action@v4
