@@ -33,5 +33,5 @@ Run `bin/waf --help` to see all options.
 Documentation
 -------------
 
-See the [documentation](https://geb.inf.tu-dresden.de/doxy/seeder/index.html)
+See the [documentation](https://apes-suite.github.io/seeder/index.html)
 for more details.
