@@ -161,168 +161,168 @@ internally and do triangle cube intersection.</p>
 <ul>
 <li>Single box</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nv">geometry</span><span class="o">=</span><span class="p">{</span>
-<span class="w">  </span><span class="nv">kind</span><span class="o">=</span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="nv">object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">      </span><span class="nv">origin</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-<span class="w">      </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.8</span><span class="p">}</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">      </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">-- If not defined default is set to false</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">geometry</span><span class="o">=</span><span class="p">{</span>
+  <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span> 
+    <span class="n">object</span><span class="o">=</span><span class="p">{</span>
+      <span class="n">origin</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+      <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+        <span class="p">{</span> <span class="mf">0.2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+        <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.8</span><span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- If not defined default is set to false</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <ul>
 <li>Rotated box</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nv">geometry</span><span class="o">=</span><span class="p">{</span>
-<span class="w">  </span><span class="nv">kind</span><span class="o">=</span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="nv">object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">      </span><span class="p">{</span>
-<span class="w">      </span><span class="nv">origin</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
-<span class="w">       </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                 </span><span class="mf">0.4</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                 </span><span class="o">-</span><span class="mf">0.4</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
-<span class="w">               </span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">               </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                 </span><span class="mf">0.4</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                 </span><span class="mf">0.4</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
-<span class="w">       </span><span class="p">},</span><span class="w"> </span><span class="c1">-- box rotated along x-axis in anti-clockwise direction by 45°</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="n">geometry</span><span class="o">=</span><span class="p">{</span>
+  <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span> 
+    <span class="n">object</span><span class="o">=</span><span class="p">{</span>
+      <span class="p">{</span>
+      <span class="n">origin</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">},</span>
+       <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> 
+                 <span class="mf">0.4</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                 <span class="o">-</span><span class="mf">0.4</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span> <span class="p">},</span>
+               <span class="p">{</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+               <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> 
+                 <span class="mf">0.4</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                 <span class="mf">0.4</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span> <span class="p">},</span>
+       <span class="p">},</span> <span class="c1">-- box rotated along x-axis in anti-clockwise direction by 45°</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span> 
 </code></pre></div>
 
 <p>Seeder file to generate the mesh with box</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mesh/&#39;</span>
-<span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;box&#39;</span>
-<span class="nv">minlevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<div class="codehilite"><pre><span></span><code><span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span>
+<span class="n">comment</span> <span class="o">=</span> <span class="s1">&#39;box&#39;</span>
+<span class="n">minlevel</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="c1">-- number of levels are two</span>
+<span class="n">level</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">-- number of levels are two</span>
 
 <span class="c1">-- Debug output can be used to output preliminary tree in restart format</span>
 <span class="c1">-- and this restart file can be converted to vtu format by harvester.</span>
 
-<span class="nv">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
+<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span><span class="n">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
 
 <span class="c1">-- boundingbox: two entries: origin and length in this</span>
 <span class="c1">-- order, if no keys are used</span>
-<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">},</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="p">}</span>
+<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">},</span> <span class="n">length</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="p">}</span>
 
 
 <span class="c1">-- Each spatial object is defined by an attribute and some geometric</span>
 <span class="c1">-- entity attached to this attribute. Attribute might be defined mulitple times.</span>
 <span class="c1">-- Attributes are described by a kind (boundary ,seed or Refinement) a level</span>
-<span class="nv">spatial_object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">},</span>
+<span class="n">spatial_object</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="p">},</span>
 
 <span class="c1">-- Geometric objects might by right now:</span>
 <span class="c1">-- canoND (point, line, plane or box)</span>
 <span class="c1">-- STL</span>
-<span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-<span class="w">                   </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="p">}</span>
-<span class="w">                           </span><span class="p">}</span>
-<span class="w">              </span><span class="p">}</span><span class="w"> </span>
-<span class="w"> </span><span class="p">},</span><span class="w">   </span><span class="c1">-- seed</span>
+<span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+                   <span class="n">object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mf">1.8</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span> <span class="p">}</span>
+                           <span class="p">}</span>
+              <span class="p">}</span> 
+ <span class="p">},</span>   <span class="c1">-- seed</span>
 
 <span class="c1">-- defining the attribute and geometry of the box</span>
 
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;solid&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="o">=</span><span class="mi">3</span><span class="w"> </span><span class="p">},</span>
+    <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span> <span class="p">},</span>
 
-<span class="w">      </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-<span class="w">         </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">           </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">           </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">             </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">             </span><span class="p">{</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">             </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="p">}</span>
-<span class="w">           </span><span class="p">},</span>
-<span class="w">           </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">         </span><span class="p">}</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span><span class="w"> </span>
-<span class="p">}</span><span class="w"> </span><span class="c1">-- spatial object</span>
+      <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+         <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+           <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+           <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span>
+             <span class="p">{</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+             <span class="p">{</span> <span class="mf">0.2</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+             <span class="p">{</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.0</span> <span class="p">,</span> <span class="mf">0.8</span> <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">}</span> 
+<span class="p">}</span> <span class="c1">-- spatial object</span>
 </code></pre></div>
 
 <p>A box can also be defined by two planes</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">printRuntimeInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<div class="codehilite"><pre><span></span><code><span class="n">printRuntimeInfo</span> <span class="o">=</span> <span class="kc">false</span>
 
-<span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;box&#39;</span>
-<span class="nv">minlevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="n">comment</span> <span class="o">=</span> <span class="s1">&#39;box&#39;</span>
+<span class="n">minlevel</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="c1">-- Use this file as template. Do not modify this file for running some testcases</span>
 <span class="c1">-- Location to write the mesh in</span>
 <span class="c1">-- Note the trailing path seperator, needed, if all mesh files should be</span>
 <span class="c1">-- directory. This directory has to exist before running Seeder in this</span>
 <span class="c1">-- case</span>
-<span class="nv">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mesh/&#39;</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;mesh/&#39;</span>
 
-<span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w">      </span><span class="c1">--number of levels are six</span>
+<span class="n">level</span> <span class="o">=</span> <span class="mi">6</span>      <span class="c1">--number of levels are six</span>
 
 <span class="c1">--Debug output can be used to output preliminary tree in restart format</span>
 <span class="c1">--and this restart file can be converted to vtu format by harvester.</span>
-<span class="nv">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
+<span class="n">debug</span> <span class="o">=</span> <span class="p">{</span><span class="n">debugMode</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugFiles</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span> <span class="n">debugMesh</span><span class="o">=</span><span class="s1">&#39;debug/&#39;</span><span class="p">}</span>
 
 <span class="c1">-- boundingbox: two entries: origin and length in this</span>
 <span class="c1">-- order, if no keys are used</span>
-<span class="nv">bounding_cube</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">},</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="p">}</span><span class="w">  </span>
+<span class="n">bounding_cube</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">},</span> <span class="n">length</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="p">}</span>  
 
 <span class="c1">-- Each spatial object is defined by an attribute and some geometric</span>
 <span class="c1">-- entity attached to this attribute. Attribute might be defined mulitple times.</span>
 <span class="c1">-- Attributes are described by a kind (boundary ,seed or Refinement) a level</span>
-<span class="w">    </span><span class="nv">spatial_object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">-- kind and lable are &#39;seed&#39;</span>
+    <span class="n">spatial_object</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="p">},</span> <span class="c1">-- kind and lable are &#39;seed&#39;</span>
 
 <span class="c1">-- Geometric objects might by right now:</span>
 <span class="c1">-- canoND (point, line, plane or box)</span>
 <span class="c1">-- STL</span>
-<span class="w">      </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="c1">-- seed</span>
-<span class="w">  </span><span class="c1">--------------------------------------------</span>
+      <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="c1">-- seed</span>
+  <span class="c1">--------------------------------------------</span>
 <span class="c1">-- defining the attribute and geometry for the left wall</span>
 
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;left_wall&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">level</span><span class="p">,</span><span class="w"> </span><span class="nv">calc_dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="p">{</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                 </span><span class="p">{</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">              </span><span class="p">},</span>
-<span class="w">        </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">               </span><span class="p">}</span><span class="w"> </span><span class="c1">-- object</span>
-<span class="w">               </span><span class="p">},</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="c1">--------------------------------------------</span>
+  <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;left_wall&#39;</span><span class="p">,</span>
+      <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="p">,</span> <span class="n">calc_dist</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span> <span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span>  <span class="p">{</span>  <span class="mf">4.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="p">},</span>
+                 <span class="p">{</span>  <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">4.0</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="p">},</span>
+              <span class="p">},</span>
+        <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="p">}</span> <span class="c1">-- object</span>
+               <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="c1">--------------------------------------------</span>
 <span class="c1">-- defining the attribute for the right wall</span>
 
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">               </span>
-<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;right_wall&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">level</span><span class="p">,</span><span class="w"> </span><span class="nv">calc_dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nv">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nv">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nv">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nv">origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="nv">vec</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                 </span><span class="p">{</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nv">only_surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="c1">-- object</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="c1">-- right_wall</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">-- spatial object</span>
+    <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">{</span>               
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;boundary&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;right_wall&#39;</span><span class="p">,</span>
+      <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="p">,</span> <span class="n">calc_dist</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;canoND&#39;</span><span class="p">,</span>
+      <span class="n">object</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.4</span> <span class="p">},</span>
+        <span class="n">vec</span> <span class="o">=</span>  <span class="p">{</span> <span class="p">{</span>  <span class="mf">4.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+                 <span class="p">{</span>  <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="n">only_surface</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">}</span> <span class="c1">-- object</span>
+    <span class="p">},</span>
+  <span class="p">},</span> <span class="c1">-- right_wall</span>
+<span class="p">}</span> <span class="c1">-- spatial object</span>
 </code></pre></div>
 
 <p>Mesh with hollow box (Hollow =&gt; only_surface = true)
@@ -351,7 +351,7 @@ internally and do triangle cube intersection.</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-19T20:29:04.916244+0000             </p>
+ on 2025-05-21T12:57:24.846657+0000             </p>
           </div>
         </div>
         <br>

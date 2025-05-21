@@ -158,13 +158,13 @@
       </a>
       <div id="inters-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-assignment%28%3D%29~6">assignment(=)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28%3D%3D%29~5">operator(==)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28SLASH%3D%29~5">operator(/=)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28lt%29~5">operator(<)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28lt%3D%29~5">operator(<=)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28gt%29~5">operator(>)</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28gt%3D%29~5">operator(>=)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-assignment%28%3D%29~2">assignment(=)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28%3D%3D%29~2">operator(==)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28SLASH%3D%29~2">operator(/=)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28lt%29~2">operator(<)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28lt%3D%29~2">operator(<=)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28gt%29~2">operator(>)</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#interface-operator%28gt%3D%29~2">operator(>=)</a>
         </div>
       </div>
     </div>
@@ -189,12 +189,12 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isequal~5">isEqual</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isunequal~5">isUnequal</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-issmaller~5">isSmaller</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-issmallerorequal~5">isSmallerOrEqual</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isgreater~5">isGreater</a>
-            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isgreaterorequal~5">isGreaterOrEqual</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isequal~2">isEqual</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isunequal~2">isUnequal</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-issmaller~2">isSmaller</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-issmallerorequal~2">isSmallerOrEqual</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isgreater~2">isGreater</a>
+            <a class="list-group-item" href="../module/ply_fpt_header_module.html#proc-isgreaterorequal~2">isGreaterOrEqual</a>
         </div>
       </div>
     </div>
@@ -288,17 +288,17 @@
    elements in the transformation matrix. The default for this setting is 8.</li>
 </ul>
 <p>The configuration table for the FPT table may, for example, look as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nv">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nv">kind</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fpt&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">factor</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">adapt_factor_pow2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">lobattoPoints</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">blocksize</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">approx_terms</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">implementation</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">striplen</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">subblockingWidth</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
-<span class="w">  </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code>  <span class="n">projection</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">kind</span>              <span class="o">=</span> <span class="s1">&#39;fpt&#39;</span><span class="p">,</span>
+    <span class="n">factor</span>            <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="n">adapt_factor_pow2</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">lobattoPoints</span>     <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">blocksize</span>         <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="n">approx_terms</span>      <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="n">implementation</span>    <span class="o">=</span> <span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
+    <span class="n">striplen</span>          <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
+    <span class="n">subblockingWidth</span>  <span class="o">=</span> <span class="mi">8</span>
+  <span class="p">}</span>
 </code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
@@ -307,502 +307,21 @@
             <li class="list-group-item">
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_tools_module.html'>tem_tools_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_float_module.html'>tem_float_module</a></li>
                   <li class="list-inline-item"><a href='ply_nodes_header_module.html'>ply_nodes_header_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
-                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_compileconf_module.html'>tem_compileconf_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_aux_module.html'>tem_aux_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aot_out_module.html'>aot_out_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_logging_module.html'>tem_logging_module</a></li>
                   <li class="list-inline-item"><a href='https://apes-suite.github.io/aotus/module/aotus_module.html'>aotus_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/tem_compileconf_module.html'>tem_compileconf_module</a></li>
+                  <li class="list-inline-item"><a href='https://apes-suite.github.io/treelm/module/env_module.html'>env_module</a></li>
               </ul>
             </li>
-            <li class="list-group-item">
-              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.43.0 (0)
- -->
-<!-- Title: module~~ply_fpt_header_module~~UsesGraph Pages: 1 -->
-<svg id="moduleply_fpt_header_moduleUsesGraph" width="450pt" height="364pt"
- viewBox="0.00 0.00 450.00 364.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~ply_fpt_header_module~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 360)">
-<title>module~~ply_fpt_header_module~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-360 446,-360 446,4 -4,4"/>
-<!-- module~ply_fpt_header_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node1" class="node">
-<title>module~ply_fpt_header_module</title>
-<polygon fill="none" stroke="black" points="442,-192 305,-192 305,-168 442,-168 442,-192"/>
-<text text-anchor="middle" x="373.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_fpt_header_module</text>
-</g>
-<!-- aot_out_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node2" class="node">
-<title>aot_out_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node2"><a xlink:href="https://apes-suite.github.io/aotus/module/aot_out_module.html" xlink:title="aot_out_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="240.5,-356 142.5,-356 142.5,-332 240.5,-332 240.5,-356"/>
-<text text-anchor="middle" x="191.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aot_out_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;aot_out_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge1" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;aot_out_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M367.23,-192.11C354.56,-219.77 319.63,-287.91 269,-323 263.37,-326.9 257.04,-330.08 250.5,-332.67"/>
-<polygon fill="#000000" stroke="#000000" points="249.1,-329.45 240.82,-336.05 251.41,-336.06 249.1,-329.45"/>
-</g>
-<!-- aotus_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node3" class="node">
-<title>aotus_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node3"><a xlink:href="https://apes-suite.github.io/aotus/module/aotus_module.html" xlink:title="aotus_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="235.5,-314 147.5,-314 147.5,-290 235.5,-290 235.5,-314"/>
-<text text-anchor="middle" x="191.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aotus_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;aotus_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge2" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;aotus_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M362.58,-192.05C345.44,-212.12 308.36,-252.53 269,-276 261.64,-280.39 253.44,-284.16 245.21,-287.37"/>
-<polygon fill="#000000" stroke="#000000" points="243.79,-284.16 235.59,-290.87 246.19,-290.74 243.79,-284.16"/>
-</g>
-<!-- env_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node4" class="node">
-<title>env_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node4"><a xlink:href="https://apes-suite.github.io/treelm/module/env_module.html" xlink:title="env_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="78,-254 0,-254 0,-230 78,-230 78,-254"/>
-<text text-anchor="middle" x="39" y="-239.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">env_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;env_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge3" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;env_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M358.29,-192.21C339.39,-207.56 304.24,-233.12 269,-243 208.37,-260 135.11,-255.58 88.05,-249.74"/>
-<polygon fill="#000000" stroke="#000000" points="88.5,-246.27 78.13,-248.44 87.59,-253.21 88.5,-246.27"/>
-</g>
-<!-- module~ply_nodes_header_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node5" class="node">
-<title>module~ply_nodes_header_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node5"><a xlink:href="../module/ply_nodes_header_module.html" xlink:title="ply_nodes_header_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="269,-234 114,-234 114,-210 269,-210 269,-234"/>
-<text text-anchor="middle" x="191.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_nodes_header_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge4" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;module~ply_nodes_header_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M320.92,-192.04C300.02,-196.91 275.71,-202.58 253.91,-207.67"/>
-<polygon fill="#000000" stroke="#000000" points="253.03,-204.28 244.09,-209.96 254.62,-211.1 253.03,-204.28"/>
-</g>
-<!-- tem_aux_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node6" class="node">
-<title>tem_aux_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node6"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_aux_module.html" xlink:title="tem_aux_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="243.5,-192 139.5,-192 139.5,-168 243.5,-168 243.5,-192"/>
-<text text-anchor="middle" x="191.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_aux_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;tem_aux_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge5" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;tem_aux_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M304.96,-180C288.11,-180 270.13,-180 253.61,-180"/>
-<polygon fill="#000000" stroke="#000000" points="253.54,-176.5 243.54,-180 253.54,-183.5 253.54,-176.5"/>
-</g>
-<!-- tem_compileconf_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node7" class="node">
-<title>tem_compileconf_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node7"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_compileconf_module.html" xlink:title="tem_compileconf_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="267,-150 116,-150 116,-126 267,-126 267,-150"/>
-<text text-anchor="middle" x="191.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_compileconf_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;tem_compileconf_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge6" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;tem_compileconf_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M320.92,-167.96C300.02,-163.09 275.71,-157.42 253.91,-152.33"/>
-<polygon fill="#000000" stroke="#000000" points="254.62,-148.9 244.09,-150.04 253.03,-155.72 254.62,-148.9"/>
-</g>
-<!-- tem_float_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node8" class="node">
-<title>tem_float_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node8"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_float_module.html" xlink:title="tem_float_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="246,-108 137,-108 137,-84 246,-84 246,-108"/>
-<text text-anchor="middle" x="191.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_float_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;tem_float_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge7" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;tem_float_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M356.07,-168C336.29,-154.03 301.64,-131.08 269,-117 264.22,-114.94 259.19,-113.03 254.08,-111.27"/>
-<polygon fill="#000000" stroke="#000000" points="254.8,-107.82 244.2,-108.07 252.64,-114.48 254.8,-107.82"/>
-</g>
-<!-- tem_logging_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node9" class="node">
-<title>tem_logging_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node9"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_logging_module.html" xlink:title="tem_logging_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="253.5,-66 129.5,-66 129.5,-42 253.5,-42 253.5,-66"/>
-<text text-anchor="middle" x="191.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_logging_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;tem_logging_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge8" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;tem_logging_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M364.03,-167.91C348.03,-146 311.18,-99.73 269,-75 265.94,-73.2 262.71,-71.56 259.4,-70.05"/>
-<polygon fill="#000000" stroke="#000000" points="260.43,-66.69 249.85,-66.14 257.78,-73.17 260.43,-66.69"/>
-</g>
-<!-- tem_tools_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_node10" class="node">
-<title>tem_tools_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsesGraph_node10"><a xlink:href="https://apes-suite.github.io/treelm/module/tem_tools_module.html" xlink:title="tem_tools_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="246.5,-24 136.5,-24 136.5,0 246.5,0 246.5,-24"/>
-<text text-anchor="middle" x="191.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tem_tools_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_fpt_header_module&#45;&gt;tem_tools_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge9" class="edge">
-<title>module~ply_fpt_header_module&#45;&gt;tem_tools_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M367.51,-167.98C355.2,-139.82 320.58,-69.25 269,-33 265.05,-30.23 260.75,-27.82 256.27,-25.73"/>
-<polygon fill="#000000" stroke="#000000" points="257.45,-22.43 246.87,-21.87 254.79,-28.9 257.45,-22.43"/>
-</g>
-<!-- module~ply_nodes_header_module&#45;&gt;env_module -->
-<g id="module~~ply_fpt_header_module~~UsesGraph_edge10" class="edge">
-<title>module~ply_nodes_header_module&#45;&gt;env_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M113.93,-232.18C105.25,-233.33 96.59,-234.48 88.42,-235.57"/>
-<polygon fill="#000000" stroke="#000000" points="87.82,-232.11 78.37,-236.9 88.74,-239.05 87.82,-232.11"/>
-</g>
-</g>
-</svg>
-</div>          <div>
-            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
-          </div>
-          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-<p>Nodes of different colours represent the following: </p>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.43.0 (0)
- -->
-<!-- Title: Graph Key Pages: 1 -->
-<svg width="518pt" height="32pt"
- viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
-<!-- Module -->
-<g id="node1" class="node">
-<title>Module</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
-</g>
-<!-- Submodule -->
-<g id="node2" class="node">
-<title>Submodule</title>
-<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
-<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
-</g>
-<!-- Subroutine -->
-<g id="node3" class="node">
-<title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
-<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
-</g>
-<!-- Function -->
-<g id="node4" class="node">
-<title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
-<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
-</g>
-<!-- Program -->
-<g id="node5" class="node">
-<title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
-<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
-</g>
-<!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
-<title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
-<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
-</g>
-</g>
-</svg>
-
-<p>Solid arrows point from a submodule to the (sub)module which it is
-descended from. Dashed arrows point from a module or program unit to 
-modules which it uses.
-</p>
- </div>
-            </div>
-          </div>
-        </div>
-            </li>
         </ul>
       </div>
     </div>
 
-          <div class="card">
-      <h3 class="card-header card-title bg-light">Used by</h3>
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.43.0 (0)
- -->
-<!-- Title: module~~ply_fpt_header_module~~UsedByGraph Pages: 1 -->
-<svg id="moduleply_fpt_header_moduleUsedByGraph" width="641pt" height="140pt"
- viewBox="0.00 0.00 641.00 140.07" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~ply_fpt_header_module~~UsedByGraph" class="graph" transform="scale(0.69 0.69) rotate(0) translate(4 199)">
-<title>module~~ply_fpt_header_module~~UsedByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-199 925,-199 925,4 -4,4"/>
-<!-- module~ply_fpt_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node1" class="node">
-<title>module~ply_fpt_header_module</title>
-<polygon fill="none" stroke="black" points="137,-174 0,-174 0,-150 137,-150 137,-174"/>
-<text text-anchor="middle" x="68.5" y="-159.6" font-family="Helvetica,sans-Serif" font-size="10.50">ply_fpt_header_module</text>
-</g>
-<!-- module~ply_legfpt_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node2" class="node">
-<title>module~ply_legfpt_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node2"><a xlink:href="../module/ply_legfpt_module.html" xlink:title="ply_legFpt_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="297.5,-195 185.5,-195 185.5,-171 297.5,-171 297.5,-195"/>
-<text text-anchor="middle" x="241.5" y="-180.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_legFpt_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge1" class="edge">
-<title>module~ply_legfpt_module&#45;&gt;module~ply_fpt_header_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M185.45,-176.24C173.28,-174.75 160.16,-173.13 147.28,-171.55"/>
-<polygon fill="#000000" stroke="#000000" points="147.37,-168.04 137.02,-170.29 146.52,-174.98 147.37,-168.04"/>
-</g>
-<!-- module~ply_prj_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node3" class="node">
-<title>module~ply_prj_header_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node3"><a xlink:href="../module/ply_prj_header_module.html" xlink:title="ply_prj_header_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="310,-153 173,-153 173,-129 310,-129 310,-153"/>
-<text text-anchor="middle" x="241.5" y="-138.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ply_prj_header_module</text>
-</a>
-</g>
-</g>
-<!-- module~ply_prj_header_module&#45;&gt;module~ply_fpt_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge2" class="edge">
-<title>module~ply_prj_header_module&#45;&gt;module~ply_fpt_header_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.92,-149.3C164.46,-150.34 155.76,-151.41 147.17,-152.46"/>
-<polygon fill="#000000" stroke="#000000" points="146.65,-149 137.15,-153.69 147.5,-155.95 146.65,-149"/>
-</g>
-<!-- module~sdr_proto2treelm_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node4" class="node">
-<title>module~sdr_proto2treelm_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node4"><a xlink:href="../module/sdr_proto2treelm_module.html" xlink:title="sdr_proto2treelm_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="831,-188 682,-188 682,-164 831,-164 831,-188"/>
-<text text-anchor="middle" x="756.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_proto2treelm_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge3" class="edge">
-<title>module~sdr_proto2treelm_module&#45;&gt;module~ply_prj_header_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M682,-170.99C585.94,-164.43 418.43,-153 320.29,-146.31"/>
-<polygon fill="#000000" stroke="#000000" points="320.35,-142.8 310.14,-145.61 319.88,-149.79 320.35,-142.8"/>
-</g>
-<!-- module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node6" class="node">
-<title>module~sdr_config_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node6"><a xlink:href="../module/sdr_config_module.html" xlink:title="sdr_config_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="646,-113 533,-113 533,-89 646,-89 646,-113"/>
-<text text-anchor="middle" x="589.5" y="-98.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_config_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge8" class="edge">
-<title>module~sdr_proto2treelm_module&#45;&gt;module~sdr_config_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M718.06,-163.99C706.36,-159.91 693.52,-155.08 682,-150 660.52,-140.52 637.21,-127.99 619.49,-117.98"/>
-<polygon fill="#000000" stroke="#000000" points="621.19,-114.92 610.77,-113 617.72,-121 621.19,-114.92"/>
-</g>
-<!-- module~sdr_subresolution_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node5" class="node">
-<title>module~sdr_subresolution_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node5"><a xlink:href="../module/sdr_subresolution_module.html" xlink:title="sdr_subresolution_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="497,-133 346,-133 346,-109 497,-109 497,-133"/>
-<text text-anchor="middle" x="421.5" y="-118.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_subresolution_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge4" class="edge">
-<title>module~sdr_subresolution_module&#45;&gt;module~ply_prj_header_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M345.79,-129.39C337.4,-130.34 328.84,-131.3 320.41,-132.25"/>
-<polygon fill="#000000" stroke="#000000" points="319.77,-128.8 310.22,-133.39 320.55,-135.75 319.77,-128.8"/>
-</g>
-<!-- module~sdr_config_module&#45;&gt;module~sdr_subresolution_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge6" class="edge">
-<title>module~sdr_config_module&#45;&gt;module~sdr_subresolution_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M532.76,-107.72C524.57,-108.7 515.98,-109.74 507.36,-110.78"/>
-<polygon fill="#000000" stroke="#000000" points="506.77,-107.32 497.26,-111.99 507.61,-114.27 506.77,-107.32"/>
-</g>
-<!-- program~seeder -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node7" class="node">
-<title>program~seeder</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node7"><a xlink:href="../program/seeder.html" xlink:title="seeder">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="921,-168 867,-168 867,-144 921,-144 921,-168"/>
-<text text-anchor="middle" x="894" y="-153.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">seeder</text>
-</a>
-</g>
-</g>
-<!-- program~seeder&#45;&gt;module~sdr_proto2treelm_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge5" class="edge">
-<title>program~seeder&#45;&gt;module~sdr_proto2treelm_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M866.87,-159.86C859.25,-160.98 850.48,-162.28 841.29,-163.63"/>
-<polygon fill="#000000" stroke="#000000" points="840.57,-160.2 831.19,-165.12 841.59,-167.13 840.57,-160.2"/>
-</g>
-<!-- program~seeder&#45;&gt;module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge11" class="edge">
-<title>program~seeder&#45;&gt;module~sdr_config_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M866.95,-151.26C820.46,-142.81 721.93,-124.9 655.95,-112.9"/>
-<polygon fill="#000000" stroke="#000000" points="656.52,-109.45 646.06,-111.1 655.27,-116.33 656.52,-109.45"/>
-</g>
-<!-- module~sdr_flooding_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node8" class="node">
-<title>module~sdr_flooding_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node8"><a xlink:href="../module/sdr_flooding_module.html" xlink:title="sdr_flooding_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="818.5,-108 694.5,-108 694.5,-84 818.5,-84 818.5,-108"/>
-<text text-anchor="middle" x="756.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_flooding_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_flooding_module&#45;&gt;module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge7" class="edge">
-<title>module~sdr_flooding_module&#45;&gt;module~sdr_config_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M694.06,-97.86C681.75,-98.23 668.77,-98.63 656.31,-99.01"/>
-<polygon fill="#000000" stroke="#000000" points="655.89,-95.52 646,-99.32 656.1,-102.51 655.89,-95.52"/>
-</g>
-<!-- module~sdr_prototree_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node9" class="node">
-<title>module~sdr_prototree_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node9"><a xlink:href="../module/sdr_prototree_module.html" xlink:title="sdr_protoTree_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="821.5,-66 691.5,-66 691.5,-42 821.5,-42 821.5,-66"/>
-<text text-anchor="middle" x="756.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_protoTree_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_prototree_module&#45;&gt;module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge9" class="edge">
-<title>module~sdr_prototree_module&#45;&gt;module~sdr_config_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M713.01,-66.1C691.55,-72.22 665.32,-79.69 642.65,-86.14"/>
-<polygon fill="#000000" stroke="#000000" points="641.51,-82.83 632.85,-88.94 643.42,-89.56 641.51,-82.83"/>
-</g>
-<!-- module~sdr_refinept_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_node10" class="node">
-<title>module~sdr_refinept_module</title>
-<g id="a_module~~ply_fpt_header_module~~UsedByGraph_node10"><a xlink:href="../module/sdr_refinept_module.html" xlink:title="sdr_refinePT_module">
-<polygon fill="#337ab7" stroke="#337ab7" points="818.5,-24 694.5,-24 694.5,0 818.5,0 818.5,-24"/>
-<text text-anchor="middle" x="756.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sdr_refinePT_module</text>
-</a>
-</g>
-</g>
-<!-- module~sdr_refinept_module&#45;&gt;module~sdr_config_module -->
-<g id="module~~ply_fpt_header_module~~UsedByGraph_edge10" class="edge">
-<title>module~sdr_refinept_module&#45;&gt;module~sdr_config_module</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M704.38,-24.01C696.71,-26.55 689.02,-29.53 682,-33 655.62,-46.03 629.02,-66.86 611.35,-82.04"/>
-<polygon fill="#000000" stroke="#000000" points="608.65,-79.75 603.44,-88.97 613.26,-85.01 608.65,-79.75"/>
-</g>
-</g>
-</svg>
-</div>                <script>
-                  var panmoduleply_fpt_header_moduleUsedByGraph = svgPanZoom('#moduleply_fpt_header_moduleUsedByGraph',
-                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
-                  );
-                </script>          <div>
-            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
-          </div>
-          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-<p>Nodes of different colours represent the following: </p>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.43.0 (0)
- -->
-<!-- Title: Graph Key Pages: 1 -->
-<svg width="518pt" height="32pt"
- viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
-<!-- Module -->
-<g id="node1" class="node">
-<title>Module</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
-</g>
-<!-- Submodule -->
-<g id="node2" class="node">
-<title>Submodule</title>
-<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
-<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
-</g>
-<!-- Subroutine -->
-<g id="node3" class="node">
-<title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
-<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
-</g>
-<!-- Function -->
-<g id="node4" class="node">
-<title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
-<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
-</g>
-<!-- Program -->
-<g id="node5" class="node">
-<title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
-<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
-</g>
-<!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
-<title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
-<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
-</g>
-</g>
-</svg>
-
-<p>Solid arrows point from a submodule to the (sub)module which it is
-descended from. Dashed arrows point from a module or program unit to 
-modules which it uses.
-</p>
- </div>
-            </div>
-          </div>
-        </div>
-            </li>
-        </ul>
-      </div>
-    </div>
-
+      
       <br>
 
 
@@ -916,8 +435,8 @@ parameter
           <h2>Interfaces</h2>
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-assignment%28%3D%29~6"></span>
-      <h3>public        interface <a href='../interface/assignment(=)~6.html'>assignment(=)</a> 
+      <span class="anchor" id="interface-assignment%28%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/assignment(=)~2.html'>assignment(=)</a> 
       </h3>
     </div>
     <ul class="list-group">
@@ -942,7 +461,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~31"></span>
+              <span class="anchor" id="variable-left~8"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -957,7 +476,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~31"></span>
+              <span class="anchor" id="variable-right~8"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -980,14 +499,14 @@ parameter
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28%3D%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(==)~5.html'>operator(==)</a> 
+      <span class="anchor" id="interface-operator%28%3D%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(==)~2.html'>operator(==)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/isequal~5.html'>isEqual</a>(left, right) result(equality)  
+    private pure function <a href='../proc/isequal~2.html'>isEqual</a>(left, right) result(equality)  
 
     </h3>
     
@@ -1008,7 +527,7 @@ fpt_blocksize or the factor are equal.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~32"></span>
+              <span class="anchor" id="variable-left~9"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1023,7 +542,7 @@ fpt_blocksize or the factor are equal.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~32"></span>
+              <span class="anchor" id="variable-right~9"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1051,14 +570,14 @@ fpt_blocksize or the factor are equal.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28SLASH%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(SLASH=)~5.html'>operator(/=)</a> 
+      <span class="anchor" id="interface-operator%28SLASH%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(SLASH=)~2.html'>operator(/=)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+    private pure function <a href='../proc/isunequal~2.html'>isUnequal</a>(left, right) result(unequality)  
 
     </h3>
     
@@ -1079,7 +598,7 @@ fpt_blocksize or the factor are not equal.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~33"></span>
+              <span class="anchor" id="variable-left~10"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1094,7 +613,7 @@ fpt_blocksize or the factor are not equal.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~33"></span>
+              <span class="anchor" id="variable-right~10"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1122,14 +641,14 @@ fpt_blocksize or the factor are not equal.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28lt%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(lt)~5.html'>operator(<)</a> 
+      <span class="anchor" id="interface-operator%28lt%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(lt)~2.html'>operator(<)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
+    private pure function <a href='../proc/issmaller~2.html'>isSmaller</a>(left, right) result(small)  
 
     </h3>
     
@@ -1150,7 +669,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~34"></span>
+              <span class="anchor" id="variable-left~11"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1165,7 +684,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~34"></span>
+              <span class="anchor" id="variable-right~11"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1193,14 +712,14 @@ last by factor.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28lt%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(lt=)~5.html'>operator(<=)</a> 
+      <span class="anchor" id="interface-operator%28lt%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(lt=)~2.html'>operator(<=)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+    private pure function <a href='../proc/issmallerorequal~2.html'>isSmallerOrEqual</a>(left, right) result(small)  
 
     </h3>
     
@@ -1221,7 +740,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~35"></span>
+              <span class="anchor" id="variable-left~12"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1236,7 +755,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~35"></span>
+              <span class="anchor" id="variable-right~12"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1264,14 +783,14 @@ last by factor.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28gt%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(gt)~5.html'>operator(>)</a> 
+      <span class="anchor" id="interface-operator%28gt%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(gt)~2.html'>operator(>)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
+    private pure function <a href='../proc/isgreater~2.html'>isGreater</a>(left, right) result(great)  
 
     </h3>
     
@@ -1292,7 +811,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~36"></span>
+              <span class="anchor" id="variable-left~13"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1307,7 +826,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~36"></span>
+              <span class="anchor" id="variable-right~13"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1335,14 +854,14 @@ last by factor.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-operator%28gt%3D%29~5"></span>
-      <h3>public        interface <a href='../interface/operator(gt=)~5.html'>operator(>=)</a> 
+      <span class="anchor" id="interface-operator%28gt%3D%29~2"></span>
+      <h3>public        interface <a href='../interface/operator(gt=)~2.html'>operator(>=)</a> 
       </h3>
     </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
+    private pure function <a href='../proc/isgreaterorequal~2.html'>isGreaterOrEqual</a>(left, right) result(great)  
 
     </h3>
     
@@ -1363,7 +882,7 @@ last by factor.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~37"></span>
+              <span class="anchor" id="variable-left~14"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1378,7 +897,7 @@ last by factor.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~37"></span>
+              <span class="anchor" id="variable-right~14"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1436,7 +955,7 @@ fpt method later on</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-nodes_header~3"></span>
+              <span class="anchor" id="variable-nodes_header~2"></span>
               type(<a href='../type/ply_nodes_header_type.html'>ply_nodes_header_type</a>),
             </td>
               <td>public</td>
@@ -1453,7 +972,7 @@ fpt method later on</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-factor~4"></span>
+              <span class="anchor" id="variable-factor~3"></span>
               real(kind=rk),
             </td>
               <td>public</td>
@@ -1598,11 +1117,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isequal~5"></span> <h3>private pure function <a href='../proc/isequal~5.html'>isEqual</a>(left, right) result(equality)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isequal~2"></span> <h3>private pure function <a href='../proc/isequal~2.html'>isEqual</a>(left, right) result(equality)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides the test for equality of two projections.</p><a href="../proc/isequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides the test for equality of two projections.</p><a href="../proc/isequal~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1617,7 +1136,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~32"></span>
+              <span class="anchor" id="variable-left~9"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1632,7 +1151,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~32"></span>
+              <span class="anchor" id="variable-right~9"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1658,11 +1177,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~5"></span> <h3>private pure function <a href='../proc/isunequal~5.html'>isUnequal</a>(left, right) result(unequality)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isunequal~2"></span> <h3>private pure function <a href='../proc/isunequal~2.html'>isUnequal</a>(left, right) result(unequality)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides the test for unequality of two projections.</p><a href="../proc/isunequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides the test for unequality of two projections.</p><a href="../proc/isunequal~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1677,7 +1196,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~33"></span>
+              <span class="anchor" id="variable-left~10"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1692,7 +1211,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~33"></span>
+              <span class="anchor" id="variable-right~10"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1718,11 +1237,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~5"></span> <h3>private pure function <a href='../proc/issmaller~5.html'>isSmaller</a>(left, right) result(small)  
+    <div class="card-header codesum"><span class="anchor" id="proc-issmaller~2"></span> <h3>private pure function <a href='../proc/issmaller~2.html'>isSmaller</a>(left, right) result(small)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &lt; comparison of two projections.</p><a href="../proc/issmaller~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &lt; comparison of two projections.</p><a href="../proc/issmaller~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1737,7 +1256,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~34"></span>
+              <span class="anchor" id="variable-left~11"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1752,7 +1271,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~34"></span>
+              <span class="anchor" id="variable-right~11"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1778,11 +1297,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~5"></span> <h3>private pure function <a href='../proc/issmallerorequal~5.html'>isSmallerOrEqual</a>(left, right) result(small)  
+    <div class="card-header codesum"><span class="anchor" id="proc-issmallerorequal~2"></span> <h3>private pure function <a href='../proc/issmallerorequal~2.html'>isSmallerOrEqual</a>(left, right) result(small)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &lt;= comparison of two projections.</p><a href="../proc/issmallerorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &lt;= comparison of two projections.</p><a href="../proc/issmallerorequal~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1797,7 +1316,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~35"></span>
+              <span class="anchor" id="variable-left~12"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1812,7 +1331,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~35"></span>
+              <span class="anchor" id="variable-right~12"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1838,11 +1357,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~5"></span> <h3>private pure function <a href='../proc/isgreater~5.html'>isGreater</a>(left, right) result(great)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreater~2"></span> <h3>private pure function <a href='../proc/isgreater~2.html'>isGreater</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &gt; comparison of two projections.</p><a href="../proc/isgreater~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt; comparison of two projections.</p><a href="../proc/isgreater~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1857,7 +1376,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~36"></span>
+              <span class="anchor" id="variable-left~13"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1872,7 +1391,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~36"></span>
+              <span class="anchor" id="variable-right~13"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1898,11 +1417,11 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~5"></span> <h3>private pure function <a href='../proc/isgreaterorequal~5.html'>isGreaterOrEqual</a>(left, right) result(great)  
+    <div class="card-header codesum"><span class="anchor" id="proc-isgreaterorequal~2"></span> <h3>private pure function <a href='../proc/isgreaterorequal~2.html'>isGreaterOrEqual</a>(left, right) result(great)  
 </h3></div>
     <div class="card-body">
           
-  <p>This function provides a &gt;= comparison of two projections.</p><a href="../proc/isgreaterorequal~5.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>This function provides a &gt;= comparison of two projections.</p><a href="../proc/isgreaterorequal~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1917,7 +1436,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~37"></span>
+              <span class="anchor" id="variable-left~14"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1932,7 +1451,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~37"></span>
+              <span class="anchor" id="variable-right~14"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -1983,7 +1502,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~32"></span>
+              <span class="anchor" id="variable-me~8"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -1998,7 +1517,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-conf~28"></span>
+              <span class="anchor" id="variable-conf~9"></span>
               type(<a href='https://apes-suite.github.io/aotus/type/flu_state.html'>flu_State</a>),
             </td>
 <td>intent(inout)</td>
@@ -2013,7 +1532,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-thandle~19"></span>
+              <span class="anchor" id="variable-thandle~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2053,7 +1572,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~33"></span>
+              <span class="anchor" id="variable-me~9"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -2084,7 +1603,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-factor~5"></span>
+              <span class="anchor" id="variable-factor~4"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -2094,7 +1613,7 @@ in the oversampled polynomial?</p><a href="../type/ply_fpt_header_type.html#vari
             <td>::</td>
             <td><strong>factor</strong></td>
             <td>
-<p>Oversampling factor to use.</p><a href="../proc/ply_fpt_header_define.html#variable-factor~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Oversampling factor to use.</p><a href="../proc/ply_fpt_header_define.html#variable-factor~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2181,7 +1700,7 @@ Default is .false..</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-lobattopoints~3"></span>
+              <span class="anchor" id="variable-lobattopoints~2"></span>
               logical,
             </td>
 <td>intent(in),</td>
@@ -2222,7 +1741,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~34"></span>
+              <span class="anchor" id="variable-me~10"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2237,7 +1756,7 @@ not. Defaults to .false..</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-conf~29"></span>
+              <span class="anchor" id="variable-conf~10"></span>
               type(<a href='https://apes-suite.github.io/aotus/type/aot_out_type.html'>aot_out_type</a>),
             </td>
 <td>intent(inout)</td>
@@ -2277,7 +1796,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-me~35"></span>
+              <span class="anchor" id="variable-me~11"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2317,7 +1836,7 @@ not. Defaults to .false..</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-left~31"></span>
+              <span class="anchor" id="variable-left~8"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(out)</td>
@@ -2332,7 +1851,7 @@ not. Defaults to .false..</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right~31"></span>
+              <span class="anchor" id="variable-right~8"></span>
               type(<a href='../type/ply_fpt_header_type.html'>ply_fpt_header_type</a>),
             </td>
 <td>intent(in)</td>
@@ -2375,7 +1894,7 @@ not. Defaults to .false..</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-19T20:29:04.916244+0000             </p>
+ on 2025-05-21T12:57:24.846657+0000             </p>
           </div>
         </div>
         <br>

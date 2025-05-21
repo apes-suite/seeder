@@ -165,12 +165,12 @@ to translate the geometrical object.
 Gometry is translated just by adding the position of the geometry with 
 given translation vector.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">  </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">attribute</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">  </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">geometry</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">  </span><span class="nv">transformation</span><span class="o">=</span><span class="p">{</span>
-<span class="w">    </span><span class="nv">translation</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span><span class="w"> </span><span class="c1">-- translating the object along y-axis by 2.0</span>
-<span class="w">  </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+  <span class="p">...</span><span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span><span class="p">...</span>
+  <span class="p">...</span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span><span class="p">...</span>
+  <span class="n">transformation</span><span class="o">=</span><span class="p">{</span>
+    <span class="n">translation</span><span class="o">=</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">}</span> <span class="c1">-- translating the object along y-axis by 2.0</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -189,24 +189,24 @@ with const and it is vector with three entries, then geometry is scaled in
 x,y,z directions with different factor.
 Example:
 * Constant scaling in three direction</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">attribute</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">geometry</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="nv">transformation</span><span class="o">=</span><span class="p">{</span>
-<span class="w">     </span><span class="nv">deformation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="c1">-- scaled in all direction by 2.0</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code> <span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="n">transformation</span><span class="o">=</span><span class="p">{</span>
+     <span class="n">deformation</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="c1">-- scaled in all direction by 2.0</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <ul>
 <li>Different scaling in three direction</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">attribute</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">geometry</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="nv">transformation</span><span class="o">=</span><span class="p">{</span>
-<span class="w">     </span><span class="nv">deformation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code> <span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="n">transformation</span><span class="o">=</span><span class="p">{</span>
+     <span class="n">deformation</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">}</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -214,12 +214,12 @@ Example:
 <li>Reflection
 Below example reflect the geometry object in y-axis</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">attribute</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">geometry</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="nv">transformation</span><span class="o">=</span><span class="p">{</span>
-<span class="w">     </span><span class="nv">deformation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code> <span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="n">transformation</span><span class="o">=</span><span class="p">{</span>
+     <span class="n">deformation</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">}</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -229,20 +229,20 @@ Below example reflect the geometry object in y-axis</li>
  Below example rotate the geometry object in z-axis in anti-clockwise
  direction by 45°.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">spatial_object</span><span class="o">=</span><span class="p">{</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">attribute</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="p">...</span><span class="o">&lt;</span><span class="nv">geometry</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="w">   </span><span class="nv">transformation</span><span class="o">=</span><span class="p">{</span>
-<span class="w">     </span><span class="nv">deformation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                      </span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                      </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                      </span><span class="mf">0.5</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                      </span><span class="mf">0.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">}</span>
-<span class="w">     </span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code> <span class="n">spatial_object</span><span class="o">=</span><span class="p">{</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">attribute</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="p">...</span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span><span class="p">...</span>
+   <span class="n">transformation</span><span class="o">=</span><span class="p">{</span>
+     <span class="n">deformation</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="p">{</span> <span class="mf">0.5</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                      <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                      <span class="mf">0.0</span> <span class="p">},</span>
+                    <span class="p">{</span> <span class="mf">0.5</span><span class="o">*</span><span class="nb">math.sin</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                      <span class="mf">0.5</span><span class="o">*</span><span class="nb">math.cos</span><span class="p">(</span><span class="mi">45</span><span class="o">*</span><span class="nb">math.pi</span><span class="o">/</span><span class="mi">180</span><span class="p">),</span> 
+                      <span class="mf">0.0</span> <span class="p">},</span>
+                    <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -268,7 +268,7 @@ Example lua file is available at <code>testsuite/transform/seeder.lua</code>.</p
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-19T20:29:04.916244+0000             </p>
+ on 2025-05-21T12:57:24.846657+0000             </p>
           </div>
         </div>
         <br>
