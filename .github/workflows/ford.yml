@@ -5,34 +5,11 @@ on:
     branches:
       - 'main'
 
-permissions:
-  contents: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   documentation:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Build Seeder Documentation
-        uses: apes-suite/build-action@v1.1.1
-        with:
-          waf-args: "--fordonline configure docu"
-          obtain: "build/ford/sdr/docu"
-
-      - name: Change docu ownership
-        run: |
-          sudo chown -R $USER docu
-
-      - name: Deploy Documentation
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: docu
+    permissions:
+      contents: write
+    uses: apes-suite/reus/.github/workflows/ford.yml@v1.3.3
+    with:
+      name: Seeder
+      docdir: 'build/ford/sdr'
